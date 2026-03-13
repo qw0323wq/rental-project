@@ -288,6 +288,14 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     if n_cols < 23:
         return pd.DataFrame()
 
+    # The _city column was appended by extract_rental_csv(), so the
+    # *original* column count is n_cols - 1.  CSV files from 112S1-112S3
+    # have 29 original columns; 112S4+ have 35.  The extended fields
+    # (rental_type, has_manager, has_elevator, equipment) live in cols 29-34
+    # and must ONLY be read when the file actually has 35 original columns.
+    n_original = n_cols - 1  # subtract the injected _city column
+    has_extended_cols = n_original >= 35
+
     result = pd.DataFrame()
 
     # --- City (injected by extract_rental_csv) ---
@@ -328,7 +336,8 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     # ------------------------------------------------------------------ #
 
     # --- Col 29: 出租型態 (rental type) ---
-    if n_cols > 29:
+    # Only available in 35-column files (112S4+)
+    if has_extended_cols:
         result["rental_type"] = df.iloc[:, 29].astype(str).str.strip()
         result["rental_type"] = result["rental_type"].replace("nan", "")
     else:
@@ -353,7 +362,8 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
         result["building_age"] = None
 
     # --- Col 30: 有無管理員 (has residential manager) ---
-    if n_cols > 30:
+    # Only available in 35-column files (112S4+)
+    if has_extended_cols:
         result["has_manager"] = df.iloc[:, 30].astype(str).str.strip().map(
             {"有": True, "無": False}
         )
@@ -361,7 +371,8 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
         result["has_manager"] = None
 
     # --- Col 32: 有無電梯 (has elevator) ---
-    if n_cols > 32:
+    # Only available in 35-column files (112S4+)
+    if has_extended_cols:
         result["has_elevator"] = df.iloc[:, 32].astype(str).str.strip().map(
             {"有": True, "無": False}
         )
@@ -384,7 +395,8 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
         result["main_use"] = ""
 
     # --- Col 33: 附屬設備 (equipment list, comma-separated string) ---
-    if n_cols > 33:
+    # Only available in 35-column files (112S4+)
+    if has_extended_cols:
         result["equipment"] = df.iloc[:, 33].astype(str).str.strip()
         result["equipment"] = result["equipment"].replace("nan", "")
     else:
