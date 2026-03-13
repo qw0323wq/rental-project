@@ -13,6 +13,8 @@ import StatCard from "@/components/StatCard";
 import BuildingInfo from "@/components/BuildingInfo";
 import RoadTable from "@/components/RoadTable";
 import RoadSearch from "@/components/RoadSearch";
+import CpiRentChart from "@/components/CpiRentChart";
+import SocialHousingCard from "@/components/SocialHousingCard";
 
 // Dynamic import for map (SSR-safe)
 const RentMap = dynamic(() => import("@/components/RentMap"), {
@@ -909,11 +911,17 @@ function SearchContent() {
             />
           )}
 
+          {/* CPI Rent Index & Social Housing */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 mb-8">
+            <CpiRentChart />
+            <SocialHousingCard city={city} />
+          </div>
+
           {/* Data Note */}
           <div className="mt-8 text-sm text-gray-400 text-center">
             <p>
               資料來源：內政部不動產交易實價查詢服務（實價登錄
-              2.0）
+              2.0）、主計總處 CPI、社會住宅推動聯盟
             </p>
             <p>租金範圍顯示的是 P10 ~ P90（排除極端值後的範圍）</p>
           </div>

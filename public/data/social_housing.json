@@ -1,0 +1,73 @@
+{
+  "description": "台灣社會住宅統計",
+  "source": "社會住宅推動聯盟、內政部不動產資訊平台",
+  "updated": "2025-06",
+  "total_units": 32415,
+  "total_housing_stock": 9436751,
+  "ratio_percent": 0.34,
+  "rent_discount": "市價8折(一般戶) / 5-7折(優先戶)",
+  "cities": {
+    "臺北市": {
+      "completed_units": 13224,
+      "projects": 44,
+      "note": "含台北市政府興辦"
+    },
+    "新北市": {
+      "completed_units": 5687,
+      "projects": 15,
+      "note": "含中和青年社宅"
+    },
+    "桃園市": {
+      "completed_units": 4374,
+      "projects": 14,
+      "note": "達成率83.52%"
+    },
+    "臺中市": {
+      "completed_units": 3668,
+      "projects": 14,
+      "note": "含豐原安康社宅"
+    },
+    "高雄市": {
+      "completed_units": 849,
+      "projects": 5,
+      "note": "含崇實安居"
+    },
+    "臺南市": {
+      "completed_units": 184,
+      "projects": 2,
+      "note": ""
+    },
+    "基隆市": {
+      "completed_units": 126,
+      "projects": 1,
+      "note": ""
+    },
+    "新竹市": {
+      "completed_units": 95,
+      "projects": 1,
+      "note": ""
+    },
+    "嘉義市": {
+      "completed_units": 33,
+      "projects": 1,
+      "note": ""
+    },
+    "臺東縣": {
+      "completed_units": 43,
+      "projects": 1,
+      "note": ""
+    }
+  },
+  "future_plan": {
+    "2025": 4593,
+    "2026": 4957,
+    "2027": 13783,
+    "2028": 23229,
+    "2029_target": 60000
+  },
+  "policy_target_2032": {
+    "direct_build": 250000,
+    "lease_manage": 250000,
+    "rent_subsidy": 500000
+  }
+}
