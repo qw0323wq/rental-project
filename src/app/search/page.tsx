@@ -58,6 +58,18 @@ interface DistrictData {
       avg_area_ping?: number;
     }
   >;
+  by_rental_type?: Record<
+    string,
+    {
+      median_rent: number;
+      avg_rent: number;
+      min_rent: number;
+      max_rent: number;
+      sample_count: number;
+      avg_area_ping?: number;
+      avg_rooms?: number;
+    }
+  >;
   by_floor?: Record<
     string,
     {
@@ -109,10 +121,19 @@ function SearchContent() {
   const city = searchParams.get("city") || "";
   const district = searchParams.get("district") || "";
   const roomType = searchParams.get("type") || "";
+  const rentalType = searchParams.get("rentalType") || "";
   const road = searchParams.get("road") || "";
   const area = searchParams.get("area") || "";
   const floorRange = searchParams.get("floor") || "";
   const rentRange = searchParams.get("rent") || "";
+
+  const RENTAL_TYPES = [
+    { label: "整戶出租", value: "整棟(戶)出租" },
+    { label: "獨立套房", value: "獨立套房" },
+    { label: "分租套房", value: "分租套房" },
+    { label: "分租雅房", value: "分租雅房" },
+    { label: "分層出租", value: "分層出租" },
+  ];
 
   const AREA_RANGES = [
     { label: "10坪以下", value: "0-10" },
@@ -145,6 +166,7 @@ function SearchContent() {
   const [selectedCity, setSelectedCity] = useState(city);
   const [selectedDistrict, setSelectedDistrict] = useState(district);
   const [selectedType, setSelectedType] = useState(roomType);
+  const [selectedRentalType, setSelectedRentalType] = useState(rentalType);
   const [selectedRoad, setSelectedRoad] = useState(road);
   const [selectedArea, setSelectedArea] = useState(area);
   const [selectedFloor, setSelectedFloor] = useState(floorRange);
@@ -174,11 +196,12 @@ function SearchContent() {
     setSelectedCity(city);
     setSelectedDistrict(district);
     setSelectedType(roomType);
+    setSelectedRentalType(rentalType);
     setSelectedRoad(road);
     setSelectedArea(area);
     setSelectedFloor(floorRange);
     setSelectedRent(rentRange);
-  }, [city, district, roomType, road, area, floorRange, rentRange]);
+  }, [city, district, roomType, rentalType, road, area, floorRange, rentRange]);
 
   // Available roads for selected district
   const availableRoads =
@@ -198,6 +221,7 @@ function SearchContent() {
     if (selectedDistrict) params.set("district", selectedDistrict);
     if (selectedRoad) params.set("road", selectedRoad);
     if (selectedType) params.set("type", selectedType);
+    if (selectedRentalType) params.set("rentalType", selectedRentalType);
     if (selectedArea) params.set("area", selectedArea);
     if (selectedFloor) params.set("floor", selectedFloor);
     if (selectedRent) params.set("rent", selectedRent);
@@ -269,7 +293,18 @@ function SearchContent() {
     }
     if (singleDistrict) {
       const d = singleDistrict as DistrictData;
-      // Type filter takes priority
+      // Rental type filter (出租型態) takes priority
+      if (rentalType && d.by_rental_type?.[rentalType]) {
+        const rt = d.by_rental_type[rentalType];
+        return {
+          median: rt.median_rent,
+          avg: rt.avg_rent,
+          count: rt.sample_count,
+          area: rt.avg_area_ping,
+          rooms: rt.avg_rooms,
+        };
+      }
+      // Room type filter
       if (roomType && d.by_type?.[roomType]) {
         const t = d.by_type[roomType];
         return {
@@ -323,7 +358,7 @@ function SearchContent() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Search Bar - always visible */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-4">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 mb-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-3">
           <select
             value={selectedCity}
             onChange={(e) => {
@@ -382,6 +417,19 @@ function SearchContent() {
             <option value="雅房">雅房</option>
             <option value="整層">整層住家</option>
             <option value="電梯大樓">電梯大樓</option>
+          </select>
+
+          <select
+            value={selectedRentalType}
+            onChange={(e) => setSelectedRentalType(e.target.value)}
+            className="border border-gray-300 rounded-lg px-3 py-2 text-gray-800 focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="">全部出租型態</option>
+            {RENTAL_TYPES.map((r) => (
+              <option key={r.value} value={r.value}>
+                {r.label}
+              </option>
+            ))}
           </select>
 
           <select
@@ -478,6 +526,7 @@ function SearchContent() {
               {city}
               {district ? ` ${district}` : ""}
               {road ? ` ${road}` : ""}
+              {rentalType ? ` ${RENTAL_TYPES.find((r) => r.value === rentalType)?.label || rentalType}` : ""}
               {roomType ? ` ${roomType}` : ""}
               {floorRange ? ` ${floorRange}樓` : ""}
               {rentRange
@@ -564,6 +613,14 @@ function SearchContent() {
                   color="orange"
                 />
               )}
+              {(summary as { rooms?: number }).rooms && (
+                <StatCard
+                  label="平均房數"
+                  value={`${(summary as { rooms?: number }).rooms} 房`}
+                  sub={rentalType ? (RENTAL_TYPES.find((r) => r.value === rentalType)?.label || rentalType) : ""}
+                  color="orange"
+                />
+              )}
               {!summary.area && !district && (
                 <StatCard
                   label="涵蓋區域"
@@ -645,6 +702,185 @@ function SearchContent() {
                   </button>
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* Rental Type Quick Buttons (出租型態) */}
+          {singleDistrict && (singleDistrict as DistrictData).by_rental_type && (
+            <div className="mb-6">
+              <h3 className="text-sm font-medium text-gray-500 mb-2">
+                📋 按出租型態查看：
+              </h3>
+              <div className="flex gap-2 flex-wrap">
+                <button
+                  onClick={() => {
+                    const params = new URLSearchParams({ city, district });
+                    if (roomType) params.set("type", roomType);
+                    router.push(`/search?${params.toString()}`);
+                  }}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
+                    !rentalType
+                      ? "bg-purple-600 text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  全部型態
+                </button>
+                {Object.entries(
+                  (singleDistrict as DistrictData).by_rental_type || {}
+                )
+                  .sort(([, a], [, b]) => b.sample_count - a.sample_count)
+                  .map(([type, rtStats]) => {
+                    const label = RENTAL_TYPES.find((r) => r.value === type)?.label || type;
+                    return (
+                      <button
+                        key={type}
+                        onClick={() => {
+                          const params = new URLSearchParams({
+                            city,
+                            district,
+                            rentalType: type,
+                          });
+                          if (roomType) params.set("type", roomType);
+                          router.push(`/search?${params.toString()}`);
+                        }}
+                        className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
+                          rentalType === type
+                            ? "bg-purple-600 text-white"
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                        }`}
+                      >
+                        {label}
+                        <span className="ml-1 text-xs opacity-70">
+                          ({rtStats.sample_count})
+                        </span>
+                      </button>
+                    );
+                  })}
+              </div>
+
+              {/* Rental Type Detail Cards */}
+              {!rentalType && (
+                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {Object.entries(
+                    (singleDistrict as DistrictData).by_rental_type || {}
+                  )
+                    .sort(([, a], [, b]) => b.sample_count - a.sample_count)
+                    .map(([type, rtStats]) => {
+                      const label = RENTAL_TYPES.find((r) => r.value === type)?.label || type;
+                      const iconMap: Record<string, string> = {
+                        "整棟(戶)出租": "🏠",
+                        "獨立套房": "🚪",
+                        "分租套房": "🛏️",
+                        "分租雅房": "📦",
+                        "分層出租": "🏢",
+                      };
+                      return (
+                        <button
+                          key={type}
+                          onClick={() => {
+                            const params = new URLSearchParams({
+                              city,
+                              district,
+                              rentalType: type,
+                            });
+                            router.push(`/search?${params.toString()}`);
+                          }}
+                          className="bg-white border border-gray-200 rounded-xl p-4 text-left hover:border-purple-300 hover:shadow-md transition-all cursor-pointer"
+                        >
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-lg">{iconMap[type] || "🏠"}</span>
+                            <span className="font-bold text-gray-800">{label}</span>
+                          </div>
+                          <div className="space-y-1">
+                            <div className="flex justify-between text-sm">
+                              <span className="text-gray-500">中位數租金</span>
+                              <span className="font-bold text-blue-600">
+                                ${rtStats.median_rent.toLocaleString()}
+                              </span>
+                            </div>
+                            <div className="flex justify-between text-sm">
+                              <span className="text-gray-500">資料筆數</span>
+                              <span className="text-gray-700">{rtStats.sample_count} 筆</span>
+                            </div>
+                            {rtStats.avg_area_ping && (
+                              <div className="flex justify-between text-sm">
+                                <span className="text-gray-500">平均坪數</span>
+                                <span className="text-gray-700">{rtStats.avg_area_ping} 坪</span>
+                              </div>
+                            )}
+                            {rtStats.avg_rooms && (
+                              <div className="flex justify-between text-sm">
+                                <span className="text-gray-500">平均房數</span>
+                                <span className="font-medium text-orange-600">
+                                  {rtStats.avg_rooms} 房
+                                </span>
+                              </div>
+                            )}
+                            <div className="flex justify-between text-xs text-gray-400 mt-1">
+                              <span>
+                                ${rtStats.min_rent.toLocaleString()} ~ ${rtStats.max_rent.toLocaleString()}
+                              </span>
+                            </div>
+                          </div>
+                        </button>
+                      );
+                    })}
+                </div>
+              )}
+
+              {/* Selected Rental Type Detail */}
+              {rentalType && (singleDistrict as DistrictData).by_rental_type?.[rentalType] && (
+                <div className="mt-4 bg-purple-50 border border-purple-200 rounded-xl p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">
+                      {rentalType === "整棟(戶)出租" ? "🏠" :
+                       rentalType === "獨立套房" ? "🚪" :
+                       rentalType === "分租套房" ? "🛏️" :
+                       rentalType === "分租雅房" ? "📦" : "🏢"}
+                    </span>
+                    <span className="font-bold text-purple-800">
+                      {RENTAL_TYPES.find((r) => r.value === rentalType)?.label || rentalType}
+                    </span>
+                    <span className="text-sm text-purple-500">
+                      {(singleDistrict as DistrictData).by_rental_type![rentalType].sample_count} 筆資料
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div className="bg-white rounded-lg p-3 text-center">
+                      <div className="text-xs text-gray-500">中位數租金</div>
+                      <div className="text-lg font-bold text-blue-600">
+                        ${(singleDistrict as DistrictData).by_rental_type![rentalType].median_rent.toLocaleString()}
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-lg p-3 text-center">
+                      <div className="text-xs text-gray-500">平均租金</div>
+                      <div className="text-lg font-bold text-green-600">
+                        ${(singleDistrict as DistrictData).by_rental_type![rentalType].avg_rent.toLocaleString()}
+                      </div>
+                    </div>
+                    {(singleDistrict as DistrictData).by_rental_type![rentalType].avg_area_ping && (
+                      <div className="bg-white rounded-lg p-3 text-center">
+                        <div className="text-xs text-gray-500">平均坪數</div>
+                        <div className="text-lg font-bold text-orange-600">
+                          {(singleDistrict as DistrictData).by_rental_type![rentalType].avg_area_ping} 坪
+                        </div>
+                      </div>
+                    )}
+                    {(singleDistrict as DistrictData).by_rental_type![rentalType].avg_rooms && (
+                      <div className="bg-white rounded-lg p-3 text-center">
+                        <div className="text-xs text-gray-500">平均房數</div>
+                        <div className="text-lg font-bold text-purple-600">
+                          {(singleDistrict as DistrictData).by_rental_type![rentalType].avg_rooms} 房
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div className="mt-2 text-xs text-purple-400">
+                    租金範圍：${(singleDistrict as DistrictData).by_rental_type![rentalType].min_rent.toLocaleString()} ~ ${(singleDistrict as DistrictData).by_rental_type![rentalType].max_rent.toLocaleString()}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 

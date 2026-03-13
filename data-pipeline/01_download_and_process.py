@@ -609,6 +609,27 @@ def build_statistics(df: pd.DataFrame) -> dict:
             if by_type:
                 ds["by_type"] = by_type
 
+            # 出租型態統計 (detailed rental types from raw data)
+            # 整棟(戶)出租, 獨立套房, 分租套房, 分租雅房, 分層出租
+            if "rental_type" in dist_group.columns:
+                by_rental_type: dict = {}
+                for rtype, rgroup in dist_group.groupby("rental_type"):
+                    label = str(rtype).strip()
+                    if not label or label in ("nan", ""):
+                        continue
+                    if len(rgroup) < 2:
+                        continue
+                    rt_stats = calc_stats(rgroup)
+                    if rt_stats:
+                        # Add avg_rooms for rental type
+                        if "rooms" in rgroup.columns and rgroup["rooms"].notna().sum() > 0:
+                            rt_stats["avg_rooms"] = round(
+                                float(rgroup["rooms"].mean()), 1
+                            )
+                        by_rental_type[label] = rt_stats
+                if by_rental_type:
+                    ds["by_rental_type"] = by_rental_type
+
             # 個別樓層統計 (for per-floor filter)
             if "floor" in dist_group.columns:
                 by_floor: dict = {}
@@ -846,20 +867,29 @@ def build_social_housing_stats(df: pd.DataFrame) -> dict:
             if by_social_type:
                 dist_stats["by_social_type"] = by_social_type
 
-            # Sample addresses (up to 5)
+            # Sample addresses: up to 3 per rental type to ensure coverage
             samples = []
-            for _, row in dist_group.head(5).iterrows():
+            seen_types: dict[str, int] = {}
+            for _, row in dist_group.iterrows():
+                rtype = str(row.get("rental_type", ""))
+                if rtype in seen_types and seen_types[rtype] >= 3:
+                    continue
+                seen_types[rtype] = seen_types.get(rtype, 0) + 1
                 rec: dict = {
                     "address": str(row.get("address", ""))[:60],
                     "rent": int(row["monthly_rent"]),
-                    "rental_type": str(row.get("rental_type", "")),
+                    "rental_type": rtype,
                     "social_type": str(row.get("social_type", "")),
                 }
                 if pd.notna(row.get("area_ping")):
                     rec["area_ping"] = round(float(row["area_ping"]), 1)
                 if pd.notna(row.get("rooms")):
                     rec["rooms"] = int(row["rooms"])
+                if pd.notna(row.get("floor")):
+                    rec["floor"] = int(row["floor"])
                 samples.append(rec)
+                if len(samples) >= 15:
+                    break
             if samples:
                 dist_stats["samples"] = samples
 

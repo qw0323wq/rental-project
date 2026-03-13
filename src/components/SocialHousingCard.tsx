@@ -39,6 +39,7 @@ interface SampleRecord {
   social_type: string;
   area_ping?: number;
   rooms?: number;
+  floor?: number;
 }
 
 interface DistrictSocialData {
@@ -167,6 +168,7 @@ export default function SocialHousingCard({
   const [overviewData, setOverviewData] = useState<SocialHousingData | null>(null);
   const [realData, setRealData] = useState<SocialHousingRealData | null>(null);
   const [activeTab, setActiveTab] = useState<TabType>("real");
+  const [selectedRentalType, setSelectedRentalType] = useState<string>("");
 
   useEffect(() => {
     fetch("/data/social_housing.json")
@@ -313,11 +315,46 @@ export default function SocialHousingCard({
                 {/* Rental type breakdown */}
                 {socialStats.by_rental_type && Object.keys(socialStats.by_rental_type).length > 0 ? (
                   <>
-                    <h4 className="text-sm font-medium text-gray-600 mb-4">
+                    <h4 className="text-sm font-medium text-gray-600 mb-3">
                       {district || city} 社宅實價 — 依出租型態
                     </h4>
+
+                    {/* Rental type filter pills */}
+                    <div className="flex gap-2 flex-wrap mb-4">
+                      <button
+                        onClick={() => setSelectedRentalType("")}
+                        className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer ${
+                          !selectedRentalType
+                            ? "bg-blue-600 text-white"
+                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
+                      >
+                        全部型態
+                      </button>
+                      {Object.entries(socialStats.by_rental_type)
+                        .sort((a, b) => b[1].count - a[1].count)
+                        .map(([type, rtStats]) => {
+                          const config = RENTAL_TYPE_CONFIG[type] || { label: type, color: "#6B7280", icon: "🏠" };
+                          return (
+                            <button
+                              key={type}
+                              onClick={() => setSelectedRentalType(type === selectedRentalType ? "" : type)}
+                              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer ${
+                                selectedRentalType === type
+                                  ? "text-white"
+                                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                              }`}
+                              style={selectedRentalType === type ? { backgroundColor: config.color } : {}}
+                            >
+                              {config.icon} {config.label} ({rtStats.count})
+                            </button>
+                          );
+                        })}
+                    </div>
+
                     <div className="space-y-3">
                       {Object.entries(socialStats.by_rental_type)
+                        .filter(([type]) => !selectedRentalType || type === selectedRentalType)
                         .sort((a, b) => b[1].count - a[1].count)
                         .map(([type, stats]) => {
                           const config = RENTAL_TYPE_CONFIG[type] || {
@@ -492,9 +529,17 @@ export default function SocialHousingCard({
                       <div className="mt-4 pt-3 border-t border-gray-100">
                         <h5 className="text-xs font-medium text-gray-500 mb-2">
                           📍 社宅實例
+                          {selectedRentalType && (
+                            <span className="ml-1 text-blue-500">
+                              — {RENTAL_TYPE_CONFIG[selectedRentalType]?.label || selectedRentalType}
+                            </span>
+                          )}
                         </h5>
                         <div className="space-y-2">
-                          {socialStats.samples.slice(0, 3).map((sample, i) => (
+                          {socialStats.samples
+                            .filter((s) => !selectedRentalType || s.rental_type === selectedRentalType)
+                            .slice(0, selectedRentalType ? 5 : 3)
+                            .map((sample, i) => (
                             <div
                               key={i}
                               className="flex items-start gap-2 text-xs bg-gray-50 rounded-lg p-2"
@@ -524,6 +569,11 @@ export default function SocialHousingCard({
                                   {sample.rooms && (
                                     <span className="text-gray-500">
                                       {sample.rooms}房
+                                    </span>
+                                  )}
+                                  {sample.floor && (
+                                    <span className="text-gray-500">
+                                      {sample.floor}F
                                     </span>
                                   )}
                                   <span className="text-gray-400">
