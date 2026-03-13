@@ -76,15 +76,32 @@ function getCityColor(units: number): string {
   return "#BFDBFE";
 }
 
-interface SocialHousingCardProps {
-  city?: string;
+interface MarketRentInfo {
+  median_rent: number;
+  avg_rent: number;
+  label: string; // e.g. "整層住家" or "全部房型"
 }
 
-type TabType = "overview" | "future";
+interface SocialHousingCardProps {
+  city?: string;
+  district?: string;
+  marketRent?: MarketRentInfo;
+  wholeFlatRent?: MarketRentInfo;
+}
 
-export default function SocialHousingCard({ city }: SocialHousingCardProps) {
+type TabType = "rent" | "overview" | "future";
+
+export default function SocialHousingCard({
+  city,
+  district,
+  marketRent,
+  wholeFlatRent,
+}: SocialHousingCardProps) {
   const [data, setData] = useState<SocialHousingData | null>(null);
-  const [activeTab, setActiveTab] = useState<TabType>("overview");
+  const hasRentData = !!(marketRent || wholeFlatRent);
+  const [activeTab, setActiveTab] = useState<TabType>(
+    hasRentData ? "rent" : "overview"
+  );
 
   useEffect(() => {
     fetch("/data/social_housing.json")
@@ -135,7 +152,42 @@ export default function SocialHousingCard({ city }: SocialHousingCardProps) {
     },
   ];
 
+  // Build rent comparison data
+  const rentComparisons: Array<{
+    label: string;
+    market: number;
+    general: number; // 8折
+    priority70: number; // 7折
+    priority50: number; // 5折
+  }> = [];
+
+  if (wholeFlatRent && wholeFlatRent.median_rent > 0) {
+    rentComparisons.push({
+      label: wholeFlatRent.label,
+      market: wholeFlatRent.median_rent,
+      general: Math.round(wholeFlatRent.median_rent * 0.8),
+      priority70: Math.round(wholeFlatRent.median_rent * 0.7),
+      priority50: Math.round(wholeFlatRent.median_rent * 0.5),
+    });
+  }
+  if (
+    marketRent &&
+    marketRent.median_rent > 0 &&
+    marketRent.label !== wholeFlatRent?.label
+  ) {
+    rentComparisons.push({
+      label: marketRent.label,
+      market: marketRent.median_rent,
+      general: Math.round(marketRent.median_rent * 0.8),
+      priority70: Math.round(marketRent.median_rent * 0.7),
+      priority50: Math.round(marketRent.median_rent * 0.5),
+    });
+  }
+
   const tabs: { key: TabType; label: string; icon: string }[] = [
+    ...(hasRentData
+      ? [{ key: "rent" as TabType, label: "租金比較", icon: "💰" }]
+      : []),
     { key: "overview", label: "現況總覽", icon: "🏘️" },
     { key: "future", label: "未來規劃", icon: "📋" },
   ];
@@ -215,6 +267,132 @@ export default function SocialHousingCard({ city }: SocialHousingCardProps) {
       </div>
 
       <div className="p-4">
+        {/* Rent Comparison Tab */}
+        {activeTab === "rent" && rentComparisons.length > 0 && (
+          <>
+            <h4 className="text-sm font-medium text-gray-600 mb-4">
+              {district ? `${district}` : city} 市場租金 vs 社宅估算租金
+            </h4>
+            <div className="space-y-6">
+              {rentComparisons.map((comp) => {
+                const savings = comp.market - comp.general;
+                const savingsPercent = Math.round(
+                  (savings / comp.market) * 100
+                );
+                const barData = [
+                  {
+                    name: "市場行情",
+                    rent: comp.market,
+                    color: "#EF4444",
+                  },
+                  {
+                    name: "社宅一般戶(8折)",
+                    rent: comp.general,
+                    color: "#3B82F6",
+                  },
+                  {
+                    name: "社宅優先戶(7折)",
+                    rent: comp.priority70,
+                    color: "#10B981",
+                  },
+                  {
+                    name: "社宅優先戶(5折)",
+                    rent: comp.priority50,
+                    color: "#059669",
+                  },
+                ];
+
+                return (
+                  <div key={comp.label}>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm font-bold text-gray-700">
+                        {comp.label}
+                      </span>
+                      <span className="text-xs bg-green-50 text-green-700 font-bold px-2 py-1 rounded-full">
+                        一般戶可省 ${savings.toLocaleString()}/月（{savingsPercent}%）
+                      </span>
+                    </div>
+
+                    {/* Horizontal bar comparison */}
+                    <div className="space-y-2.5">
+                      {barData.map((item) => {
+                        const widthPercent = Math.min(
+                          (item.rent / comp.market) * 100,
+                          100
+                        );
+                        return (
+                          <div key={item.name} className="flex items-center gap-3">
+                            <div className="w-[120px] text-xs text-gray-600 text-right shrink-0">
+                              {item.name}
+                            </div>
+                            <div className="flex-1 relative">
+                              <div className="w-full bg-gray-100 rounded-full h-7">
+                                <div
+                                  className="h-7 rounded-full flex items-center justify-end pr-2 transition-all duration-500"
+                                  style={{
+                                    width: `${widthPercent}%`,
+                                    backgroundColor: item.color,
+                                    minWidth: "80px",
+                                  }}
+                                >
+                                  <span className="text-xs font-bold text-white">
+                                    ${item.rent.toLocaleString()}/月
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Monthly savings summary */}
+            {rentComparisons.length > 0 && (
+              <div className="mt-5 pt-4 border-t border-gray-100">
+                <h5 className="text-xs font-medium text-gray-500 mb-3">
+                  💡 每月租金節省估算
+                </h5>
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="bg-blue-50 rounded-lg p-3 text-center">
+                    <div className="text-xs text-blue-600 font-medium">一般戶（8折）</div>
+                    <div className="text-lg font-bold text-blue-700 mt-1">
+                      省 ${(rentComparisons[0].market - rentComparisons[0].general).toLocaleString()}
+                    </div>
+                    <div className="text-xs text-blue-500 mt-0.5">
+                      年省 ${((rentComparisons[0].market - rentComparisons[0].general) * 12).toLocaleString()}
+                    </div>
+                  </div>
+                  <div className="bg-green-50 rounded-lg p-3 text-center">
+                    <div className="text-xs text-green-600 font-medium">優先戶（7折）</div>
+                    <div className="text-lg font-bold text-green-700 mt-1">
+                      省 ${(rentComparisons[0].market - rentComparisons[0].priority70).toLocaleString()}
+                    </div>
+                    <div className="text-xs text-green-500 mt-0.5">
+                      年省 ${((rentComparisons[0].market - rentComparisons[0].priority70) * 12).toLocaleString()}
+                    </div>
+                  </div>
+                  <div className="bg-emerald-50 rounded-lg p-3 text-center">
+                    <div className="text-xs text-emerald-600 font-medium">優先戶（5折）</div>
+                    <div className="text-lg font-bold text-emerald-700 mt-1">
+                      省 ${(rentComparisons[0].market - rentComparisons[0].priority50).toLocaleString()}
+                    </div>
+                    <div className="text-xs text-emerald-500 mt-0.5">
+                      年省 ${((rentComparisons[0].market - rentComparisons[0].priority50) * 12).toLocaleString()}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-400 mt-3">
+                  * 社宅租金為估算值，以該區域實價登錄中位數租金乘以折數計算。實際租金依各社宅案場公告為準。
+                </p>
+              </div>
+            )}
+          </>
+        )}
+
         {/* Overview: City comparison bar chart */}
         {activeTab === "overview" && (
           <>

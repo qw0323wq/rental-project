@@ -914,7 +914,32 @@ function SearchContent() {
           {/* CPI Rent Index & Social Housing */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 mb-8">
             <CpiRentChart />
-            <SocialHousingCard city={city} />
+            <SocialHousingCard
+              city={city}
+              district={district || undefined}
+              marketRent={
+                summary
+                  ? {
+                      median_rent: summary.median,
+                      avg_rent: summary.avg,
+                      label: district
+                        ? roomType || "全部房型"
+                        : "全市中位數",
+                    }
+                  : undefined
+              }
+              wholeFlatRent={(() => {
+                if (!singleDistrict) return undefined;
+                const d = singleDistrict as DistrictData;
+                const wholeFlat = d.by_type?.["整層"];
+                if (!wholeFlat) return undefined;
+                return {
+                  median_rent: wholeFlat.median_rent,
+                  avg_rent: wholeFlat.avg_rent,
+                  label: "整層住家",
+                };
+              })()}
+            />
           </div>
 
           {/* Data Note */}
