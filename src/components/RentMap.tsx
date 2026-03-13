@@ -46,14 +46,26 @@ interface RentMapProps {
 
 // 租金顏色漸層
 function getRentColor(rent: number): string {
-  if (rent >= 20000) return "#dc2626"; // red
-  if (rent >= 15000) return "#ea580c"; // orange
-  if (rent >= 12000) return "#d97706"; // amber
+  if (rent >= 50000) return "#7f1d1d"; // dark red
+  if (rent >= 30000) return "#dc2626"; // red
+  if (rent >= 20000) return "#ea580c"; // orange
+  if (rent >= 15000) return "#d97706"; // amber
   if (rent >= 10000) return "#65a30d"; // lime
   if (rent >= 8000) return "#16a34a"; // green
-  if (rent >= 6000) return "#0891b2"; // cyan
+  if (rent >= 5000) return "#0891b2"; // cyan
   return "#2563eb"; // blue
 }
+
+const LEGEND_ITEMS = [
+  { color: "#2563eb", label: "<$5K" },
+  { color: "#0891b2", label: "$5-8K" },
+  { color: "#16a34a", label: "$8-10K" },
+  { color: "#65a30d", label: "$10-15K" },
+  { color: "#d97706", label: "$15-20K" },
+  { color: "#ea580c", label: "$20-30K" },
+  { color: "#dc2626", label: "$30-50K" },
+  { color: "#7f1d1d", label: ">$50K" },
+];
 
 function getRadius(count: number): number {
   if (count >= 500) return 18;
@@ -132,35 +144,16 @@ export default function RentMap({
           {city ? `${city} 各區租金地圖` : "全台租金分布"}
         </h3>
         {city && (
-          <div className="flex items-center gap-3 text-xs text-gray-500">
-            <span className="flex items-center gap-1">
-              <span
-                className="inline-block w-3 h-3 rounded-full"
-                style={{ backgroundColor: "#2563eb" }}
-              />
-              &lt;$8K
-            </span>
-            <span className="flex items-center gap-1">
-              <span
-                className="inline-block w-3 h-3 rounded-full"
-                style={{ backgroundColor: "#16a34a" }}
-              />
-              $8-12K
-            </span>
-            <span className="flex items-center gap-1">
-              <span
-                className="inline-block w-3 h-3 rounded-full"
-                style={{ backgroundColor: "#d97706" }}
-              />
-              $12-15K
-            </span>
-            <span className="flex items-center gap-1">
-              <span
-                className="inline-block w-3 h-3 rounded-full"
-                style={{ backgroundColor: "#dc2626" }}
-              />
-              &gt;$15K
-            </span>
+          <div className="flex items-center gap-2 text-xs text-gray-500 flex-wrap">
+            {LEGEND_ITEMS.map((item) => (
+              <span key={item.label} className="flex items-center gap-1">
+                <span
+                  className="inline-block w-3 h-3 rounded-full"
+                  style={{ backgroundColor: item.color }}
+                />
+                {item.label}
+              </span>
+            ))}
           </div>
         )}
       </div>
