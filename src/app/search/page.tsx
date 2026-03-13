@@ -56,7 +56,7 @@ interface DistrictData {
       avg_area_ping?: number;
     }
   >;
-  by_floor_range?: Record<
+  by_floor?: Record<
     string,
     {
       median_rent: number;
@@ -108,12 +108,10 @@ function SearchContent() {
     { label: "40坪以上", value: "40-999" },
   ];
 
-  const FLOOR_RANGES = [
-    { label: "1-5樓", value: "1-5F" },
-    { label: "6-10樓", value: "6-10F" },
-    { label: "11-15樓", value: "11-15F" },
-    { label: "16樓以上", value: "16F+" },
-  ];
+  const FLOORS = Array.from({ length: 25 }, (_, i) => ({
+    label: `${i + 1}樓`,
+    value: String(i + 1),
+  }));
 
   const [stats, setStats] = useState<Record<string, CityData>>({});
   const [cities, setCities] = useState<CityInfo[]>([]);
@@ -255,9 +253,9 @@ function SearchContent() {
           area: t.avg_area_ping,
         };
       }
-      // Floor range filter
-      if (floorRange && d.by_floor_range?.[floorRange]) {
-        const f = d.by_floor_range[floorRange];
+      // Floor filter
+      if (floorRange && d.by_floor?.[floorRange]) {
+        const f = d.by_floor[floorRange];
         return {
           median: f.median_rent,
           avg: f.avg_rent,
@@ -366,7 +364,7 @@ function SearchContent() {
             className="border border-gray-300 rounded-lg px-3 py-2 text-gray-800 focus:ring-2 focus:ring-blue-500"
           >
             <option value="">全部樓層</option>
-            {FLOOR_RANGES.map((r) => (
+            {FLOORS.map((r) => (
               <option key={r.value} value={r.value}>
                 {r.label}
               </option>
@@ -433,7 +431,7 @@ function SearchContent() {
               {district ? ` ${district}` : ""}
               {road ? ` ${road}` : ""}
               {roomType ? ` ${roomType}` : ""}
-              {floorRange ? ` ${floorRange}` : ""} 租金行情
+              {floorRange ? ` ${floorRange}樓` : ""} 租金行情
             </h1>
             {district && districtProfiles[city]?.[district] && (
               <SafetyBadge

@@ -592,25 +592,18 @@ def build_statistics(df: pd.DataFrame) -> dict:
             if by_type:
                 ds["by_type"] = by_type
 
-            # 樓層範圍統計 (for floor range filter)
+            # 個別樓層統計 (for per-floor filter)
             if "floor" in dist_group.columns:
                 by_floor: dict = {}
-                floor_ranges = [
-                    ("1-5F", 1, 5),
-                    ("6-10F", 6, 10),
-                    ("11-15F", 11, 15),
-                    ("16F+", 16, 9999),
-                ]
-                for label, lo, hi in floor_ranges:
-                    valid_floors = dist_group["floor"].dropna()
-                    mask = valid_floors.between(lo, hi)
-                    floor_subset = dist_group.loc[valid_floors[mask].index]
+                for floor_num in range(1, 26):
+                    mask = dist_group["floor"] == floor_num
+                    floor_subset = dist_group[mask]
                     if len(floor_subset) >= 2:
                         fs = calc_stats(floor_subset)
                         if fs:
-                            by_floor[label] = fs
+                            by_floor[str(floor_num)] = fs
                 if by_floor:
-                    ds["by_floor_range"] = by_floor
+                    ds["by_floor"] = by_floor
 
             # 出租型態分佈
             rtb = _rental_type_breakdown(dist_group)
