@@ -104,6 +104,128 @@ def extract_rental_csv(zip_path: Path) -> list[pd.DataFrame]:
     return dfs
 
 
+def parse_chinese_floor(value) -> int | None:
+    """Parse Chinese floor text into an integer floor number.
+
+    Args:
+        value: Raw floor value from column 9, e.g. "三層", "十二層",
+               "地下一層", "二", or a plain numeric string.
+
+    Returns:
+        Integer floor number (negative for basement), or None when the
+        value cannot be parsed.
+
+    Examples:
+        >>> parse_chinese_floor("三層")
+        3
+        >>> parse_chinese_floor("十二層")
+        12
+        >>> parse_chinese_floor("地下一層")
+        -1
+        >>> parse_chinese_floor("二十三層")
+        23
+    """
+    if value is None:
+        return None
+    text = str(value).strip()
+    if not text or text in ("nan", ""):
+        return None
+
+    # Already a plain integer string
+    try:
+        return int(text)
+    except ValueError:
+        pass
+
+    # Detect basement floors ("地下N層" → negative)
+    basement = "地下" in text
+    # Strip common suffixes so the number-parsing logic works uniformly
+    text = text.replace("地下", "").replace("層", "").replace("樓", "").strip()
+
+    # Chinese digit mapping (traditional numerals)
+    chinese_digits: dict[str, int] = {
+        "零": 0, "一": 1, "二": 2, "三": 3, "四": 4,
+        "五": 5, "六": 6, "七": 7, "八": 8, "九": 9,
+    }
+
+    # Try plain numeric again after stripping Chinese characters
+    try:
+        result = int(text)
+        return -result if basement else result
+    except ValueError:
+        pass
+
+    # Parse Chinese numeral with 十 (tens) logic:
+    # "十" alone → 10, "十二" → 12, "二十三" → 23
+    if not text:
+        return None
+
+    floor_val = 0
+    if "十" in text:
+        parts = text.split("十")
+        tens_part = parts[0]
+        units_part = parts[1] if len(parts) > 1 else ""
+        tens = chinese_digits.get(tens_part, 1) if tens_part else 1
+        units = chinese_digits.get(units_part, 0) if units_part else 0
+        floor_val = tens * 10 + units
+    elif len(text) == 1:
+        floor_val = chinese_digits.get(text, 0)
+    else:
+        # Multi-character without 十, try character-by-character (e.g. "二三" is unusual but safe)
+        accumulated = 0
+        for ch in text:
+            if ch in chinese_digits:
+                accumulated = accumulated * 10 + chinese_digits[ch]
+        floor_val = accumulated if accumulated else 0
+
+    if floor_val == 0:
+        return None
+    return -floor_val if basement else floor_val
+
+
+def calc_building_age(raw_date) -> int | None:
+    """Calculate building age in years from a ROC-format construction date.
+
+    Args:
+        raw_date: Construction date string in ROC format, e.g. "0860613"
+                  (ROC year 86, month 06, day 13 → 1997).  Values that are
+                  empty, zero-padded zeros, or non-numeric return None.
+
+    Returns:
+        Building age in years relative to 2026, or None when the date is
+        unavailable or invalid.
+
+    Examples:
+        >>> calc_building_age("0860613")
+        29
+        >>> calc_building_age("1100101")
+        16
+        >>> calc_building_age("")  # returns None
+    """
+    if raw_date is None:
+        return None
+    text = str(raw_date).strip()
+    if not text or text in ("nan", "0", "00000000"):
+        return None
+    # Remove any non-digit characters (e.g. slashes)
+    digits = re.sub(r"\D", "", text)
+    if len(digits) < 3:
+        return None
+    try:
+        # First 3 digits are the ROC year; ROC year + 1911 = Gregorian year
+        roc_year = int(digits[:3]) if len(digits) >= 7 else int(digits[:2])
+        if roc_year <= 0:
+            return None
+        gregorian_year = roc_year + 1911
+        age = 2026 - gregorian_year
+        # Guard against future dates or unrealistically old buildings
+        if age < 0 or age > 120:
+            return None
+        return age
+    except (ValueError, IndexError):
+        return None
+
+
 def extract_road(address: str) -> str:
     """從地址提取路段名稱"""
     if not isinstance(address, str):
@@ -146,57 +268,131 @@ def classify_room_type(row):
 
 
 def clean_data(df: pd.DataFrame) -> pd.DataFrame:
-    """清洗單一 CSV 的租賃資料"""
-    cols = df.columns.tolist()
+    """清洗單一 CSV 的租賃資料。
 
-    # 直接用已知的欄位名
+    Uses column indices instead of column names to avoid encoding issues with
+    garbled Chinese column headers.  The expected column layout (35 columns)
+    is documented in the module-level comment.
+
+    Args:
+        df: Raw DataFrame from a rental _c.csv file with the _city column
+            already attached by extract_rental_csv().
+
+    Returns:
+        Cleaned DataFrame with all extracted fields, or an empty DataFrame
+        when the source data is unusable.
+    """
+    n_cols = len(df.columns)
+
+    # Minimum required columns: at least up to col 22 (monthly rent)
+    if n_cols < 23:
+        return pd.DataFrame()
+
     result = pd.DataFrame()
+
+    # --- City (injected by extract_rental_csv) ---
     result["city"] = df["_city"]
 
-    if "鄉鎮市區" in cols:
-        result["district"] = df["鄉鎮市區"].astype(str).str.strip()
-    else:
+    # --- Col 0: 鄉鎮市區 (district) ---
+    result["district"] = df.iloc[:, 0].astype(str).str.strip()
+
+    # --- Col 2: 土地位置建物門牌 (address) ---
+    result["address"] = df.iloc[:, 2].astype(str)
+
+    # --- Col 22: 總額元 (monthly rent) ---
+    result["monthly_rent"] = pd.to_numeric(df.iloc[:, 22], errors="coerce")
+
+    # Guard: if all rents are NaN the file is likely malformed
+    if result["monthly_rent"].isna().all():
         return pd.DataFrame()
 
-    # 地址
-    if "土地位置建物門牌" in cols:
-        result["address"] = df["土地位置建物門牌"].astype(str)
+    # --- Col 15: 建物移轉總面積平方公尺 (building area → convert to 坪) ---
+    if n_cols > 15:
+        area_m2 = pd.to_numeric(df.iloc[:, 15], errors="coerce")
+        result["area_ping"] = (area_m2 * 0.3025).round(1)
+
+    # --- Col 11: 建物型態 (building type) ---
+    if n_cols > 11:
+        result["building_type"] = df.iloc[:, 11].astype(str)
+
+    # --- Col 7: 租賃年月日 (transaction date, ROC format) ---
+    if n_cols > 7:
+        result["date_raw"] = df.iloc[:, 7].astype(str)
+
+    # --- Col 16: 格局-房 (number of rooms) ---
+    if n_cols > 16:
+        result["rooms"] = pd.to_numeric(df.iloc[:, 16], errors="coerce")
+
+    # ------------------------------------------------------------------ #
+    # NEW FIELDS
+    # ------------------------------------------------------------------ #
+
+    # --- Col 29: 出租型態 (rental type) ---
+    if n_cols > 29:
+        result["rental_type"] = df.iloc[:, 29].astype(str).str.strip()
+        result["rental_type"] = result["rental_type"].replace("nan", "")
     else:
-        result["address"] = ""
+        result["rental_type"] = ""
 
-    # 租金
-    rent_col = None
-    for c in cols:
-        if "總額元" in c and "車位" not in c:
-            rent_col = c
-            break
-    if rent_col:
-        result["monthly_rent"] = pd.to_numeric(df[rent_col], errors="coerce")
+    # --- Col 9: 租賃層次 (floor number, Chinese text) ---
+    if n_cols > 9:
+        result["floor"] = df.iloc[:, 9].apply(parse_chinese_floor)
     else:
-        return pd.DataFrame()
+        result["floor"] = None
 
-    # 面積
-    for c in cols:
-        if "建物" in c and "面積" in c and "平方公尺" in c and "車位" not in c:
-            area_m2 = pd.to_numeric(df[c], errors="coerce")
-            result["area_ping"] = (area_m2 * 0.3025).round(1)
-            break
+    # --- Col 10: 總樓層數 (total floors, may be numeric or Chinese) ---
+    if n_cols > 10:
+        result["total_floors"] = pd.to_numeric(df.iloc[:, 10], errors="coerce")
+    else:
+        result["total_floors"] = None
 
-    # 建物型態
-    if "建物型態" in cols:
-        result["building_type"] = df["建物型態"].astype(str)
+    # --- Col 14: 建築完成年月 (construction date → building age) ---
+    if n_cols > 14:
+        result["building_age"] = df.iloc[:, 14].apply(calc_building_age)
+    else:
+        result["building_age"] = None
 
-    # 租賃日期
-    if "租賃年月日" in cols:
-        result["date_raw"] = df["租賃年月日"].astype(str)
+    # --- Col 30: 有無管理員 (has residential manager) ---
+    if n_cols > 30:
+        result["has_manager"] = df.iloc[:, 30].astype(str).str.strip().map(
+            {"有": True, "無": False}
+        )
+    else:
+        result["has_manager"] = None
 
-    # 格局
-    for c in cols:
-        if "格局" in c and "房" in c:
-            result["rooms"] = pd.to_numeric(df[c], errors="coerce")
-            break
+    # --- Col 32: 有無電梯 (has elevator) ---
+    if n_cols > 32:
+        result["has_elevator"] = df.iloc[:, 32].astype(str).str.strip().map(
+            {"有": True, "無": False}
+        )
+    else:
+        result["has_elevator"] = None
 
-    # 過濾異常
+    # --- Col 21: 有無附傢俱 (has furniture) ---
+    if n_cols > 21:
+        result["has_furniture"] = df.iloc[:, 21].astype(str).str.strip().map(
+            {"有": True, "無": False}
+        )
+    else:
+        result["has_furniture"] = None
+
+    # --- Col 12: 主要用途 (main use) ---
+    if n_cols > 12:
+        result["main_use"] = df.iloc[:, 12].astype(str).str.strip()
+        result["main_use"] = result["main_use"].replace("nan", "")
+    else:
+        result["main_use"] = ""
+
+    # --- Col 33: 附屬設備 (equipment list, comma-separated string) ---
+    if n_cols > 33:
+        result["equipment"] = df.iloc[:, 33].astype(str).str.strip()
+        result["equipment"] = result["equipment"].replace("nan", "")
+    else:
+        result["equipment"] = ""
+
+    # ------------------------------------------------------------------ #
+    # FILTERS
+    # ------------------------------------------------------------------ #
     result = result.dropna(subset=["monthly_rent", "district"])
     result = result[result["monthly_rent"] > 1000]
     result = result[result["monthly_rent"] < 200000]
@@ -205,6 +401,10 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     if "area_ping" in result.columns:
         result = result[(result["area_ping"] > 1) | (result["area_ping"].isna())]
         result = result[(result["area_ping"] < 200) | (result["area_ping"].isna())]
+
+    # ------------------------------------------------------------------ #
+    # DERIVED FIELDS
+    # ------------------------------------------------------------------ #
 
     # 提取路段
     result["road"] = result["address"].apply(extract_road)
@@ -216,22 +416,127 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def calc_stats(group: pd.DataFrame) -> dict:
-    """計算一組資料的統計"""
+    """計算一組資料的統計。
+
+    Computes core rent statistics plus new building and amenity metrics
+    introduced in v2 of the schema.
+
+    Args:
+        group: Sub-DataFrame for a city / district / road grouping.
+
+    Returns:
+        Dictionary of statistics, or None when the group has fewer than
+        two records (insufficient for meaningful aggregates).
+    """
     if len(group) < 2:
         return None
-    return {
+
+    stats: dict = {
         "median_rent": int(group["monthly_rent"].median()),
         "avg_rent": int(group["monthly_rent"].mean()),
         "min_rent": int(group["monthly_rent"].quantile(0.1)),
         "max_rent": int(group["monthly_rent"].quantile(0.9)),
         "sample_count": int(len(group)),
-        "avg_area_ping": round(float(group["area_ping"].mean()), 1) if "area_ping" in group.columns and group["area_ping"].notna().sum() > 0 else None,
+        "avg_area_ping": (
+            round(float(group["area_ping"].mean()), 1)
+            if "area_ping" in group.columns and group["area_ping"].notna().sum() > 0
+            else None
+        ),
     }
+
+    # avg_building_age: mean age across rows that have a valid building age
+    if "building_age" in group.columns:
+        valid_ages = group["building_age"].dropna()
+        if len(valid_ages) > 0:
+            stats["avg_building_age"] = round(float(valid_ages.mean()), 1)
+
+    # has_manager_ratio: fraction of rows where has_manager is True
+    if "has_manager" in group.columns:
+        manager_series = group["has_manager"].dropna()
+        if len(manager_series) > 0:
+            stats["has_manager_ratio"] = round(
+                float(manager_series.sum()) / len(manager_series), 3
+            )
+
+    # has_elevator_ratio: fraction of rows where has_elevator is True
+    if "has_elevator" in group.columns:
+        elevator_series = group["has_elevator"].dropna()
+        if len(elevator_series) > 0:
+            stats["has_elevator_ratio"] = round(
+                float(elevator_series.sum()) / len(elevator_series), 3
+            )
+
+    return stats
+
+
+def _rental_type_breakdown(group: pd.DataFrame) -> dict[str, int]:
+    """Count records by rental type (出租型態) for a district group.
+
+    Args:
+        group: District-level sub-DataFrame.
+
+    Returns:
+        Mapping of rental type label to record count, e.g.
+        {"整層住家": 120, "獨立套房": 85, "分租套房": 42}.
+        Empty rental type strings are omitted.
+    """
+    if "rental_type" not in group.columns:
+        return {}
+    counts: dict[str, int] = {}
+    for rtype, cnt in group["rental_type"].value_counts().items():
+        label = str(rtype).strip()
+        if label and label not in ("nan", ""):
+            counts[label] = int(cnt)
+    return counts
+
+
+def _floor_distribution(group: pd.DataFrame) -> dict[str, int]:
+    """Bucket floor numbers into standard ranges for a district group.
+
+    Ranges: 1-5F, 6-10F, 11-15F, 16F+. Basement (< 1) and unknown floors
+    are excluded.
+
+    Args:
+        group: District-level sub-DataFrame.
+
+    Returns:
+        Mapping of bucket label to record count, e.g.
+        {"1-5F": 200, "6-10F": 80, "11-15F": 30, "16F+": 10}.
+        Buckets with zero count are omitted.
+    """
+    if "floor" not in group.columns:
+        return {}
+    buckets: dict[str, int] = {"1-5F": 0, "6-10F": 0, "11-15F": 0, "16F+": 0}
+    for floor_val in group["floor"].dropna():
+        f = int(floor_val)
+        if f < 1:
+            continue
+        if f <= 5:
+            buckets["1-5F"] += 1
+        elif f <= 10:
+            buckets["6-10F"] += 1
+        elif f <= 15:
+            buckets["11-15F"] += 1
+        else:
+            buckets["16F+"] += 1
+    return {k: v for k, v in buckets.items() if v > 0}
 
 
 def build_statistics(df: pd.DataFrame) -> dict:
-    """計算完整統計：城市 > 區域 > 路段"""
-    stats = {}
+    """計算完整統計：城市 > 區域 > 路段。
+
+    Extends the v1 schema with per-district rental_type_breakdown and
+    floor_distribution, and propagates the new calc_stats() fields
+    (avg_building_age, has_manager_ratio, has_elevator_ratio) at every
+    aggregation level.
+
+    Args:
+        df: Fully cleaned and concatenated rental DataFrame.
+
+    Returns:
+        Nested statistics dictionary keyed by city → districts / summary.
+    """
+    stats: dict = {}
 
     for city, city_group in df.groupby("city"):
         city_key = str(city)
@@ -256,7 +561,7 @@ def build_statistics(df: pd.DataFrame) -> dict:
                 continue
 
             # 按房型
-            by_type = {}
+            by_type: dict = {}
             for rtype, rgroup in dist_group.groupby("room_type"):
                 ts = calc_stats(rgroup)
                 if ts:
@@ -264,8 +569,18 @@ def build_statistics(df: pd.DataFrame) -> dict:
             if by_type:
                 ds["by_type"] = by_type
 
+            # 出租型態分佈
+            rtb = _rental_type_breakdown(dist_group)
+            if rtb:
+                ds["rental_type_breakdown"] = rtb
+
+            # 樓層分佈
+            fd = _floor_distribution(dist_group)
+            if fd:
+                ds["floor_distribution"] = fd
+
             # 路段統計
-            roads = {}
+            roads: dict = {}
             for road, road_group in dist_group.groupby("road"):
                 if not road or road == "" or len(road_group) < 2:
                     continue
@@ -274,7 +589,9 @@ def build_statistics(df: pd.DataFrame) -> dict:
                     roads[str(road)] = rs
             if roads:
                 # 只保留前 30 條路段（按樣本數排序）
-                sorted_roads = sorted(roads.items(), key=lambda x: -x[1]["sample_count"])[:30]
+                sorted_roads = sorted(
+                    roads.items(), key=lambda x: -x[1]["sample_count"]
+                )[:30]
                 ds["roads"] = dict(sorted_roads)
 
             stats[city_key]["districts"][str(district)] = ds
@@ -283,15 +600,25 @@ def build_statistics(df: pd.DataFrame) -> dict:
 
 
 def build_records(df: pd.DataFrame) -> list:
-    """建立個別紀錄列表（給地圖標記用，每個區取最新 50 筆）"""
-    records = []
+    """建立個別紀錄列表（給地圖標記用，每個區取最新 50 筆）。
+
+    Includes all new fields extracted in v2 of clean_data() so that
+    map-display and detail panels have full property attributes.
+
+    Args:
+        df: Fully cleaned and concatenated rental DataFrame.
+
+    Returns:
+        List of record dicts, at most 50 sampled per (city, district) pair.
+    """
+    records: list = []
     for (city, district), group in df.groupby(["city", "district"]):
         subset = group.nlargest(50, "monthly_rent") if len(group) > 50 else group
         # Actually take a sample, not just highest rent
         if len(group) > 50:
             subset = group.sample(50, random_state=42)
         for _, row in subset.iterrows():
-            rec = {
+            rec: dict = {
                 "city": str(city),
                 "district": str(district),
                 "address": str(row.get("address", "")),
@@ -299,8 +626,38 @@ def build_records(df: pd.DataFrame) -> list:
                 "monthly_rent": int(row["monthly_rent"]),
                 "room_type": str(row.get("room_type", "")),
             }
+
+            # Numeric optional fields — only include when non-null
             if pd.notna(row.get("area_ping")):
                 rec["area_ping"] = round(float(row["area_ping"]), 1)
+            if pd.notna(row.get("floor")):
+                rec["floor"] = int(row["floor"])
+            if pd.notna(row.get("total_floors")):
+                rec["total_floors"] = int(row["total_floors"])
+            if pd.notna(row.get("building_age")):
+                rec["building_age"] = int(row["building_age"])
+
+            # Boolean optional fields
+            if pd.notna(row.get("has_manager")):
+                rec["has_manager"] = bool(row["has_manager"])
+            if pd.notna(row.get("has_elevator")):
+                rec["has_elevator"] = bool(row["has_elevator"])
+            if pd.notna(row.get("has_furniture")):
+                rec["has_furniture"] = bool(row["has_furniture"])
+
+            # String optional fields — only include when non-empty
+            rental_type = str(row.get("rental_type", "")).strip()
+            if rental_type and rental_type != "nan":
+                rec["rental_type"] = rental_type
+
+            main_use = str(row.get("main_use", "")).strip()
+            if main_use and main_use != "nan":
+                rec["main_use"] = main_use
+
+            equipment = str(row.get("equipment", "")).strip()
+            if equipment and equipment != "nan":
+                rec["equipment"] = equipment
+
             records.append(rec)
     return records
 

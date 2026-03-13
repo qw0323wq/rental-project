@@ -10,6 +10,7 @@ import DistrictProfile from "@/components/DistrictProfile";
 import LiveabilityScore from "@/components/LiveabilityScore";
 import SafetyBadge from "@/components/SafetyBadge";
 import StatCard from "@/components/StatCard";
+import BuildingInfo from "@/components/BuildingInfo";
 import RoadTable from "@/components/RoadTable";
 import RoadSearch from "@/components/RoadSearch";
 
@@ -39,6 +40,11 @@ interface DistrictData {
   max_rent: number;
   sample_count: number;
   avg_area_ping?: number;
+  avg_building_age?: number;
+  has_manager_ratio?: number;
+  has_elevator_ratio?: number;
+  rental_type_breakdown?: Record<string, number>;
+  floor_distribution?: Record<string, number>;
   by_type?: Record<
     string,
     {
@@ -467,6 +473,31 @@ function SearchContent() {
                   color="orange"
                 />
               )}
+              {/* New stats for district view */}
+              {singleDistrict && (singleDistrict as DistrictData).avg_building_age !== undefined && (
+                <StatCard
+                  label="平均屋齡"
+                  value={`${(singleDistrict as DistrictData).avg_building_age} 年`}
+                  sub="建築完成至今"
+                  color="orange"
+                />
+              )}
+              {singleDistrict && (singleDistrict as DistrictData).has_manager_ratio !== undefined && (
+                <StatCard
+                  label="管理員比例"
+                  value={`${Math.round(((singleDistrict as DistrictData).has_manager_ratio || 0) * 100)}%`}
+                  sub="有管理組織"
+                  color="blue"
+                />
+              )}
+              {singleDistrict && (singleDistrict as DistrictData).has_elevator_ratio !== undefined && (
+                <StatCard
+                  label="電梯比例"
+                  value={`${Math.round(((singleDistrict as DistrictData).has_elevator_ratio || 0) * 100)}%`}
+                  sub="有電梯設備"
+                  color="green"
+                />
+              )}
             </div>
           )}
 
@@ -634,6 +665,18 @@ function SearchContent() {
                 districtName={district}
               />
             </div>
+          )}
+
+          {/* Building Info (district level) */}
+          {singleDistrict && (
+            <BuildingInfo
+              avgBuildingAge={(singleDistrict as DistrictData).avg_building_age}
+              hasManagerRatio={(singleDistrict as DistrictData).has_manager_ratio}
+              hasElevatorRatio={(singleDistrict as DistrictData).has_elevator_ratio}
+              rentalTypeBreakdown={(singleDistrict as DistrictData).rental_type_breakdown}
+              floorDistribution={(singleDistrict as DistrictData).floor_distribution}
+              districtName={district}
+            />
           )}
 
           {/* Single District Detail - room type cards */}

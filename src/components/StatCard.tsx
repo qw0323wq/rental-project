@@ -18,6 +18,9 @@ export default function StatCard({
     green: "text-green-600",
     orange: "text-orange-600",
     purple: "text-purple-600",
+    red: "text-red-600",
+    amber: "text-amber-600",
+    teal: "text-teal-600",
   };
 
   return (
