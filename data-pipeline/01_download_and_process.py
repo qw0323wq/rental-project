@@ -402,6 +402,23 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     else:
         result["equipment"] = ""
 
+    # --- Col 34: 租賃住宅服務 (rental housing service type) ---
+    # Identifies social housing: "社會住宅包租轉租", "社會住宅代管"
+    # vs general: "一般轉租", "一般代管", "一般包租"
+    # Only available in 35-column files (112S4+)
+    if has_extended_cols:
+        result["housing_service"] = df.iloc[:, 34].astype(str).str.strip()
+        result["housing_service"] = result["housing_service"].replace("nan", "")
+    else:
+        result["housing_service"] = ""
+
+    # --- Col 27: 備註 (notes, may contain social housing program details) ---
+    if n_cols > 27:
+        result["note"] = df.iloc[:, 27].astype(str).str.strip()
+        result["note"] = result["note"].replace("nan", "")
+    else:
+        result["note"] = ""
+
     # ------------------------------------------------------------------ #
     # FILTERS
     # ------------------------------------------------------------------ #
@@ -718,6 +735,141 @@ def build_records(df: pd.DataFrame) -> list:
     return records
 
 
+def build_social_housing_stats(df: pd.DataFrame) -> dict:
+    """Build statistics for social housing records identified by col 34.
+
+    Social housing records have housing_service values containing "社會住宅".
+    These are further categorized into "包租轉租" and "代管" sub-types.
+
+    Args:
+        df: Fully cleaned and concatenated rental DataFrame.
+
+    Returns:
+        Nested statistics dict keyed by city → districts → by_rental_type,
+        with overall stats and sample records.
+    """
+    # Filter social housing records
+    mask = df["housing_service"].str.contains("社會住宅", na=False)
+    social_df = df[mask].copy()
+
+    if len(social_df) == 0:
+        return {}
+
+    # Derive social housing sub-type: 包租轉租 vs 代管
+    social_df["social_type"] = social_df["housing_service"].apply(
+        lambda x: "包租轉租" if "包租" in str(x) else "代管" if "代管" in str(x) else "其他"
+    )
+
+    stats: dict = {}
+
+    for city, city_group in social_df.groupby("city"):
+        city_key = str(city)
+        city_stats: dict = {
+            "total_count": int(len(city_group)),
+            "overall_stats": {},
+            "by_social_type": {},
+            "districts": {},
+        }
+
+        # City-level overall stats
+        city_stats["overall_stats"] = {
+            "median_rent": int(city_group["monthly_rent"].median()),
+            "avg_rent": int(city_group["monthly_rent"].mean()),
+            "min_rent": int(city_group["monthly_rent"].quantile(0.1)),
+            "max_rent": int(city_group["monthly_rent"].quantile(0.9)),
+            "sample_count": int(len(city_group)),
+        }
+        if "area_ping" in city_group.columns and city_group["area_ping"].notna().sum() > 0:
+            city_stats["overall_stats"]["avg_area_ping"] = round(
+                float(city_group["area_ping"].mean()), 1
+            )
+
+        # City-level by social type (包租轉租 vs 代管)
+        for stype, sgroup in city_group.groupby("social_type"):
+            if len(sgroup) >= 2:
+                city_stats["by_social_type"][str(stype)] = {
+                    "count": int(len(sgroup)),
+                    "median_rent": int(sgroup["monthly_rent"].median()),
+                    "avg_rent": int(sgroup["monthly_rent"].mean()),
+                }
+
+        # District-level stats
+        for district, dist_group in city_group.groupby("district"):
+            if len(dist_group) < 1:
+                continue
+
+            dist_stats: dict = {
+                "total_count": int(len(dist_group)),
+                "median_rent": int(dist_group["monthly_rent"].median()),
+                "avg_rent": int(dist_group["monthly_rent"].mean()),
+            }
+
+            if dist_group["area_ping"].notna().sum() > 0:
+                dist_stats["avg_area_ping"] = round(
+                    float(dist_group["area_ping"].mean()), 1
+                )
+
+            # By rental type (出租型態): 整棟(戶)出租, 獨立套房, 分租套房, 分租雅房
+            by_rental_type: dict = {}
+            for rtype, rgroup in dist_group.groupby("rental_type"):
+                label = str(rtype).strip()
+                if not label or label in ("nan", ""):
+                    continue
+                rt_stats: dict = {
+                    "count": int(len(rgroup)),
+                    "median_rent": int(rgroup["monthly_rent"].median()),
+                    "avg_rent": int(rgroup["monthly_rent"].mean()),
+                }
+                if rgroup["area_ping"].notna().sum() > 0:
+                    rt_stats["avg_area_ping"] = round(
+                        float(rgroup["area_ping"].mean()), 1
+                    )
+                if "rooms" in rgroup.columns and rgroup["rooms"].notna().sum() > 0:
+                    rt_stats["avg_rooms"] = round(float(rgroup["rooms"].mean()), 1)
+                # Rent range
+                rt_stats["min_rent"] = int(rgroup["monthly_rent"].min())
+                rt_stats["max_rent"] = int(rgroup["monthly_rent"].max())
+                by_rental_type[label] = rt_stats
+
+            if by_rental_type:
+                dist_stats["by_rental_type"] = by_rental_type
+
+            # By social type (包租轉租 vs 代管) within district
+            by_social_type: dict = {}
+            for stype, sgroup in dist_group.groupby("social_type"):
+                if len(sgroup) >= 1:
+                    by_social_type[str(stype)] = {
+                        "count": int(len(sgroup)),
+                        "median_rent": int(sgroup["monthly_rent"].median()),
+                        "avg_rent": int(sgroup["monthly_rent"].mean()),
+                    }
+            if by_social_type:
+                dist_stats["by_social_type"] = by_social_type
+
+            # Sample addresses (up to 5)
+            samples = []
+            for _, row in dist_group.head(5).iterrows():
+                rec: dict = {
+                    "address": str(row.get("address", ""))[:60],
+                    "rent": int(row["monthly_rent"]),
+                    "rental_type": str(row.get("rental_type", "")),
+                    "social_type": str(row.get("social_type", "")),
+                }
+                if pd.notna(row.get("area_ping")):
+                    rec["area_ping"] = round(float(row["area_ping"]), 1)
+                if pd.notna(row.get("rooms")):
+                    rec["rooms"] = int(row["rooms"])
+                samples.append(rec)
+            if samples:
+                dist_stats["samples"] = samples
+
+            city_stats["districts"][str(district)] = dist_stats
+
+        stats[city_key] = city_stats
+
+    return stats
+
+
 def main():
     print("=" * 60)
     print("  Taiwan Rental Database Builder v2")
@@ -807,12 +959,21 @@ def main():
     with open(OUTPUT_DIR / "records.json", "w", encoding="utf-8") as f:
         json.dump(records, f, ensure_ascii=False)
 
-    # 5. CSV backup
+    # 5. Social housing stats (real data from col 34)
+    print("  Building social housing statistics...")
+    social_stats = build_social_housing_stats(all_data)
+    with open(OUTPUT_DIR / "social_housing_real.json", "w", encoding="utf-8") as f:
+        json.dump(social_stats, f, ensure_ascii=False, indent=2)
+    social_total = sum(v.get("total_count", 0) for v in social_stats.values())
+    print(f"  => {social_total:,} social housing records across {len(social_stats)} cities")
+
+    # 6. CSV backup
     all_data.to_csv(PROCESSED_DIR / "all_rental_data.csv", index=False, encoding="utf-8-sig")
 
     print(f"\n{'='*60}")
     print(f"  DONE!")
     print(f"  {len(all_data):,} records, {all_data['city'].nunique()} cities")
+    print(f"  Social housing: {social_total:,} records")
     print(f"  Files in: {OUTPUT_DIR}")
     print(f"{'='*60}")
 
