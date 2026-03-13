@@ -605,6 +605,26 @@ def build_statistics(df: pd.DataFrame) -> dict:
                 if by_floor:
                     ds["by_floor"] = by_floor
 
+            # 租金範圍統計 (for rent range filter)
+            by_rent: dict = {}
+            rent_ranges = [
+                ("0-5000", 0, 5000),
+                ("5000-10000", 5000, 10000),
+                ("10000-20000", 10000, 20000),
+                ("20000-30000", 20000, 30000),
+                ("30000-50000", 30000, 50000),
+                ("50000+", 50000, 999999),
+            ]
+            for label, lo, hi in rent_ranges:
+                mask = dist_group["monthly_rent"].between(lo, hi, inclusive="left") if hi < 999999 else (dist_group["monthly_rent"] >= lo)
+                rent_subset = dist_group[mask]
+                if len(rent_subset) >= 2:
+                    rs = calc_stats(rent_subset)
+                    if rs:
+                        by_rent[label] = rs
+            if by_rent:
+                ds["by_rent_range"] = by_rent
+
             # 出租型態分佈
             rtb = _rental_type_breakdown(dist_group)
             if rtb:
