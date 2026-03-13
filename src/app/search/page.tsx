@@ -56,6 +56,17 @@ interface DistrictData {
       avg_area_ping?: number;
     }
   >;
+  by_floor_range?: Record<
+    string,
+    {
+      median_rent: number;
+      avg_rent: number;
+      min_rent: number;
+      max_rent: number;
+      sample_count: number;
+      avg_area_ping?: number;
+    }
+  >;
   roads?: Record<string, RoadData>;
   [key: string]: unknown;
 }
@@ -87,6 +98,7 @@ function SearchContent() {
   const roomType = searchParams.get("type") || "";
   const road = searchParams.get("road") || "";
   const area = searchParams.get("area") || "";
+  const floorRange = searchParams.get("floor") || "";
 
   const AREA_RANGES = [
     { label: "10坪以下", value: "0-10" },
@@ -94,6 +106,13 @@ function SearchContent() {
     { label: "20-30坪", value: "20-30" },
     { label: "30-40坪", value: "30-40" },
     { label: "40坪以上", value: "40-999" },
+  ];
+
+  const FLOOR_RANGES = [
+    { label: "1-5樓", value: "1-5F" },
+    { label: "6-10樓", value: "6-10F" },
+    { label: "11-15樓", value: "11-15F" },
+    { label: "16樓以上", value: "16F+" },
   ];
 
   const [stats, setStats] = useState<Record<string, CityData>>({});
@@ -107,6 +126,7 @@ function SearchContent() {
   const [selectedType, setSelectedType] = useState(roomType);
   const [selectedRoad, setSelectedRoad] = useState(road);
   const [selectedArea, setSelectedArea] = useState(area);
+  const [selectedFloor, setSelectedFloor] = useState(floorRange);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"chart" | "map" | "trend">("chart");
 
@@ -134,7 +154,8 @@ function SearchContent() {
     setSelectedType(roomType);
     setSelectedRoad(road);
     setSelectedArea(area);
-  }, [city, district, roomType, road, area]);
+    setSelectedFloor(floorRange);
+  }, [city, district, roomType, road, area, floorRange]);
 
   // Available roads for selected district
   const availableRoads =
@@ -155,6 +176,7 @@ function SearchContent() {
     if (selectedRoad) params.set("road", selectedRoad);
     if (selectedType) params.set("type", selectedType);
     if (selectedArea) params.set("area", selectedArea);
+    if (selectedFloor) params.set("floor", selectedFloor);
     router.push(`/search?${params.toString()}`);
   };
 
@@ -223,6 +245,7 @@ function SearchContent() {
     }
     if (singleDistrict) {
       const d = singleDistrict as DistrictData;
+      // Type filter takes priority
       if (roomType && d.by_type?.[roomType]) {
         const t = d.by_type[roomType];
         return {
@@ -230,6 +253,16 @@ function SearchContent() {
           avg: t.avg_rent,
           count: t.sample_count,
           area: t.avg_area_ping,
+        };
+      }
+      // Floor range filter
+      if (floorRange && d.by_floor_range?.[floorRange]) {
+        const f = d.by_floor_range[floorRange];
+        return {
+          median: f.median_rent,
+          avg: f.avg_rent,
+          count: f.sample_count,
+          area: f.avg_area_ping,
         };
       }
       return {
@@ -266,7 +299,7 @@ function SearchContent() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Search Bar */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-4">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-3">
           <select
             value={selectedCity}
             onChange={(e) => {
@@ -324,6 +357,20 @@ function SearchContent() {
             <option value="套房">套房</option>
             <option value="雅房">雅房</option>
             <option value="整層">整層住家</option>
+            <option value="電梯大樓">電梯大樓</option>
+          </select>
+
+          <select
+            value={selectedFloor}
+            onChange={(e) => setSelectedFloor(e.target.value)}
+            className="border border-gray-300 rounded-lg px-3 py-2 text-gray-800 focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="">全部樓層</option>
+            {FLOOR_RANGES.map((r) => (
+              <option key={r.value} value={r.value}>
+                {r.label}
+              </option>
+            ))}
           </select>
 
           <select
@@ -385,7 +432,8 @@ function SearchContent() {
               {city}
               {district ? ` ${district}` : ""}
               {road ? ` ${road}` : ""}
-              {roomType ? ` ${roomType}` : ""} 租金行情
+              {roomType ? ` ${roomType}` : ""}
+              {floorRange ? ` ${floorRange}` : ""} 租金行情
             </h1>
             {district && districtProfiles[city]?.[district] && (
               <SafetyBadge

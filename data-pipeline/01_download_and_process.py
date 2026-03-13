@@ -578,8 +578,39 @@ def build_statistics(df: pd.DataFrame) -> dict:
                 ts = calc_stats(rgroup)
                 if ts:
                     by_type[str(rtype)] = ts
+
+            # 建物類型：電梯大樓 (住宅大樓 + 華廈 + 辦公商業大樓)
+            if "building_type" in dist_group.columns:
+                elevator_mask = dist_group["building_type"].str.contains(
+                    "有電梯|大樓", na=False
+                )
+                if elevator_mask.sum() >= 2:
+                    ts = calc_stats(dist_group[elevator_mask])
+                    if ts:
+                        by_type["電梯大樓"] = ts
+
             if by_type:
                 ds["by_type"] = by_type
+
+            # 樓層範圍統計 (for floor range filter)
+            if "floor" in dist_group.columns:
+                by_floor: dict = {}
+                floor_ranges = [
+                    ("1-5F", 1, 5),
+                    ("6-10F", 6, 10),
+                    ("11-15F", 11, 15),
+                    ("16F+", 16, 9999),
+                ]
+                for label, lo, hi in floor_ranges:
+                    valid_floors = dist_group["floor"].dropna()
+                    mask = valid_floors.between(lo, hi)
+                    floor_subset = dist_group.loc[valid_floors[mask].index]
+                    if len(floor_subset) >= 2:
+                        fs = calc_stats(floor_subset)
+                        if fs:
+                            by_floor[label] = fs
+                if by_floor:
+                    ds["by_floor_range"] = by_floor
 
             # 出租型態分佈
             rtb = _rental_type_breakdown(dist_group)
