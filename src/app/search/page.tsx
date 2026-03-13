@@ -283,19 +283,9 @@ function SearchContent() {
 
   const summary = !loading && city ? getSummary() : null;
 
-  if (loading) {
-    return (
-      <div className="max-w-6xl mx-auto px-4 py-16 text-center">
-        <div className="text-2xl text-gray-400 animate-pulse">
-          載入資料中...
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      {/* Search Bar */}
+      {/* Search Bar - always visible */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-4">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-3">
           <select
@@ -395,7 +385,7 @@ function SearchContent() {
       </div>
 
       {/* Road Search */}
-      {Object.keys(stats).length > 0 && (
+      {!loading && Object.keys(stats).length > 0 && (
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-8">
           <div className="text-sm text-gray-500 mb-2 font-medium">
             🔍 路段快速搜尋
@@ -404,8 +394,17 @@ function SearchContent() {
         </div>
       )}
 
+      {/* Loading */}
+      {loading && (
+        <div className="text-center py-16">
+          <div className="text-2xl text-gray-400 animate-pulse">
+            載入資料中...
+          </div>
+        </div>
+      )}
+
       {/* No city selected */}
-      {!city && (
+      {!loading && !city && (
         <div className="text-center py-16 text-gray-400">
           <div className="text-5xl mb-4">🔍</div>
           <p className="text-xl">請選擇縣市或搜尋路段開始查詢</p>
@@ -413,7 +412,7 @@ function SearchContent() {
       )}
 
       {/* City not found */}
-      {city && !cityData && (
+      {!loading && city && !cityData && (
         <div className="text-center py-16 text-gray-400">
           <div className="text-5xl mb-4">😕</div>
           <p className="text-xl">「{city}」目前沒有資料</p>
@@ -422,7 +421,7 @@ function SearchContent() {
       )}
 
       {/* Results */}
-      {city && cityData && (
+      {!loading && city && cityData && (
         <>
           {/* Title */}
           <div className="flex items-center gap-4 mb-6 flex-wrap">
