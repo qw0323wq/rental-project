@@ -74,8 +74,8 @@ export default function RentChart({ districts, roomType }: RentChartProps) {
             tickFormatter={(v: number) => `$${(v / 1000).toFixed(0)}k`}
           />
           <Tooltip
-            formatter={(value: number) => [`$${value.toLocaleString()}`, ""]}
-            labelFormatter={(label: string) => `${label}區`}
+            formatter={(value) => [`$${Number(value).toLocaleString()}`, ""]}
+            labelFormatter={(label) => `${label}區`}
           />
           <Legend />
           <Bar dataKey="中位數" fill="#3B82F6" radius={[4, 4, 0, 0]} />

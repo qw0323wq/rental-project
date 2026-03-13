@@ -47,6 +47,7 @@ interface DistrictData {
     }
   >;
   roads?: Record<string, RoadData>;
+  [key: string]: unknown;
 }
 
 interface CityData {
