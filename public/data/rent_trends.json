@@ -1,0 +1,5494 @@
+{
+  "南投縣": {
+    "city_trend": {
+      "2022": {
+        "median_rent": 9000,
+        "avg_rent": 13711,
+        "count": 17
+      },
+      "2023": {
+        "median_rent": 13000,
+        "avg_rent": 16356,
+        "count": 107
+      },
+      "2024": {
+        "median_rent": 9500,
+        "avg_rent": 12171,
+        "count": 313
+      },
+      "2025": {
+        "median_rent": 10000,
+        "avg_rent": 11810,
+        "count": 613
+      }
+    },
+    "districts": {
+      "中寮鄉": {},
+      "南投市": {
+        "2022": {
+          "median_rent": 17500,
+          "avg_rent": 19375,
+          "count": 8
+        },
+        "2023": {
+          "median_rent": 16500,
+          "avg_rent": 20607,
+          "count": 34
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 16343,
+          "count": 63
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 15944,
+          "count": 111
+        }
+      },
+      "名間鄉": {
+        "2023": {
+          "median_rent": 17500,
+          "avg_rent": 17500,
+          "count": 2
+        },
+        "2024": {
+          "median_rent": 7000,
+          "avg_rent": 8000,
+          "count": 3
+        },
+        "2025": {
+          "median_rent": 8000,
+          "avg_rent": 9835,
+          "count": 14
+        }
+      },
+      "國姓鄉": {
+        "2025": {
+          "median_rent": 5500,
+          "avg_rent": 5500,
+          "count": 2
+        }
+      },
+      "埔里鎮": {
+        "2022": {
+          "median_rent": 12500,
+          "avg_rent": 12500,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 26000,
+          "avg_rent": 32186,
+          "count": 7
+        },
+        "2024": {
+          "median_rent": 14500,
+          "avg_rent": 17688,
+          "count": 16
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 13524,
+          "count": 75
+        }
+      },
+      "水里鄉": {
+        "2025": {
+          "median_rent": 19950,
+          "avg_rent": 15649,
+          "count": 3
+        }
+      },
+      "竹山鎮": {
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 12188,
+          "count": 9
+        },
+        "2025": {
+          "median_rent": 13200,
+          "avg_rent": 12586,
+          "count": 23
+        }
+      },
+      "草屯鎮": {
+        "2022": {
+          "median_rent": 7820,
+          "avg_rent": 7585,
+          "count": 7
+        },
+        "2023": {
+          "median_rent": 10500,
+          "avg_rent": 12309,
+          "count": 62
+        },
+        "2024": {
+          "median_rent": 8500,
+          "avg_rent": 10662,
+          "count": 221
+        },
+        "2025": {
+          "median_rent": 6500,
+          "avg_rent": 10373,
+          "count": 370
+        }
+      },
+      "集集鎮": {
+        "2025": {
+          "median_rent": 7500,
+          "avg_rent": 8500,
+          "count": 4
+        }
+      },
+      "魚池鄉": {
+        "2025": {
+          "median_rent": 8500,
+          "avg_rent": 8500,
+          "count": 8
+        }
+      },
+      "鹿谷鄉": {
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 12000,
+          "count": 2
+        }
+      }
+    }
+  },
+  "台中市": {
+    "city_trend": {
+      "2022": {
+        "median_rent": 17000,
+        "avg_rent": 22691,
+        "count": 816
+      },
+      "2023": {
+        "median_rent": 16500,
+        "avg_rent": 20589,
+        "count": 7225
+      },
+      "2024": {
+        "median_rent": 15000,
+        "avg_rent": 18429,
+        "count": 11063
+      },
+      "2025": {
+        "median_rent": 15000,
+        "avg_rent": 16925,
+        "count": 18813
+      }
+    },
+    "districts": {
+      "中區": {
+        "2022": {
+          "median_rent": 9000,
+          "avg_rent": 10978,
+          "count": 19
+        },
+        "2023": {
+          "median_rent": 7600,
+          "avg_rent": 10882,
+          "count": 208
+        },
+        "2024": {
+          "median_rent": 8500,
+          "avg_rent": 11357,
+          "count": 288
+        },
+        "2025": {
+          "median_rent": 8500,
+          "avg_rent": 11344,
+          "count": 502
+        }
+      },
+      "北區": {
+        "2022": {
+          "median_rent": 13500,
+          "avg_rent": 17523,
+          "count": 76
+        },
+        "2023": {
+          "median_rent": 13500,
+          "avg_rent": 16841,
+          "count": 772
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 15966,
+          "count": 1150
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 14717,
+          "count": 2115
+        }
+      },
+      "北屯區": {
+        "2022": {
+          "median_rent": 18000,
+          "avg_rent": 23606,
+          "count": 102
+        },
+        "2023": {
+          "median_rent": 19000,
+          "avg_rent": 21420,
+          "count": 1032
+        },
+        "2024": {
+          "median_rent": 18800,
+          "avg_rent": 20259,
+          "count": 1528
+        },
+        "2025": {
+          "median_rent": 19000,
+          "avg_rent": 19728,
+          "count": 2877
+        }
+      },
+      "南區": {
+        "2022": {
+          "median_rent": 13500,
+          "avg_rent": 14624,
+          "count": 36
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 16149,
+          "count": 435
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 15903,
+          "count": 630
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 15589,
+          "count": 1019
+        }
+      },
+      "南屯區": {
+        "2022": {
+          "median_rent": 21500,
+          "avg_rent": 28132,
+          "count": 75
+        },
+        "2023": {
+          "median_rent": 20000,
+          "avg_rent": 27286,
+          "count": 559
+        },
+        "2024": {
+          "median_rent": 17500,
+          "avg_rent": 21596,
+          "count": 884
+        },
+        "2025": {
+          "median_rent": 16000,
+          "avg_rent": 19776,
+          "count": 1243
+        }
+      },
+      "后里區": {
+        "2022": {
+          "median_rent": 18500,
+          "avg_rent": 18500,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 10000,
+          "avg_rent": 12670,
+          "count": 48
+        },
+        "2024": {
+          "median_rent": 10000,
+          "avg_rent": 13248,
+          "count": 59
+        },
+        "2025": {
+          "median_rent": 10750,
+          "avg_rent": 15555,
+          "count": 60
+        }
+      },
+      "外埔區": {
+        "2023": {
+          "median_rent": 14000,
+          "avg_rent": 14000,
+          "count": 2
+        },
+        "2024": {
+          "median_rent": 14000,
+          "avg_rent": 14785,
+          "count": 7
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 14816,
+          "count": 12
+        }
+      },
+      "大安區": {},
+      "大甲區": {
+        "2023": {
+          "median_rent": 12500,
+          "avg_rent": 14863,
+          "count": 11
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 21125,
+          "count": 21
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 14755,
+          "count": 40
+        }
+      },
+      "大肚區": {
+        "2022": {
+          "median_rent": 11000,
+          "avg_rent": 11375,
+          "count": 4
+        },
+        "2023": {
+          "median_rent": 14000,
+          "avg_rent": 14808,
+          "count": 47
+        },
+        "2024": {
+          "median_rent": 15392,
+          "avg_rent": 18120,
+          "count": 50
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 15800,
+          "count": 105
+        }
+      },
+      "大里區": {
+        "2022": {
+          "median_rent": 17000,
+          "avg_rent": 18614,
+          "count": 40
+        },
+        "2023": {
+          "median_rent": 17000,
+          "avg_rent": 18450,
+          "count": 361
+        },
+        "2024": {
+          "median_rent": 18000,
+          "avg_rent": 18267,
+          "count": 477
+        },
+        "2025": {
+          "median_rent": 17000,
+          "avg_rent": 18098,
+          "count": 810
+        }
+      },
+      "大雅區": {
+        "2022": {
+          "median_rent": 13800,
+          "avg_rent": 29681,
+          "count": 11
+        },
+        "2023": {
+          "median_rent": 18250,
+          "avg_rent": 21220,
+          "count": 82
+        },
+        "2024": {
+          "median_rent": 18950,
+          "avg_rent": 21947,
+          "count": 128
+        },
+        "2025": {
+          "median_rent": 16500,
+          "avg_rent": 18801,
+          "count": 212
+        }
+      },
+      "太平區": {
+        "2022": {
+          "median_rent": 16000,
+          "avg_rent": 18597,
+          "count": 46
+        },
+        "2023": {
+          "median_rent": 16800,
+          "avg_rent": 18880,
+          "count": 289
+        },
+        "2024": {
+          "median_rent": 16000,
+          "avg_rent": 17013,
+          "count": 514
+        },
+        "2025": {
+          "median_rent": 16000,
+          "avg_rent": 17133,
+          "count": 896
+        }
+      },
+      "新社區": {
+        "2022": {
+          "median_rent": 17000,
+          "avg_rent": 17000,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 17800,
+          "count": 5
+        },
+        "2024": {
+          "median_rent": 14000,
+          "avg_rent": 14500,
+          "count": 6
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 14722,
+          "count": 9
+        }
+      },
+      "東勢區": {
+        "2024": {
+          "median_rent": 10000,
+          "avg_rent": 11500,
+          "count": 5
+        },
+        "2025": {
+          "median_rent": 13750,
+          "avg_rent": 14608,
+          "count": 24
+        }
+      },
+      "東區": {
+        "2022": {
+          "median_rent": 12350,
+          "avg_rent": 12776,
+          "count": 26
+        },
+        "2023": {
+          "median_rent": 17000,
+          "avg_rent": 20804,
+          "count": 184
+        },
+        "2024": {
+          "median_rent": 18000,
+          "avg_rent": 18668,
+          "count": 341
+        },
+        "2025": {
+          "median_rent": 16000,
+          "avg_rent": 17969,
+          "count": 534
+        }
+      },
+      "梧棲區": {
+        "2022": {
+          "median_rent": 15700,
+          "avg_rent": 19840,
+          "count": 11
+        },
+        "2023": {
+          "median_rent": 17000,
+          "avg_rent": 19946,
+          "count": 64
+        },
+        "2024": {
+          "median_rent": 17000,
+          "avg_rent": 20344,
+          "count": 224
+        },
+        "2025": {
+          "median_rent": 17000,
+          "avg_rent": 19862,
+          "count": 618
+        }
+      },
+      "沙鹿區": {
+        "2022": {
+          "median_rent": 4300,
+          "avg_rent": 8659,
+          "count": 43
+        },
+        "2023": {
+          "median_rent": 4500,
+          "avg_rent": 10790,
+          "count": 180
+        },
+        "2024": {
+          "median_rent": 7500,
+          "avg_rent": 11516,
+          "count": 335
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 12250,
+          "count": 246
+        }
+      },
+      "清水區": {
+        "2022": {
+          "median_rent": 18500,
+          "avg_rent": 19411,
+          "count": 22
+        },
+        "2023": {
+          "median_rent": 17300,
+          "avg_rent": 19397,
+          "count": 195
+        },
+        "2024": {
+          "median_rent": 17390,
+          "avg_rent": 19836,
+          "count": 294
+        },
+        "2025": {
+          "median_rent": 17000,
+          "avg_rent": 18273,
+          "count": 497
+        }
+      },
+      "潭子區": {
+        "2022": {
+          "median_rent": 15500,
+          "avg_rent": 19261,
+          "count": 16
+        },
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 19016,
+          "count": 112
+        },
+        "2024": {
+          "median_rent": 18000,
+          "avg_rent": 18512,
+          "count": 158
+        },
+        "2025": {
+          "median_rent": 17050,
+          "avg_rent": 19178,
+          "count": 276
+        }
+      },
+      "烏日區": {
+        "2022": {
+          "median_rent": 19000,
+          "avg_rent": 23540,
+          "count": 20
+        },
+        "2023": {
+          "median_rent": 19200,
+          "avg_rent": 21186,
+          "count": 223
+        },
+        "2024": {
+          "median_rent": 19900,
+          "avg_rent": 20762,
+          "count": 339
+        },
+        "2025": {
+          "median_rent": 19900,
+          "avg_rent": 21291,
+          "count": 459
+        }
+      },
+      "石岡區": {
+        "2024": {
+          "median_rent": 12500,
+          "avg_rent": 12500,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 12700,
+          "count": 5
+        }
+      },
+      "神岡區": {
+        "2022": {
+          "median_rent": 21500,
+          "avg_rent": 29875,
+          "count": 4
+        },
+        "2023": {
+          "median_rent": 12000,
+          "avg_rent": 20112,
+          "count": 42
+        },
+        "2024": {
+          "median_rent": 18000,
+          "avg_rent": 27766,
+          "count": 44
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 23164,
+          "count": 65
+        }
+      },
+      "西區": {
+        "2022": {
+          "median_rent": 23500,
+          "avg_rent": 28107,
+          "count": 61
+        },
+        "2023": {
+          "median_rent": 14000,
+          "avg_rent": 21657,
+          "count": 600
+        },
+        "2024": {
+          "median_rent": 11780,
+          "avg_rent": 18196,
+          "count": 813
+        },
+        "2025": {
+          "median_rent": 11000,
+          "avg_rent": 15542,
+          "count": 1294
+        }
+      },
+      "西屯區": {
+        "2022": {
+          "median_rent": 20000,
+          "avg_rent": 32795,
+          "count": 162
+        },
+        "2023": {
+          "median_rent": 18300,
+          "avg_rent": 27093,
+          "count": 1273
+        },
+        "2024": {
+          "median_rent": 16500,
+          "avg_rent": 23190,
+          "count": 1771
+        },
+        "2025": {
+          "median_rent": 14800,
+          "avg_rent": 19317,
+          "count": 2825
+        }
+      },
+      "豐原區": {
+        "2022": {
+          "median_rent": 17500,
+          "avg_rent": 19043,
+          "count": 16
+        },
+        "2023": {
+          "median_rent": 16974,
+          "avg_rent": 20789,
+          "count": 221
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 18612,
+          "count": 305
+        },
+        "2025": {
+          "median_rent": 14287,
+          "avg_rent": 15883,
+          "count": 476
+        }
+      },
+      "霧峰區": {
+        "2022": {
+          "median_rent": 16000,
+          "avg_rent": 16120,
+          "count": 5
+        },
+        "2023": {
+          "median_rent": 7400,
+          "avg_rent": 12209,
+          "count": 76
+        },
+        "2024": {
+          "median_rent": 6500,
+          "avg_rent": 7869,
+          "count": 421
+        },
+        "2025": {
+          "median_rent": 6500,
+          "avg_rent": 7691,
+          "count": 1106
+        }
+      },
+      "龍井區": {
+        "2022": {
+          "median_rent": 13150,
+          "avg_rent": 13731,
+          "count": 16
+        },
+        "2023": {
+          "median_rent": 5500,
+          "avg_rent": 10464,
+          "count": 202
+        },
+        "2024": {
+          "median_rent": 6500,
+          "avg_rent": 10639,
+          "count": 268
+        },
+        "2025": {
+          "median_rent": 7767,
+          "avg_rent": 10628,
+          "count": 487
+        }
+      }
+    }
+  },
+  "台北市": {
+    "city_trend": {
+      "2013": {
+        "median_rent": 45000,
+        "avg_rent": 45000,
+        "count": 1
+      },
+      "2016": {
+        "median_rent": 65000,
+        "avg_rent": 65000,
+        "count": 1
+      },
+      "2021": {
+        "median_rent": 23000,
+        "avg_rent": 22862,
+        "count": 8
+      },
+      "2022": {
+        "median_rent": 37000,
+        "avg_rent": 48481,
+        "count": 1169
+      },
+      "2023": {
+        "median_rent": 33000,
+        "avg_rent": 45682,
+        "count": 8353
+      },
+      "2024": {
+        "median_rent": 26800,
+        "avg_rent": 38247,
+        "count": 11618
+      },
+      "2025": {
+        "median_rent": 24000,
+        "avg_rent": 33415,
+        "count": 15717
+      }
+    },
+    "districts": {
+      "中山區": {
+        "2022": {
+          "median_rent": 42500,
+          "avg_rent": 52938,
+          "count": 250
+        },
+        "2023": {
+          "median_rent": 36000,
+          "avg_rent": 47696,
+          "count": 1613
+        },
+        "2024": {
+          "median_rent": 27000,
+          "avg_rent": 39620,
+          "count": 2176
+        },
+        "2025": {
+          "median_rent": 24300,
+          "avg_rent": 36342,
+          "count": 2821
+        }
+      },
+      "中正區": {
+        "2022": {
+          "median_rent": 24000,
+          "avg_rent": 41118,
+          "count": 90
+        },
+        "2023": {
+          "median_rent": 29000,
+          "avg_rent": 42176,
+          "count": 704
+        },
+        "2024": {
+          "median_rent": 21000,
+          "avg_rent": 30895,
+          "count": 882
+        },
+        "2025": {
+          "median_rent": 20000,
+          "avg_rent": 29563,
+          "count": 1095
+        }
+      },
+      "信義區": {
+        "2022": {
+          "median_rent": 45000,
+          "avg_rent": 54030,
+          "count": 96
+        },
+        "2023": {
+          "median_rent": 40000,
+          "avg_rent": 57268,
+          "count": 611
+        },
+        "2024": {
+          "median_rent": 33000,
+          "avg_rent": 50830,
+          "count": 872
+        },
+        "2025": {
+          "median_rent": 29150,
+          "avg_rent": 43480,
+          "count": 1226
+        }
+      },
+      "內湖區": {
+        "2021": {
+          "median_rent": 30750,
+          "avg_rent": 30750,
+          "count": 2
+        },
+        "2022": {
+          "median_rent": 37750,
+          "avg_rent": 52580,
+          "count": 104
+        },
+        "2023": {
+          "median_rent": 35000,
+          "avg_rent": 47805,
+          "count": 829
+        },
+        "2024": {
+          "median_rent": 31000,
+          "avg_rent": 42652,
+          "count": 977
+        },
+        "2025": {
+          "median_rent": 28000,
+          "avg_rent": 36392,
+          "count": 1191
+        }
+      },
+      "北投區": {
+        "2022": {
+          "median_rent": 37000,
+          "avg_rent": 44776,
+          "count": 71
+        },
+        "2023": {
+          "median_rent": 24180,
+          "avg_rent": 32260,
+          "count": 531
+        },
+        "2024": {
+          "median_rent": 22160,
+          "avg_rent": 28973,
+          "count": 808
+        },
+        "2025": {
+          "median_rent": 21100,
+          "avg_rent": 26938,
+          "count": 1102
+        }
+      },
+      "南港區": {
+        "2022": {
+          "median_rent": 30000,
+          "avg_rent": 39829,
+          "count": 53
+        },
+        "2023": {
+          "median_rent": 30500,
+          "avg_rent": 39252,
+          "count": 287
+        },
+        "2024": {
+          "median_rent": 29500,
+          "avg_rent": 40258,
+          "count": 359
+        },
+        "2025": {
+          "median_rent": 26500,
+          "avg_rent": 34313,
+          "count": 517
+        }
+      },
+      "士林區": {
+        "2022": {
+          "median_rent": 35000,
+          "avg_rent": 47511,
+          "count": 89
+        },
+        "2023": {
+          "median_rent": 37000,
+          "avg_rent": 50937,
+          "count": 681
+        },
+        "2024": {
+          "median_rent": 27000,
+          "avg_rent": 42646,
+          "count": 1077
+        },
+        "2025": {
+          "median_rent": 23000,
+          "avg_rent": 34884,
+          "count": 1366
+        }
+      },
+      "大同區": {
+        "2022": {
+          "median_rent": 33000,
+          "avg_rent": 39680,
+          "count": 79
+        },
+        "2023": {
+          "median_rent": 33000,
+          "avg_rent": 41592,
+          "count": 639
+        },
+        "2024": {
+          "median_rent": 25725,
+          "avg_rent": 35577,
+          "count": 950
+        },
+        "2025": {
+          "median_rent": 23000,
+          "avg_rent": 32634,
+          "count": 1193
+        }
+      },
+      "大安區": {
+        "2022": {
+          "median_rent": 60000,
+          "avg_rent": 69090,
+          "count": 126
+        },
+        "2023": {
+          "median_rent": 50000,
+          "avg_rent": 60356,
+          "count": 879
+        },
+        "2024": {
+          "median_rent": 39800,
+          "avg_rent": 51294,
+          "count": 1065
+        },
+        "2025": {
+          "median_rent": 30000,
+          "avg_rent": 42231,
+          "count": 1453
+        }
+      },
+      "文山區": {
+        "2022": {
+          "median_rent": 25000,
+          "avg_rent": 26574,
+          "count": 43
+        },
+        "2023": {
+          "median_rent": 25100,
+          "avg_rent": 29830,
+          "count": 355
+        },
+        "2024": {
+          "median_rent": 23500,
+          "avg_rent": 25484,
+          "count": 743
+        },
+        "2025": {
+          "median_rent": 23000,
+          "avg_rent": 24228,
+          "count": 1206
+        }
+      },
+      "松山區": {
+        "2022": {
+          "median_rent": 35000,
+          "avg_rent": 45815,
+          "count": 96
+        },
+        "2023": {
+          "median_rent": 37000,
+          "avg_rent": 49526,
+          "count": 657
+        },
+        "2024": {
+          "median_rent": 32000,
+          "avg_rent": 45472,
+          "count": 688
+        },
+        "2025": {
+          "median_rent": 27500,
+          "avg_rent": 36980,
+          "count": 993
+        }
+      },
+      "萬華區": {
+        "2021": {
+          "median_rent": 17000,
+          "avg_rent": 16133,
+          "count": 3
+        },
+        "2022": {
+          "median_rent": 21500,
+          "avg_rent": 30346,
+          "count": 72
+        },
+        "2023": {
+          "median_rent": 19000,
+          "avg_rent": 25557,
+          "count": 567
+        },
+        "2024": {
+          "median_rent": 18000,
+          "avg_rent": 22000,
+          "count": 1021
+        },
+        "2025": {
+          "median_rent": 18000,
+          "avg_rent": 20806,
+          "count": 1554
+        }
+      }
+    }
+  },
+  "台南市": {
+    "city_trend": {
+      "2021": {
+        "median_rent": 136500,
+        "avg_rent": 136500,
+        "count": 1
+      },
+      "2022": {
+        "median_rent": 15000,
+        "avg_rent": 18677,
+        "count": 547
+      },
+      "2023": {
+        "median_rent": 15000,
+        "avg_rent": 18942,
+        "count": 4006
+      },
+      "2024": {
+        "median_rent": 15000,
+        "avg_rent": 17074,
+        "count": 6986
+      },
+      "2025": {
+        "median_rent": 14500,
+        "avg_rent": 15529,
+        "count": 11620
+      }
+    },
+    "districts": {
+      "七股區": {
+        "2023": {
+          "median_rent": 22000,
+          "avg_rent": 19277,
+          "count": 9
+        },
+        "2024": {
+          "median_rent": 13500,
+          "avg_rent": 12250,
+          "count": 12
+        },
+        "2025": {
+          "median_rent": 14000,
+          "avg_rent": 14507,
+          "count": 14
+        }
+      },
+      "下營區": {
+        "2025": {
+          "median_rent": 15500,
+          "avg_rent": 14250,
+          "count": 4
+        }
+      },
+      "中埔鄉": {
+        "2023": {
+          "median_rent": 12900,
+          "avg_rent": 12800,
+          "count": 9
+        },
+        "2024": {
+          "median_rent": 11750,
+          "avg_rent": 19920,
+          "count": 10
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 14571,
+          "count": 29
+        }
+      },
+      "中西區": {
+        "2022": {
+          "median_rent": 11000,
+          "avg_rent": 15386,
+          "count": 50
+        },
+        "2023": {
+          "median_rent": 11400,
+          "avg_rent": 20449,
+          "count": 398
+        },
+        "2024": {
+          "median_rent": 9500,
+          "avg_rent": 14868,
+          "count": 576
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 13824,
+          "count": 1034
+        }
+      },
+      "仁德區": {
+        "2022": {
+          "median_rent": 16900,
+          "avg_rent": 16848,
+          "count": 38
+        },
+        "2023": {
+          "median_rent": 16000,
+          "avg_rent": 16930,
+          "count": 173
+        },
+        "2024": {
+          "median_rent": 15900,
+          "avg_rent": 16763,
+          "count": 272
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 15123,
+          "count": 539
+        }
+      },
+      "佳里區": {
+        "2022": {
+          "median_rent": 38000,
+          "avg_rent": 40333,
+          "count": 3
+        },
+        "2023": {
+          "median_rent": 16650,
+          "avg_rent": 20646,
+          "count": 28
+        },
+        "2024": {
+          "median_rent": 17000,
+          "avg_rent": 18361,
+          "count": 53
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 15441,
+          "count": 100
+        }
+      },
+      "六甲區": {
+        "2023": {
+          "median_rent": 8500,
+          "avg_rent": 10000,
+          "count": 6
+        },
+        "2024": {
+          "median_rent": 10500,
+          "avg_rent": 13767,
+          "count": 15
+        },
+        "2025": {
+          "median_rent": 9250,
+          "avg_rent": 12486,
+          "count": 12
+        }
+      },
+      "六腳鄉": {
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 14666,
+          "count": 3
+        },
+        "2025": {
+          "median_rent": 42500,
+          "avg_rent": 42500,
+          "count": 2
+        }
+      },
+      "北區": {
+        "2022": {
+          "median_rent": 16750,
+          "avg_rent": 21734,
+          "count": 50
+        },
+        "2023": {
+          "median_rent": 16000,
+          "avg_rent": 19365,
+          "count": 392
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 17800,
+          "count": 664
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 16402,
+          "count": 983
+        }
+      },
+      "南化區": {},
+      "南區": {
+        "2022": {
+          "median_rent": 16500,
+          "avg_rent": 21827,
+          "count": 36
+        },
+        "2023": {
+          "median_rent": 16000,
+          "avg_rent": 18754,
+          "count": 222
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 18347,
+          "count": 367
+        },
+        "2025": {
+          "median_rent": 14300,
+          "avg_rent": 16119,
+          "count": 613
+        }
+      },
+      "善化區": {
+        "2022": {
+          "median_rent": 29000,
+          "avg_rent": 29121,
+          "count": 10
+        },
+        "2023": {
+          "median_rent": 21000,
+          "avg_rent": 24734,
+          "count": 73
+        },
+        "2024": {
+          "median_rent": 19495,
+          "avg_rent": 22496,
+          "count": 162
+        },
+        "2025": {
+          "median_rent": 18000,
+          "avg_rent": 19240,
+          "count": 292
+        }
+      },
+      "大內區": {
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 13000,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 11000,
+          "count": 4
+        }
+      },
+      "大林鎮": {
+        "2023": {
+          "median_rent": 10000,
+          "avg_rent": 9888,
+          "count": 9
+        },
+        "2024": {
+          "median_rent": 19800,
+          "avg_rent": 17375,
+          "count": 7
+        },
+        "2025": {
+          "median_rent": 12800,
+          "avg_rent": 13250,
+          "count": 34
+        }
+      },
+      "太保市": {
+        "2022": {
+          "median_rent": 5150,
+          "avg_rent": 13620,
+          "count": 10
+        },
+        "2023": {
+          "median_rent": 5000,
+          "avg_rent": 10288,
+          "count": 54
+        },
+        "2024": {
+          "median_rent": 6150,
+          "avg_rent": 12316,
+          "count": 161
+        },
+        "2025": {
+          "median_rent": 17000,
+          "avg_rent": 18339,
+          "count": 295
+        }
+      },
+      "學甲區": {
+        "2022": {
+          "median_rent": 14250,
+          "avg_rent": 14250,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 8250,
+          "avg_rent": 11233,
+          "count": 12
+        },
+        "2024": {
+          "median_rent": 6800,
+          "avg_rent": 8282,
+          "count": 23
+        },
+        "2025": {
+          "median_rent": 9000,
+          "avg_rent": 11122,
+          "count": 48
+        }
+      },
+      "安南區": {
+        "2022": {
+          "median_rent": 20000,
+          "avg_rent": 21204,
+          "count": 21
+        },
+        "2023": {
+          "median_rent": 22000,
+          "avg_rent": 25330,
+          "count": 281
+        },
+        "2024": {
+          "median_rent": 20000,
+          "avg_rent": 22536,
+          "count": 474
+        },
+        "2025": {
+          "median_rent": 19000,
+          "avg_rent": 19629,
+          "count": 811
+        }
+      },
+      "安定區": {
+        "2022": {
+          "median_rent": 25500,
+          "avg_rent": 25500,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 19800,
+          "avg_rent": 21835,
+          "count": 29
+        },
+        "2024": {
+          "median_rent": 17800,
+          "avg_rent": 18614,
+          "count": 57
+        },
+        "2025": {
+          "median_rent": 18925,
+          "avg_rent": 20327,
+          "count": 102
+        }
+      },
+      "安平區": {
+        "2022": {
+          "median_rent": 22000,
+          "avg_rent": 27500,
+          "count": 45
+        },
+        "2023": {
+          "median_rent": 19800,
+          "avg_rent": 25001,
+          "count": 333
+        },
+        "2024": {
+          "median_rent": 18500,
+          "avg_rent": 21089,
+          "count": 535
+        },
+        "2025": {
+          "median_rent": 18000,
+          "avg_rent": 19363,
+          "count": 775
+        }
+      },
+      "官田區": {
+        "2023": {
+          "median_rent": 14500,
+          "avg_rent": 15216,
+          "count": 6
+        },
+        "2024": {
+          "median_rent": 21000,
+          "avg_rent": 23187,
+          "count": 8
+        },
+        "2025": {
+          "median_rent": 14000,
+          "avg_rent": 15250,
+          "count": 12
+        }
+      },
+      "將軍區": {
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 13166,
+          "count": 3
+        }
+      },
+      "山上區": {},
+      "布袋鎮": {
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 12000,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 8500,
+          "avg_rent": 8500,
+          "count": 2
+        }
+      },
+      "後壁區": {
+        "2024": {
+          "median_rent": 8300,
+          "avg_rent": 8300,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 9000,
+          "avg_rent": 9142,
+          "count": 7
+        }
+      },
+      "新化區": {
+        "2023": {
+          "median_rent": 20000,
+          "avg_rent": 19357,
+          "count": 14
+        },
+        "2024": {
+          "median_rent": 17000,
+          "avg_rent": 18589,
+          "count": 42
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 17203,
+          "count": 76
+        }
+      },
+      "新市區": {
+        "2022": {
+          "median_rent": 24000,
+          "avg_rent": 25200,
+          "count": 5
+        },
+        "2023": {
+          "median_rent": 19000,
+          "avg_rent": 23047,
+          "count": 99
+        },
+        "2024": {
+          "median_rent": 17100,
+          "avg_rent": 19424,
+          "count": 170
+        },
+        "2025": {
+          "median_rent": 14000,
+          "avg_rent": 14679,
+          "count": 351
+        }
+      },
+      "新港鄉": {
+        "2024": {
+          "median_rent": 14500,
+          "avg_rent": 17083,
+          "count": 6
+        },
+        "2025": {
+          "median_rent": 9000,
+          "avg_rent": 11268,
+          "count": 9
+        }
+      },
+      "新營區": {
+        "2022": {
+          "median_rent": 11000,
+          "avg_rent": 15666,
+          "count": 9
+        },
+        "2023": {
+          "median_rent": 12500,
+          "avg_rent": 14870,
+          "count": 57
+        },
+        "2024": {
+          "median_rent": 12250,
+          "avg_rent": 13380,
+          "count": 96
+        },
+        "2025": {
+          "median_rent": 12150,
+          "avg_rent": 14353,
+          "count": 139
+        }
+      },
+      "朴子市": {
+        "2022": {
+          "median_rent": 8000,
+          "avg_rent": 10100,
+          "count": 3
+        },
+        "2023": {
+          "median_rent": 9000,
+          "avg_rent": 10035,
+          "count": 17
+        },
+        "2024": {
+          "median_rent": 9750,
+          "avg_rent": 13228,
+          "count": 64
+        },
+        "2025": {
+          "median_rent": 8350,
+          "avg_rent": 13787,
+          "count": 79
+        }
+      },
+      "東區": {
+        "2022": {
+          "median_rent": 16000,
+          "avg_rent": 17866,
+          "count": 87
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 18430,
+          "count": 683
+        },
+        "2024": {
+          "median_rent": 13800,
+          "avg_rent": 15667,
+          "count": 1217
+        },
+        "2025": {
+          "median_rent": 14000,
+          "avg_rent": 15510,
+          "count": 1840
+        }
+      },
+      "東山區": {
+        "2025": {
+          "median_rent": 12500,
+          "avg_rent": 21250,
+          "count": 4
+        }
+      },
+      "東石鄉": {},
+      "柳營區": {
+        "2023": {
+          "median_rent": 12000,
+          "avg_rent": 11400,
+          "count": 5
+        },
+        "2024": {
+          "median_rent": 11000,
+          "avg_rent": 12844,
+          "count": 9
+        },
+        "2025": {
+          "median_rent": 12500,
+          "avg_rent": 13091,
+          "count": 12
+        }
+      },
+      "梅山鄉": {
+        "2025": {
+          "median_rent": 11250,
+          "avg_rent": 10875,
+          "count": 4
+        }
+      },
+      "楠西區": {
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 12000,
+          "count": 2
+        }
+      },
+      "歸仁區": {
+        "2022": {
+          "median_rent": 21000,
+          "avg_rent": 22600,
+          "count": 10
+        },
+        "2023": {
+          "median_rent": 16500,
+          "avg_rent": 22597,
+          "count": 73
+        },
+        "2024": {
+          "median_rent": 16558,
+          "avg_rent": 18483,
+          "count": 247
+        },
+        "2025": {
+          "median_rent": 16500,
+          "avg_rent": 17130,
+          "count": 343
+        }
+      },
+      "民雄鄉": {
+        "2022": {
+          "median_rent": 4000,
+          "avg_rent": 4180,
+          "count": 5
+        },
+        "2023": {
+          "median_rent": 10000,
+          "avg_rent": 11004,
+          "count": 25
+        },
+        "2024": {
+          "median_rent": 10000,
+          "avg_rent": 10713,
+          "count": 42
+        },
+        "2025": {
+          "median_rent": 4500,
+          "avg_rent": 7035,
+          "count": 163
+        }
+      },
+      "水上鄉": {
+        "2022": {
+          "median_rent": 40000,
+          "avg_rent": 40000,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 10000,
+          "avg_rent": 11142,
+          "count": 7
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 17984,
+          "count": 19
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 20145,
+          "count": 24
+        }
+      },
+      "永康區": {
+        "2022": {
+          "median_rent": 13500,
+          "avg_rent": 15156,
+          "count": 150
+        },
+        "2023": {
+          "median_rent": 13000,
+          "avg_rent": 15110,
+          "count": 937
+        },
+        "2024": {
+          "median_rent": 14000,
+          "avg_rent": 15374,
+          "count": 1546
+        },
+        "2025": {
+          "median_rent": 11000,
+          "avg_rent": 13209,
+          "count": 2624
+        }
+      },
+      "溪口鄉": {
+        "2025": {
+          "median_rent": 11000,
+          "avg_rent": 11000,
+          "count": 2
+        }
+      },
+      "玉井區": {
+        "2023": {
+          "median_rent": 8000,
+          "avg_rent": 14500,
+          "count": 3
+        },
+        "2024": {
+          "median_rent": 10000,
+          "avg_rent": 12133,
+          "count": 6
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 9685,
+          "count": 7
+        }
+      },
+      "番路鄉": {
+        "2023": {
+          "median_rent": 6500,
+          "avg_rent": 7840,
+          "count": 5
+        },
+        "2024": {
+          "median_rent": 7000,
+          "avg_rent": 10133,
+          "count": 12
+        },
+        "2025": {
+          "median_rent": 7250,
+          "avg_rent": 7933,
+          "count": 12
+        }
+      },
+      "白河區": {
+        "2023": {
+          "median_rent": 25500,
+          "avg_rent": 25500,
+          "count": 2
+        },
+        "2024": {
+          "median_rent": 9500,
+          "avg_rent": 10325,
+          "count": 8
+        },
+        "2025": {
+          "median_rent": 8250,
+          "avg_rent": 10457,
+          "count": 28
+        }
+      },
+      "竹崎鄉": {
+        "2024": {
+          "median_rent": 10000,
+          "avg_rent": 9375,
+          "count": 4
+        },
+        "2025": {
+          "median_rent": 11500,
+          "avg_rent": 11833,
+          "count": 6
+        }
+      },
+      "義竹鄉": {
+        "2023": {
+          "median_rent": 9400,
+          "avg_rent": 9400,
+          "count": 2
+        }
+      },
+      "西港區": {
+        "2023": {
+          "median_rent": 32000,
+          "avg_rent": 28100,
+          "count": 5
+        },
+        "2024": {
+          "median_rent": 18000,
+          "avg_rent": 21281,
+          "count": 16
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 16488,
+          "count": 28
+        }
+      },
+      "關廟區": {
+        "2023": {
+          "median_rent": 18750,
+          "avg_rent": 22080,
+          "count": 4
+        },
+        "2024": {
+          "median_rent": 18000,
+          "avg_rent": 17430,
+          "count": 13
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 17055,
+          "count": 48
+        }
+      },
+      "鹽水區": {
+        "2023": {
+          "median_rent": 9500,
+          "avg_rent": 14461,
+          "count": 18
+        },
+        "2024": {
+          "median_rent": 6550,
+          "avg_rent": 13230,
+          "count": 28
+        },
+        "2025": {
+          "median_rent": 7000,
+          "avg_rent": 11034,
+          "count": 43
+        }
+      },
+      "鹿草鄉": {},
+      "麻豆區": {
+        "2022": {
+          "median_rent": 35000,
+          "avg_rent": 33666,
+          "count": 3
+        },
+        "2023": {
+          "median_rent": 18500,
+          "avg_rent": 25250,
+          "count": 12
+        },
+        "2024": {
+          "median_rent": 25000,
+          "avg_rent": 25695,
+          "count": 33
+        },
+        "2025": {
+          "median_rent": 18000,
+          "avg_rent": 20292,
+          "count": 59
+        }
+      }
+    }
+  },
+  "嘉義市": {
+    "city_trend": {
+      "2022": {
+        "median_rent": 12250,
+        "avg_rent": 14837,
+        "count": 60
+      },
+      "2023": {
+        "median_rent": 11000,
+        "avg_rent": 13157,
+        "count": 503
+      },
+      "2024": {
+        "median_rent": 10000,
+        "avg_rent": 11772,
+        "count": 957
+      },
+      "2025": {
+        "median_rent": 11600,
+        "avg_rent": 13593,
+        "count": 1305
+      }
+    },
+    "districts": {
+      "嘉義市": {
+        "2022": {
+          "median_rent": 12250,
+          "avg_rent": 14837,
+          "count": 60
+        },
+        "2023": {
+          "median_rent": 11000,
+          "avg_rent": 13157,
+          "count": 503
+        },
+        "2024": {
+          "median_rent": 10000,
+          "avg_rent": 11772,
+          "count": 957
+        },
+        "2025": {
+          "median_rent": 11600,
+          "avg_rent": 13593,
+          "count": 1305
+        }
+      }
+    }
+  },
+  "嘉義縣": {
+    "city_trend": {
+      "2022": {
+        "median_rent": 14000,
+        "avg_rent": 13618,
+        "count": 16
+      },
+      "2023": {
+        "median_rent": 9000,
+        "avg_rent": 11459,
+        "count": 167
+      },
+      "2024": {
+        "median_rent": 6000,
+        "avg_rent": 10346,
+        "count": 449
+      },
+      "2025": {
+        "median_rent": 5000,
+        "avg_rent": 8926,
+        "count": 771
+      }
+    },
+    "districts": {
+      "二崙鄉": {},
+      "元長鄉": {
+        "2025": {
+          "median_rent": 4500,
+          "avg_rent": 4646,
+          "count": 13
+        }
+      },
+      "北港鎮": {
+        "2024": {
+          "median_rent": 12500,
+          "avg_rent": 18880,
+          "count": 21
+        },
+        "2025": {
+          "median_rent": 8250,
+          "avg_rent": 10886,
+          "count": 32
+        }
+      },
+      "口湖鄉": {
+        "2025": {
+          "median_rent": 8500,
+          "avg_rent": 8500,
+          "count": 2
+        }
+      },
+      "古坑鄉": {
+        "2025": {
+          "median_rent": 10500,
+          "avg_rent": 10500,
+          "count": 2
+        }
+      },
+      "台西鄉": {},
+      "四湖鄉": {},
+      "土庫鎮": {},
+      "大埤鄉": {
+        "2025": {
+          "median_rent": 11000,
+          "avg_rent": 12166,
+          "count": 6
+        }
+      },
+      "崙背鄉": {
+        "2024": {
+          "median_rent": 20000,
+          "avg_rent": 20000,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 13000,
+          "count": 2
+        }
+      },
+      "斗六市": {
+        "2022": {
+          "median_rent": 13000,
+          "avg_rent": 13223,
+          "count": 13
+        },
+        "2023": {
+          "median_rent": 12000,
+          "avg_rent": 13754,
+          "count": 99
+        },
+        "2024": {
+          "median_rent": 4400,
+          "avg_rent": 8978,
+          "count": 268
+        },
+        "2025": {
+          "median_rent": 4500,
+          "avg_rent": 9256,
+          "count": 322
+        }
+      },
+      "斗南鎮": {
+        "2022": {
+          "median_rent": 14000,
+          "avg_rent": 14000,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 10325,
+          "avg_rent": 12814,
+          "count": 7
+        },
+        "2024": {
+          "median_rent": 12430,
+          "avg_rent": 12038,
+          "count": 43
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 12457,
+          "count": 75
+        }
+      },
+      "東勢鄉": {},
+      "林內鄉": {},
+      "莿桐鄉": {
+        "2023": {
+          "median_rent": 8300,
+          "avg_rent": 8300,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 9666,
+          "count": 3
+        }
+      },
+      "虎尾鎮": {
+        "2023": {
+          "median_rent": 4000,
+          "avg_rent": 7236,
+          "count": 52
+        },
+        "2024": {
+          "median_rent": 4200,
+          "avg_rent": 10753,
+          "count": 108
+        },
+        "2025": {
+          "median_rent": 4200,
+          "avg_rent": 7218,
+          "count": 283
+        }
+      },
+      "西螺鎮": {
+        "2023": {
+          "median_rent": 9500,
+          "avg_rent": 9625,
+          "count": 4
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 13000,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 8500,
+          "avg_rent": 11263,
+          "count": 24
+        }
+      },
+      "麥寮鄉": {}
+    }
+  },
+  "基隆市": {
+    "city_trend": {
+      "2022": {
+        "median_rent": 10500,
+        "avg_rent": 11808,
+        "count": 90
+      },
+      "2023": {
+        "median_rent": 12000,
+        "avg_rent": 14010,
+        "count": 692
+      },
+      "2024": {
+        "median_rent": 12000,
+        "avg_rent": 13251,
+        "count": 1506
+      },
+      "2025": {
+        "median_rent": 12000,
+        "avg_rent": 12867,
+        "count": 2346
+      }
+    },
+    "districts": {
+      "七堵區": {
+        "2022": {
+          "median_rent": 11000,
+          "avg_rent": 10125,
+          "count": 8
+        },
+        "2023": {
+          "median_rent": 14000,
+          "avg_rent": 16071,
+          "count": 42
+        },
+        "2024": {
+          "median_rent": 13500,
+          "avg_rent": 13598,
+          "count": 118
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 13751,
+          "count": 197
+        }
+      },
+      "中山區": {
+        "2022": {
+          "median_rent": 10000,
+          "avg_rent": 10642,
+          "count": 7
+        },
+        "2023": {
+          "median_rent": 12000,
+          "avg_rent": 13450,
+          "count": 60
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 13777,
+          "count": 158
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 14283,
+          "count": 232
+        }
+      },
+      "中正區": {
+        "2022": {
+          "median_rent": 10500,
+          "avg_rent": 13640,
+          "count": 27
+        },
+        "2023": {
+          "median_rent": 11000,
+          "avg_rent": 11984,
+          "count": 204
+        },
+        "2024": {
+          "median_rent": 11545,
+          "avg_rent": 12768,
+          "count": 394
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 12203,
+          "count": 637
+        }
+      },
+      "仁愛區": {
+        "2022": {
+          "median_rent": 11250,
+          "avg_rent": 11250,
+          "count": 10
+        },
+        "2023": {
+          "median_rent": 13500,
+          "avg_rent": 26286,
+          "count": 72
+        },
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 17000,
+          "count": 119
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 14950,
+          "count": 196
+        }
+      },
+      "信義區": {
+        "2022": {
+          "median_rent": 9200,
+          "avg_rent": 10284,
+          "count": 13
+        },
+        "2023": {
+          "median_rent": 12000,
+          "avg_rent": 12704,
+          "count": 86
+        },
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 13505,
+          "count": 197
+        },
+        "2025": {
+          "median_rent": 12668,
+          "avg_rent": 13048,
+          "count": 318
+        }
+      },
+      "安樂區": {
+        "2022": {
+          "median_rent": 10000,
+          "avg_rent": 11125,
+          "count": 16
+        },
+        "2023": {
+          "median_rent": 12000,
+          "avg_rent": 12522,
+          "count": 142
+        },
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 12916,
+          "count": 348
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 12074,
+          "count": 514
+        }
+      },
+      "暖暖區": {
+        "2022": {
+          "median_rent": 12000,
+          "avg_rent": 12755,
+          "count": 9
+        },
+        "2023": {
+          "median_rent": 10000,
+          "avg_rent": 11689,
+          "count": 86
+        },
+        "2024": {
+          "median_rent": 11000,
+          "avg_rent": 11431,
+          "count": 172
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 12319,
+          "count": 252
+        }
+      }
+    }
+  },
+  "宜蘭縣": {
+    "city_trend": {
+      "2022": {
+        "median_rent": 13200,
+        "avg_rent": 14995,
+        "count": 83
+      },
+      "2023": {
+        "median_rent": 13200,
+        "avg_rent": 15992,
+        "count": 484
+      },
+      "2024": {
+        "median_rent": 12910,
+        "avg_rent": 14382,
+        "count": 783
+      },
+      "2025": {
+        "median_rent": 13000,
+        "avg_rent": 13918,
+        "count": 1350
+      }
+    },
+    "districts": {
+      "三星鄉": {
+        "2023": {
+          "median_rent": 17000,
+          "avg_rent": 17000,
+          "count": 3
+        },
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 12071,
+          "count": 7
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 12722,
+          "count": 9
+        }
+      },
+      "五結鄉": {
+        "2022": {
+          "median_rent": 12500,
+          "avg_rent": 13680,
+          "count": 10
+        },
+        "2023": {
+          "median_rent": 14000,
+          "avg_rent": 15331,
+          "count": 53
+        },
+        "2024": {
+          "median_rent": 12500,
+          "avg_rent": 14900,
+          "count": 73
+        },
+        "2025": {
+          "median_rent": 13500,
+          "avg_rent": 13733,
+          "count": 130
+        }
+      },
+      "冬山鄉": {
+        "2022": {
+          "median_rent": 28500,
+          "avg_rent": 43375,
+          "count": 4
+        },
+        "2023": {
+          "median_rent": 16400,
+          "avg_rent": 21533,
+          "count": 18
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 14863,
+          "count": 35
+        },
+        "2025": {
+          "median_rent": 14000,
+          "avg_rent": 14073,
+          "count": 63
+        }
+      },
+      "員山鄉": {
+        "2022": {
+          "median_rent": 14250,
+          "avg_rent": 14250,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 12700,
+          "avg_rent": 14625,
+          "count": 8
+        },
+        "2024": {
+          "median_rent": 12700,
+          "avg_rent": 14337,
+          "count": 20
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 14896,
+          "count": 32
+        }
+      },
+      "壯圍鄉": {
+        "2022": {
+          "median_rent": 21000,
+          "avg_rent": 17333,
+          "count": 3
+        },
+        "2023": {
+          "median_rent": 14200,
+          "avg_rent": 14483,
+          "count": 6
+        },
+        "2024": {
+          "median_rent": 12700,
+          "avg_rent": 15714,
+          "count": 12
+        },
+        "2025": {
+          "median_rent": 16800,
+          "avg_rent": 21900,
+          "count": 20
+        }
+      },
+      "宜蘭市": {
+        "2022": {
+          "median_rent": 15000,
+          "avg_rent": 15548,
+          "count": 31
+        },
+        "2023": {
+          "median_rent": 14700,
+          "avg_rent": 16074,
+          "count": 169
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 13778,
+          "count": 267
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 13961,
+          "count": 432
+        }
+      },
+      "礁溪鄉": {
+        "2022": {
+          "median_rent": 8750,
+          "avg_rent": 10306,
+          "count": 16
+        },
+        "2023": {
+          "median_rent": 10000,
+          "avg_rent": 15235,
+          "count": 63
+        },
+        "2024": {
+          "median_rent": 11000,
+          "avg_rent": 13485,
+          "count": 129
+        },
+        "2025": {
+          "median_rent": 10600,
+          "avg_rent": 12238,
+          "count": 203
+        }
+      },
+      "羅東鎮": {
+        "2022": {
+          "median_rent": 13000,
+          "avg_rent": 13007,
+          "count": 14
+        },
+        "2023": {
+          "median_rent": 13500,
+          "avg_rent": 16765,
+          "count": 126
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 16110,
+          "count": 179
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 14887,
+          "count": 350
+        }
+      },
+      "蘇澳鎮": {
+        "2023": {
+          "median_rent": 10000,
+          "avg_rent": 13963,
+          "count": 19
+        },
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 11133,
+          "count": 36
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 12261,
+          "count": 65
+        }
+      },
+      "頭城鎮": {
+        "2022": {
+          "median_rent": 9150,
+          "avg_rent": 9150,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 12000,
+          "avg_rent": 12163,
+          "count": 19
+        },
+        "2024": {
+          "median_rent": 14500,
+          "avg_rent": 15637,
+          "count": 25
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 12282,
+          "count": 46
+        }
+      }
+    }
+  },
+  "彰化縣": {
+    "city_trend": {
+      "2022": {
+        "median_rent": 19000,
+        "avg_rent": 23000,
+        "count": 22
+      },
+      "2023": {
+        "median_rent": 16000,
+        "avg_rent": 22063,
+        "count": 212
+      },
+      "2024": {
+        "median_rent": 12000,
+        "avg_rent": 14842,
+        "count": 630
+      },
+      "2025": {
+        "median_rent": 12000,
+        "avg_rent": 13238,
+        "count": 1299
+      }
+    },
+    "districts": {
+      "二林鎮": {
+        "2023": {
+          "median_rent": 15500,
+          "avg_rent": 16200,
+          "count": 6
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 14969,
+          "count": 13
+        },
+        "2025": {
+          "median_rent": 17500,
+          "avg_rent": 20768,
+          "count": 33
+        }
+      },
+      "伸港鄉": {
+        "2023": {
+          "median_rent": 21000,
+          "avg_rent": 21000,
+          "count": 2
+        },
+        "2024": {
+          "median_rent": 17000,
+          "avg_rent": 18000,
+          "count": 5
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 17350,
+          "count": 8
+        }
+      },
+      "北斗鎮": {
+        "2024": {
+          "median_rent": 14900,
+          "avg_rent": 22725,
+          "count": 8
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 17376,
+          "count": 13
+        }
+      },
+      "和美鎮": {
+        "2023": {
+          "median_rent": 16500,
+          "avg_rent": 33569,
+          "count": 10
+        },
+        "2024": {
+          "median_rent": 16000,
+          "avg_rent": 15371,
+          "count": 21
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 16244,
+          "count": 53
+        }
+      },
+      "員林市": {
+        "2022": {
+          "median_rent": 26500,
+          "avg_rent": 32700,
+          "count": 10
+        },
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 25574,
+          "count": 56
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 18061,
+          "count": 148
+        },
+        "2025": {
+          "median_rent": 14000,
+          "avg_rent": 14583,
+          "count": 325
+        }
+      },
+      "埔心鄉": {
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 37755,
+          "count": 5
+        },
+        "2024": {
+          "median_rent": 16800,
+          "avg_rent": 17960,
+          "count": 5
+        },
+        "2025": {
+          "median_rent": 17000,
+          "avg_rent": 16768,
+          "count": 19
+        }
+      },
+      "埔鹽鄉": {
+        "2023": {
+          "median_rent": 17000,
+          "avg_rent": 15666,
+          "count": 3
+        },
+        "2024": {
+          "median_rent": 13550,
+          "avg_rent": 13550,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 11000,
+          "avg_rent": 11500,
+          "count": 4
+        }
+      },
+      "埤頭鄉": {
+        "2024": {
+          "median_rent": 21500,
+          "avg_rent": 21500,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 13142,
+          "count": 7
+        }
+      },
+      "大城鄉": {},
+      "大村鄉": {
+        "2023": {
+          "median_rent": 5355,
+          "avg_rent": 8600,
+          "count": 10
+        },
+        "2024": {
+          "median_rent": 5500,
+          "avg_rent": 6476,
+          "count": 82
+        },
+        "2025": {
+          "median_rent": 5500,
+          "avg_rent": 6505,
+          "count": 92
+        }
+      },
+      "彰化市": {
+        "2022": {
+          "median_rent": 8300,
+          "avg_rent": 13200,
+          "count": 5
+        },
+        "2023": {
+          "median_rent": 16000,
+          "avg_rent": 17957,
+          "count": 71
+        },
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 14061,
+          "count": 263
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 11697,
+          "count": 597
+        }
+      },
+      "永靖鄉": {
+        "2025": {
+          "median_rent": 15250,
+          "avg_rent": 15275,
+          "count": 4
+        }
+      },
+      "溪州鄉": {
+        "2024": {
+          "median_rent": 12750,
+          "avg_rent": 12750,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 13500,
+          "avg_rent": 12766,
+          "count": 6
+        }
+      },
+      "溪湖鎮": {
+        "2022": {
+          "median_rent": 10000,
+          "avg_rent": 11600,
+          "count": 5
+        },
+        "2023": {
+          "median_rent": 16500,
+          "avg_rent": 15962,
+          "count": 16
+        },
+        "2024": {
+          "median_rent": 10000,
+          "avg_rent": 15440,
+          "count": 30
+        },
+        "2025": {
+          "median_rent": 9650,
+          "avg_rent": 13162,
+          "count": 47
+        }
+      },
+      "田中鎮": {
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 13580,
+          "count": 5
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 11050,
+          "count": 10
+        }
+      },
+      "田尾鄉": {
+        "2023": {
+          "median_rent": 10250,
+          "avg_rent": 10250,
+          "count": 2
+        },
+        "2024": {
+          "median_rent": 13500,
+          "avg_rent": 13500,
+          "count": 2
+        }
+      },
+      "社頭鄉": {
+        "2024": {
+          "median_rent": 17500,
+          "avg_rent": 17500,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 14500,
+          "avg_rent": 20980,
+          "count": 10
+        }
+      },
+      "福興鄉": {
+        "2023": {
+          "median_rent": 17000,
+          "avg_rent": 35666,
+          "count": 3
+        },
+        "2024": {
+          "median_rent": 14000,
+          "avg_rent": 14666,
+          "count": 3
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 21828,
+          "count": 14
+        }
+      },
+      "秀水鄉": {
+        "2023": {
+          "median_rent": 18500,
+          "avg_rent": 36225,
+          "count": 8
+        },
+        "2024": {
+          "median_rent": 16500,
+          "avg_rent": 26333,
+          "count": 6
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 37971,
+          "count": 7
+        }
+      },
+      "竹塘鄉": {
+        "2024": {
+          "median_rent": 8500,
+          "avg_rent": 11166,
+          "count": 3
+        },
+        "2025": {
+          "median_rent": 7500,
+          "avg_rent": 7400,
+          "count": 5
+        }
+      },
+      "線西鄉": {
+        "2023": {
+          "median_rent": 20000,
+          "avg_rent": 33538,
+          "count": 9
+        },
+        "2024": {
+          "median_rent": 21600,
+          "avg_rent": 21194,
+          "count": 4
+        }
+      },
+      "芬園鄉": {
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 32666,
+          "count": 3
+        }
+      },
+      "花壇鄉": {
+        "2023": {
+          "median_rent": 13333,
+          "avg_rent": 18316,
+          "count": 10
+        },
+        "2024": {
+          "median_rent": 8850,
+          "avg_rent": 20978,
+          "count": 14
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 18178,
+          "count": 14
+        }
+      },
+      "芳苑鄉": {
+        "2024": {
+          "median_rent": 13500,
+          "avg_rent": 13500,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 8500,
+          "avg_rent": 10750,
+          "count": 4
+        }
+      },
+      "鹿港鎮": {
+        "2024": {
+          "median_rent": 22755,
+          "avg_rent": 33422,
+          "count": 7
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 18016,
+          "count": 22
+        }
+      }
+    }
+  },
+  "新北市": {
+    "city_trend": {
+      "2020": {
+        "median_rent": 28000,
+        "avg_rent": 37862,
+        "count": 9
+      },
+      "2021": {
+        "median_rent": 20100,
+        "avg_rent": 22837,
+        "count": 8
+      },
+      "2022": {
+        "median_rent": 20000,
+        "avg_rent": 25961,
+        "count": 1435
+      },
+      "2023": {
+        "median_rent": 20000,
+        "avg_rent": 25456,
+        "count": 10445
+      },
+      "2024": {
+        "median_rent": 19900,
+        "avg_rent": 22811,
+        "count": 18729
+      },
+      "2025": {
+        "median_rent": 20000,
+        "avg_rent": 21974,
+        "count": 28498
+      }
+    },
+    "districts": {
+      "三峽區": {
+        "2022": {
+          "median_rent": 18000,
+          "avg_rent": 24678,
+          "count": 37
+        },
+        "2023": {
+          "median_rent": 18500,
+          "avg_rent": 22113,
+          "count": 297
+        },
+        "2024": {
+          "median_rent": 17450,
+          "avg_rent": 19851,
+          "count": 486
+        },
+        "2025": {
+          "median_rent": 16000,
+          "avg_rent": 17673,
+          "count": 1005
+        }
+      },
+      "三芝區": {
+        "2022": {
+          "median_rent": 7750,
+          "avg_rent": 8475,
+          "count": 12
+        },
+        "2023": {
+          "median_rent": 7000,
+          "avg_rent": 8127,
+          "count": 107
+        },
+        "2024": {
+          "median_rent": 8000,
+          "avg_rent": 8928,
+          "count": 235
+        },
+        "2025": {
+          "median_rent": 8000,
+          "avg_rent": 8785,
+          "count": 301
+        }
+      },
+      "三重區": {
+        "2022": {
+          "median_rent": 19500,
+          "avg_rent": 23573,
+          "count": 119
+        },
+        "2023": {
+          "median_rent": 20000,
+          "avg_rent": 25390,
+          "count": 923
+        },
+        "2024": {
+          "median_rent": 20000,
+          "avg_rent": 23935,
+          "count": 1809
+        },
+        "2025": {
+          "median_rent": 21000,
+          "avg_rent": 22597,
+          "count": 2938
+        }
+      },
+      "中和區": {
+        "2020": {
+          "median_rent": 25100,
+          "avg_rent": 42960,
+          "count": 6
+        },
+        "2021": {
+          "median_rent": 21950,
+          "avg_rent": 18475,
+          "count": 4
+        },
+        "2022": {
+          "median_rent": 20000,
+          "avg_rent": 26891,
+          "count": 144
+        },
+        "2023": {
+          "median_rent": 22000,
+          "avg_rent": 27958,
+          "count": 1065
+        },
+        "2024": {
+          "median_rent": 20000,
+          "avg_rent": 24939,
+          "count": 2134
+        },
+        "2025": {
+          "median_rent": 21230,
+          "avg_rent": 24587,
+          "count": 2909
+        }
+      },
+      "五股區": {
+        "2022": {
+          "median_rent": 20300,
+          "avg_rent": 21000,
+          "count": 67
+        },
+        "2023": {
+          "median_rent": 20000,
+          "avg_rent": 22329,
+          "count": 397
+        },
+        "2024": {
+          "median_rent": 19900,
+          "avg_rent": 20728,
+          "count": 755
+        },
+        "2025": {
+          "median_rent": 20500,
+          "avg_rent": 20729,
+          "count": 1262
+        }
+      },
+      "八里區": {
+        "2022": {
+          "median_rent": 14500,
+          "avg_rent": 15594,
+          "count": 17
+        },
+        "2023": {
+          "median_rent": 16310,
+          "avg_rent": 17168,
+          "count": 150
+        },
+        "2024": {
+          "median_rent": 16500,
+          "avg_rent": 16952,
+          "count": 324
+        },
+        "2025": {
+          "median_rent": 16100,
+          "avg_rent": 17423,
+          "count": 428
+        }
+      },
+      "土城區": {
+        "2022": {
+          "median_rent": 21750,
+          "avg_rent": 28859,
+          "count": 60
+        },
+        "2023": {
+          "median_rent": 20500,
+          "avg_rent": 25718,
+          "count": 487
+        },
+        "2024": {
+          "median_rent": 21000,
+          "avg_rent": 22957,
+          "count": 931
+        },
+        "2025": {
+          "median_rent": 22000,
+          "avg_rent": 22916,
+          "count": 1354
+        }
+      },
+      "新店區": {
+        "2022": {
+          "median_rent": 25000,
+          "avg_rent": 38969,
+          "count": 106
+        },
+        "2023": {
+          "median_rent": 25000,
+          "avg_rent": 33615,
+          "count": 694
+        },
+        "2024": {
+          "median_rent": 23000,
+          "avg_rent": 28099,
+          "count": 1091
+        },
+        "2025": {
+          "median_rent": 23000,
+          "avg_rent": 25434,
+          "count": 1827
+        }
+      },
+      "新莊區": {
+        "2022": {
+          "median_rent": 21000,
+          "avg_rent": 27618,
+          "count": 107
+        },
+        "2023": {
+          "median_rent": 23000,
+          "avg_rent": 28512,
+          "count": 855
+        },
+        "2024": {
+          "median_rent": 21000,
+          "avg_rent": 25586,
+          "count": 1552
+        },
+        "2025": {
+          "median_rent": 21000,
+          "avg_rent": 24211,
+          "count": 2362
+        }
+      },
+      "板橋區": {
+        "2022": {
+          "median_rent": 20000,
+          "avg_rent": 25715,
+          "count": 125
+        },
+        "2023": {
+          "median_rent": 22000,
+          "avg_rent": 28313,
+          "count": 993
+        },
+        "2024": {
+          "median_rent": 20000,
+          "avg_rent": 23765,
+          "count": 2051
+        },
+        "2025": {
+          "median_rent": 20000,
+          "avg_rent": 23075,
+          "count": 3169
+        }
+      },
+      "林口區": {
+        "2022": {
+          "median_rent": 27000,
+          "avg_rent": 34239,
+          "count": 57
+        },
+        "2023": {
+          "median_rent": 26433,
+          "avg_rent": 35076,
+          "count": 309
+        },
+        "2024": {
+          "median_rent": 24000,
+          "avg_rent": 30000,
+          "count": 472
+        },
+        "2025": {
+          "median_rent": 24500,
+          "avg_rent": 30394,
+          "count": 698
+        }
+      },
+      "樹林區": {
+        "2022": {
+          "median_rent": 15000,
+          "avg_rent": 24961,
+          "count": 57
+        },
+        "2023": {
+          "median_rent": 18500,
+          "avg_rent": 23786,
+          "count": 312
+        },
+        "2024": {
+          "median_rent": 18000,
+          "avg_rent": 22065,
+          "count": 525
+        },
+        "2025": {
+          "median_rent": 19000,
+          "avg_rent": 21841,
+          "count": 753
+        }
+      },
+      "永和區": {
+        "2020": {
+          "median_rent": 36500,
+          "avg_rent": 36500,
+          "count": 2
+        },
+        "2021": {
+          "median_rent": 20000,
+          "avg_rent": 32434,
+          "count": 3
+        },
+        "2022": {
+          "median_rent": 26750,
+          "avg_rent": 31316,
+          "count": 66
+        },
+        "2023": {
+          "median_rent": 22453,
+          "avg_rent": 27765,
+          "count": 493
+        },
+        "2024": {
+          "median_rent": 22289,
+          "avg_rent": 25450,
+          "count": 740
+        },
+        "2025": {
+          "median_rent": 22000,
+          "avg_rent": 23139,
+          "count": 1329
+        }
+      },
+      "汐止區": {
+        "2022": {
+          "median_rent": 24000,
+          "avg_rent": 29634,
+          "count": 129
+        },
+        "2023": {
+          "median_rent": 22000,
+          "avg_rent": 27712,
+          "count": 795
+        },
+        "2024": {
+          "median_rent": 20000,
+          "avg_rent": 24752,
+          "count": 1216
+        },
+        "2025": {
+          "median_rent": 20391,
+          "avg_rent": 23125,
+          "count": 1748
+        }
+      },
+      "泰山區": {
+        "2022": {
+          "median_rent": 22150,
+          "avg_rent": 21254,
+          "count": 22
+        },
+        "2023": {
+          "median_rent": 20000,
+          "avg_rent": 24195,
+          "count": 183
+        },
+        "2024": {
+          "median_rent": 19500,
+          "avg_rent": 20815,
+          "count": 362
+        },
+        "2025": {
+          "median_rent": 20000,
+          "avg_rent": 21077,
+          "count": 635
+        }
+      },
+      "淡水區": {
+        "2022": {
+          "median_rent": 18500,
+          "avg_rent": 19645,
+          "count": 233
+        },
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 18708,
+          "count": 1796
+        },
+        "2024": {
+          "median_rent": 16950,
+          "avg_rent": 17514,
+          "count": 2884
+        },
+        "2025": {
+          "median_rent": 16400,
+          "avg_rent": 16890,
+          "count": 3797
+        }
+      },
+      "深坑區": {
+        "2023": {
+          "median_rent": 14000,
+          "avg_rent": 14312,
+          "count": 8
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 20160,
+          "count": 38
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 16902,
+          "count": 67
+        }
+      },
+      "瑞芳區": {
+        "2022": {
+          "median_rent": 10000,
+          "avg_rent": 11666,
+          "count": 3
+        },
+        "2023": {
+          "median_rent": 8750,
+          "avg_rent": 9083,
+          "count": 12
+        },
+        "2024": {
+          "median_rent": 10500,
+          "avg_rent": 13062,
+          "count": 40
+        },
+        "2025": {
+          "median_rent": 11000,
+          "avg_rent": 12519,
+          "count": 65
+        }
+      },
+      "石碇區": {
+        "2023": {
+          "median_rent": 12500,
+          "avg_rent": 12500,
+          "count": 2
+        }
+      },
+      "石門區": {
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 21333,
+          "count": 3
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 14000,
+          "count": 3
+        },
+        "2025": {
+          "median_rent": 9000,
+          "avg_rent": 8666,
+          "count": 3
+        }
+      },
+      "萬里區": {
+        "2023": {
+          "median_rent": 8500,
+          "avg_rent": 8166,
+          "count": 12
+        },
+        "2024": {
+          "median_rent": 8600,
+          "avg_rent": 8527,
+          "count": 29
+        },
+        "2025": {
+          "median_rent": 8500,
+          "avg_rent": 8273,
+          "count": 66
+        }
+      },
+      "蘆洲區": {
+        "2022": {
+          "median_rent": 23000,
+          "avg_rent": 23250,
+          "count": 46
+        },
+        "2023": {
+          "median_rent": 23000,
+          "avg_rent": 27029,
+          "count": 322
+        },
+        "2024": {
+          "median_rent": 23800,
+          "avg_rent": 25324,
+          "count": 617
+        },
+        "2025": {
+          "median_rent": 23000,
+          "avg_rent": 23449,
+          "count": 1038
+        }
+      },
+      "貢寮區": {},
+      "金山區": {
+        "2022": {
+          "median_rent": 8400,
+          "avg_rent": 8133,
+          "count": 3
+        },
+        "2023": {
+          "median_rent": 10500,
+          "avg_rent": 12375,
+          "count": 8
+        },
+        "2024": {
+          "median_rent": 10000,
+          "avg_rent": 10538,
+          "count": 13
+        },
+        "2025": {
+          "median_rent": 11500,
+          "avg_rent": 10463,
+          "count": 41
+        }
+      },
+      "雙溪區": {},
+      "鶯歌區": {
+        "2022": {
+          "median_rent": 16850,
+          "avg_rent": 16933,
+          "count": 24
+        },
+        "2023": {
+          "median_rent": 17687,
+          "avg_rent": 19179,
+          "count": 220
+        },
+        "2024": {
+          "median_rent": 16600,
+          "avg_rent": 17241,
+          "count": 422
+        },
+        "2025": {
+          "median_rent": 17850,
+          "avg_rent": 18296,
+          "count": 700
+        }
+      }
+    }
+  },
+  "新竹縣": {
+    "city_trend": {
+      "2022": {
+        "median_rent": 22000,
+        "avg_rent": 37499,
+        "count": 92
+      },
+      "2023": {
+        "median_rent": 21000,
+        "avg_rent": 29824,
+        "count": 580
+      },
+      "2024": {
+        "median_rent": 20000,
+        "avg_rent": 30507,
+        "count": 864
+      },
+      "2025": {
+        "median_rent": 19000,
+        "avg_rent": 25963,
+        "count": 1018
+      }
+    },
+    "districts": {
+      "北埔鄉": {},
+      "寶山鄉": {
+        "2023": {
+          "median_rent": 19990,
+          "avg_rent": 20038,
+          "count": 5
+        },
+        "2024": {
+          "median_rent": 22250,
+          "avg_rent": 28021,
+          "count": 18
+        },
+        "2025": {
+          "median_rent": 19500,
+          "avg_rent": 23338,
+          "count": 6
+        }
+      },
+      "新埔鎮": {
+        "2022": {
+          "median_rent": 12000,
+          "avg_rent": 12000,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 18500,
+          "avg_rent": 23000,
+          "count": 10
+        },
+        "2024": {
+          "median_rent": 15350,
+          "avg_rent": 18550,
+          "count": 4
+        },
+        "2025": {
+          "median_rent": 23000,
+          "avg_rent": 24852,
+          "count": 22
+        }
+      },
+      "新豐鄉": {
+        "2022": {
+          "median_rent": 8500,
+          "avg_rent": 12366,
+          "count": 6
+        },
+        "2023": {
+          "median_rent": 17000,
+          "avg_rent": 19541,
+          "count": 34
+        },
+        "2024": {
+          "median_rent": 16000,
+          "avg_rent": 16669,
+          "count": 95
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 15616,
+          "count": 127
+        }
+      },
+      "湖口鄉": {
+        "2022": {
+          "median_rent": 15000,
+          "avg_rent": 17606,
+          "count": 15
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 17589,
+          "count": 92
+        },
+        "2024": {
+          "median_rent": 16000,
+          "avg_rent": 17477,
+          "count": 118
+        },
+        "2025": {
+          "median_rent": 16000,
+          "avg_rent": 17369,
+          "count": 183
+        }
+      },
+      "竹北市": {
+        "2022": {
+          "median_rent": 28750,
+          "avg_rent": 51113,
+          "count": 56
+        },
+        "2023": {
+          "median_rent": 26000,
+          "avg_rent": 36215,
+          "count": 374
+        },
+        "2024": {
+          "median_rent": 26000,
+          "avg_rent": 39423,
+          "count": 503
+        },
+        "2025": {
+          "median_rent": 23000,
+          "avg_rent": 32754,
+          "count": 542
+        }
+      },
+      "竹東鎮": {
+        "2022": {
+          "median_rent": 15000,
+          "avg_rent": 16845,
+          "count": 11
+        },
+        "2023": {
+          "median_rent": 15500,
+          "avg_rent": 17706,
+          "count": 60
+        },
+        "2024": {
+          "median_rent": 15700,
+          "avg_rent": 17571,
+          "count": 103
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 18891,
+          "count": 113
+        }
+      },
+      "芎林鄉": {
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 14000,
+          "count": 3
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 19542,
+          "count": 7
+        },
+        "2025": {
+          "median_rent": 17000,
+          "avg_rent": 23166,
+          "count": 6
+        }
+      },
+      "關西鎮": {
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 18000,
+          "count": 2
+        },
+        "2024": {
+          "median_rent": 25000,
+          "avg_rent": 22322,
+          "count": 16
+        },
+        "2025": {
+          "median_rent": 35000,
+          "avg_rent": 29555,
+          "count": 18
+        }
+      }
+    }
+  },
+  "桃園市": {
+    "city_trend": {
+      "2020": {
+        "median_rent": 14400,
+        "avg_rent": 14400,
+        "count": 1
+      },
+      "2021": {
+        "median_rent": 14000,
+        "avg_rent": 13762,
+        "count": 221
+      },
+      "2022": {
+        "median_rent": 15000,
+        "avg_rent": 16560,
+        "count": 1785
+      },
+      "2023": {
+        "median_rent": 15000,
+        "avg_rent": 17550,
+        "count": 10418
+      },
+      "2024": {
+        "median_rent": 15000,
+        "avg_rent": 16263,
+        "count": 18579
+      },
+      "2025": {
+        "median_rent": 15000,
+        "avg_rent": 16135,
+        "count": 30972
+      }
+    },
+    "districts": {
+      "中壢區": {
+        "2021": {
+          "median_rent": 11000,
+          "avg_rent": 11328,
+          "count": 46
+        },
+        "2022": {
+          "median_rent": 13500,
+          "avg_rent": 14675,
+          "count": 492
+        },
+        "2023": {
+          "median_rent": 14500,
+          "avg_rent": 16324,
+          "count": 2514
+        },
+        "2024": {
+          "median_rent": 14500,
+          "avg_rent": 15157,
+          "count": 4331
+        },
+        "2025": {
+          "median_rent": 14500,
+          "avg_rent": 14920,
+          "count": 7267
+        }
+      },
+      "八德區": {
+        "2021": {
+          "median_rent": 15000,
+          "avg_rent": 15000,
+          "count": 3
+        },
+        "2022": {
+          "median_rent": 16000,
+          "avg_rent": 17323,
+          "count": 163
+        },
+        "2023": {
+          "median_rent": 17000,
+          "avg_rent": 18318,
+          "count": 990
+        },
+        "2024": {
+          "median_rent": 16500,
+          "avg_rent": 17337,
+          "count": 1713
+        },
+        "2025": {
+          "median_rent": 17000,
+          "avg_rent": 17361,
+          "count": 2863
+        }
+      },
+      "大園區": {
+        "2021": {
+          "median_rent": 14750,
+          "avg_rent": 15800,
+          "count": 6
+        },
+        "2022": {
+          "median_rent": 16000,
+          "avg_rent": 19640,
+          "count": 57
+        },
+        "2023": {
+          "median_rent": 15700,
+          "avg_rent": 19121,
+          "count": 336
+        },
+        "2024": {
+          "median_rent": 16000,
+          "avg_rent": 18504,
+          "count": 637
+        },
+        "2025": {
+          "median_rent": 16500,
+          "avg_rent": 17953,
+          "count": 980
+        }
+      },
+      "大溪區": {
+        "2021": {
+          "median_rent": 14000,
+          "avg_rent": 16666,
+          "count": 3
+        },
+        "2022": {
+          "median_rent": 13000,
+          "avg_rent": 13100,
+          "count": 28
+        },
+        "2023": {
+          "median_rent": 13250,
+          "avg_rent": 15880,
+          "count": 220
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 14193,
+          "count": 445
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 13973,
+          "count": 760
+        }
+      },
+      "平鎮區": {
+        "2021": {
+          "median_rent": 13500,
+          "avg_rent": 12924,
+          "count": 29
+        },
+        "2022": {
+          "median_rent": 13500,
+          "avg_rent": 13693,
+          "count": 147
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 15562,
+          "count": 793
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 15244,
+          "count": 1382
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 15236,
+          "count": 2373
+        }
+      },
+      "新屋區": {
+        "2022": {
+          "median_rent": 15000,
+          "avg_rent": 14188,
+          "count": 9
+        },
+        "2023": {
+          "median_rent": 15500,
+          "avg_rent": 22141,
+          "count": 43
+        },
+        "2024": {
+          "median_rent": 15400,
+          "avg_rent": 18970,
+          "count": 69
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 16213,
+          "count": 112
+        }
+      },
+      "桃園區": {
+        "2021": {
+          "median_rent": 15300,
+          "avg_rent": 14997,
+          "count": 91
+        },
+        "2022": {
+          "median_rent": 16450,
+          "avg_rent": 19187,
+          "count": 368
+        },
+        "2023": {
+          "median_rent": 16000,
+          "avg_rent": 18794,
+          "count": 2469
+        },
+        "2024": {
+          "median_rent": 16000,
+          "avg_rent": 17445,
+          "count": 4526
+        },
+        "2025": {
+          "median_rent": 16000,
+          "avg_rent": 17465,
+          "count": 7303
+        }
+      },
+      "楊梅區": {
+        "2021": {
+          "median_rent": 12300,
+          "avg_rent": 12916,
+          "count": 18
+        },
+        "2022": {
+          "median_rent": 14000,
+          "avg_rent": 13619,
+          "count": 166
+        },
+        "2023": {
+          "median_rent": 14000,
+          "avg_rent": 14673,
+          "count": 888
+        },
+        "2024": {
+          "median_rent": 14300,
+          "avg_rent": 14434,
+          "count": 1312
+        },
+        "2025": {
+          "median_rent": 14500,
+          "avg_rent": 14532,
+          "count": 2261
+        }
+      },
+      "蘆竹區": {
+        "2021": {
+          "median_rent": 21460,
+          "avg_rent": 18192,
+          "count": 5
+        },
+        "2022": {
+          "median_rent": 16500,
+          "avg_rent": 21215,
+          "count": 84
+        },
+        "2023": {
+          "median_rent": 16500,
+          "avg_rent": 20554,
+          "count": 550
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 17331,
+          "count": 1061
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 17118,
+          "count": 1786
+        }
+      },
+      "觀音區": {
+        "2021": {
+          "median_rent": 12000,
+          "avg_rent": 11625,
+          "count": 8
+        },
+        "2022": {
+          "median_rent": 15000,
+          "avg_rent": 15354,
+          "count": 86
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 15859,
+          "count": 432
+        },
+        "2024": {
+          "median_rent": 14700,
+          "avg_rent": 14570,
+          "count": 894
+        },
+        "2025": {
+          "median_rent": 14800,
+          "avg_rent": 14547,
+          "count": 1601
+        }
+      },
+      "龍潭區": {
+        "2021": {
+          "median_rent": 13500,
+          "avg_rent": 13500,
+          "count": 2
+        },
+        "2022": {
+          "median_rent": 12250,
+          "avg_rent": 15260,
+          "count": 40
+        },
+        "2023": {
+          "median_rent": 13000,
+          "avg_rent": 15276,
+          "count": 323
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 14328,
+          "count": 611
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 13743,
+          "count": 1119
+        }
+      },
+      "龜山區": {
+        "2021": {
+          "median_rent": 14500,
+          "avg_rent": 14760,
+          "count": 10
+        },
+        "2022": {
+          "median_rent": 18000,
+          "avg_rent": 19692,
+          "count": 145
+        },
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 20856,
+          "count": 860
+        },
+        "2024": {
+          "median_rent": 16000,
+          "avg_rent": 17687,
+          "count": 1598
+        },
+        "2025": {
+          "median_rent": 17000,
+          "avg_rent": 17977,
+          "count": 2547
+        }
+      }
+    }
+  },
+  "澎湖縣": {
+    "city_trend": {
+      "2022": {
+        "median_rent": 33565,
+        "avg_rent": 29313,
+        "count": 5
+      },
+      "2023": {
+        "median_rent": 15000,
+        "avg_rent": 21682,
+        "count": 31
+      },
+      "2024": {
+        "median_rent": 11750,
+        "avg_rent": 13568,
+        "count": 82
+      },
+      "2025": {
+        "median_rent": 10000,
+        "avg_rent": 12413,
+        "count": 246
+      }
+    },
+    "districts": {
+      "卑南鄉": {
+        "2024": {
+          "median_rent": 11000,
+          "avg_rent": 11000,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 7250,
+          "avg_rent": 9557,
+          "count": 14
+        }
+      },
+      "台東市": {
+        "2022": {
+          "median_rent": 33565,
+          "avg_rent": 29313,
+          "count": 5
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 21871,
+          "count": 30
+        },
+        "2024": {
+          "median_rent": 11500,
+          "avg_rent": 13615,
+          "count": 79
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 12601,
+          "count": 226
+        }
+      },
+      "大武鄉": {},
+      "太麻里鄉": {
+        "2025": {
+          "median_rent": 16950,
+          "avg_rent": 16950,
+          "count": 2
+        }
+      },
+      "成功鎮": {
+        "2025": {
+          "median_rent": 12500,
+          "avg_rent": 12500,
+          "count": 2
+        }
+      },
+      "東河鄉": {},
+      "關山鎮": {}
+    }
+  },
+  "臺東縣": {
+    "city_trend": {
+      "2013": {
+        "median_rent": 8000,
+        "avg_rent": 8000,
+        "count": 1
+      },
+      "2022": {
+        "median_rent": 13000,
+        "avg_rent": 16518,
+        "count": 59
+      },
+      "2023": {
+        "median_rent": 14250,
+        "avg_rent": 16819,
+        "count": 492
+      },
+      "2024": {
+        "median_rent": 13500,
+        "avg_rent": 15631,
+        "count": 685
+      },
+      "2025": {
+        "median_rent": 12500,
+        "avg_rent": 14335,
+        "count": 865
+      }
+    },
+    "districts": {
+      "光復鄉": {
+        "2024": {
+          "median_rent": 24500,
+          "avg_rent": 24500,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 16878,
+          "avg_rent": 16878,
+          "count": 2
+        }
+      },
+      "吉安鄉": {
+        "2022": {
+          "median_rent": 12500,
+          "avg_rent": 13611,
+          "count": 9
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 16963,
+          "count": 112
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 17257,
+          "count": 126
+        },
+        "2025": {
+          "median_rent": 13500,
+          "avg_rent": 15363,
+          "count": 188
+        }
+      },
+      "壽豐鄉": {
+        "2022": {
+          "median_rent": 21750,
+          "avg_rent": 21750,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 25000,
+          "avg_rent": 30975,
+          "count": 8
+        },
+        "2024": {
+          "median_rent": 14000,
+          "avg_rent": 13113,
+          "count": 14
+        },
+        "2025": {
+          "median_rent": 8900,
+          "avg_rent": 10557,
+          "count": 38
+        }
+      },
+      "富里鄉": {},
+      "新城鄉": {
+        "2022": {
+          "median_rent": 18000,
+          "avg_rent": 18000,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 13000,
+          "avg_rent": 13703,
+          "count": 26
+        },
+        "2024": {
+          "median_rent": 11600,
+          "avg_rent": 12310,
+          "count": 32
+        },
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 14802,
+          "count": 43
+        }
+      },
+      "玉里鎮": {
+        "2024": {
+          "median_rent": 12500,
+          "avg_rent": 12500,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 15500,
+          "avg_rent": 16424,
+          "count": 8
+        }
+      },
+      "瑞穗鄉": {
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 11600,
+          "count": 5
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 12400,
+          "count": 5
+        }
+      },
+      "花蓮市": {
+        "2022": {
+          "median_rent": 13000,
+          "avg_rent": 16795,
+          "count": 46
+        },
+        "2023": {
+          "median_rent": 14000,
+          "avg_rent": 16640,
+          "count": 342
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 15542,
+          "count": 502
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 14203,
+          "count": 579
+        }
+      },
+      "萬榮鄉": {},
+      "鳳林鎮": {}
+    }
+  },
+  "花蓮縣": {
+    "city_trend": {
+      "2021": {
+        "median_rent": 55000,
+        "avg_rent": 55000,
+        "count": 1
+      },
+      "2022": {
+        "median_rent": 3500,
+        "avg_rent": 8887,
+        "count": 63
+      },
+      "2023": {
+        "median_rent": 5000,
+        "avg_rent": 9534,
+        "count": 612
+      },
+      "2024": {
+        "median_rent": 6500,
+        "avg_rent": 11852,
+        "count": 678
+      },
+      "2025": {
+        "median_rent": 6000,
+        "avg_rent": 9566,
+        "count": 1214
+      }
+    },
+    "districts": {
+      "九如鄉": {
+        "2024": {
+          "median_rent": 12500,
+          "avg_rent": 12500,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 12500,
+          "avg_rent": 12500,
+          "count": 2
+        }
+      },
+      "佳冬鄉": {},
+      "內埔鄉": {
+        "2022": {
+          "median_rent": 3200,
+          "avg_rent": 3868,
+          "count": 32
+        },
+        "2023": {
+          "median_rent": 3500,
+          "avg_rent": 4625,
+          "count": 314
+        },
+        "2024": {
+          "median_rent": 5500,
+          "avg_rent": 6824,
+          "count": 238
+        },
+        "2025": {
+          "median_rent": 5000,
+          "avg_rent": 5586,
+          "count": 490
+        }
+      },
+      "屏東市": {
+        "2022": {
+          "median_rent": 4150,
+          "avg_rent": 12680,
+          "count": 26
+        },
+        "2023": {
+          "median_rent": 8250,
+          "avg_rent": 12806,
+          "count": 200
+        },
+        "2024": {
+          "median_rent": 9500,
+          "avg_rent": 13274,
+          "count": 315
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 11524,
+          "count": 486
+        }
+      },
+      "崁頂鄉": {
+        "2025": {
+          "median_rent": 10250,
+          "avg_rent": 10250,
+          "count": 2
+        }
+      },
+      "恆春鎮": {
+        "2024": {
+          "median_rent": 5000,
+          "avg_rent": 8400,
+          "count": 5
+        },
+        "2025": {
+          "median_rent": 11250,
+          "avg_rent": 11375,
+          "count": 8
+        }
+      },
+      "新園鄉": {
+        "2023": {
+          "median_rent": 27100,
+          "avg_rent": 30800,
+          "count": 4
+        },
+        "2025": {
+          "median_rent": 14000,
+          "avg_rent": 13250,
+          "count": 4
+        }
+      },
+      "新埤鄉": {
+        "2025": {
+          "median_rent": 8500,
+          "avg_rent": 10000,
+          "count": 3
+        }
+      },
+      "東港鎮": {
+        "2023": {
+          "median_rent": 16500,
+          "avg_rent": 23095,
+          "count": 23
+        },
+        "2024": {
+          "median_rent": 22000,
+          "avg_rent": 35841,
+          "count": 17
+        },
+        "2025": {
+          "median_rent": 14000,
+          "avg_rent": 14725,
+          "count": 25
+        }
+      },
+      "枋寮鄉": {
+        "2023": {
+          "median_rent": 12000,
+          "avg_rent": 44666,
+          "count": 3
+        },
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 17000,
+          "count": 3
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 10100,
+          "count": 5
+        }
+      },
+      "枋山鄉": {},
+      "林邊鄉": {
+        "2023": {
+          "median_rent": 15500,
+          "avg_rent": 15500,
+          "count": 2
+        }
+      },
+      "潮州鎮": {
+        "2022": {
+          "median_rent": 15944,
+          "avg_rent": 15944,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 21148,
+          "count": 25
+        },
+        "2024": {
+          "median_rent": 13700,
+          "avg_rent": 16993,
+          "count": 61
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 15369,
+          "count": 81
+        }
+      },
+      "獅子鄉": {},
+      "琉球鄉": {},
+      "竹田鄉": {
+        "2023": {
+          "median_rent": 13500,
+          "avg_rent": 15500,
+          "count": 3
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 39700,
+          "count": 5
+        }
+      },
+      "萬丹鄉": {
+        "2023": {
+          "median_rent": 45000,
+          "avg_rent": 51000,
+          "count": 3
+        },
+        "2024": {
+          "median_rent": 17200,
+          "avg_rent": 20687,
+          "count": 8
+        },
+        "2025": {
+          "median_rent": 14800,
+          "avg_rent": 17846,
+          "count": 21
+        }
+      },
+      "萬巒鄉": {},
+      "里港鄉": {
+        "2025": {
+          "median_rent": 19000,
+          "avg_rent": 19363,
+          "count": 11
+        }
+      },
+      "長治鄉": {
+        "2023": {
+          "median_rent": 4175,
+          "avg_rent": 7241,
+          "count": 30
+        },
+        "2024": {
+          "median_rent": 6500,
+          "avg_rent": 8947,
+          "count": 17
+        },
+        "2025": {
+          "median_rent": 4325,
+          "avg_rent": 6461,
+          "count": 58
+        }
+      },
+      "高樹鄉": {},
+      "鹽埔鄉": {
+        "2024": {
+          "median_rent": 10000,
+          "avg_rent": 10166,
+          "count": 3
+        }
+      },
+      "麟洛鄉": {
+        "2025": {
+          "median_rent": 14500,
+          "avg_rent": 13333,
+          "count": 6
+        }
+      }
+    }
+  },
+  "苗栗縣": {
+    "city_trend": {
+      "2020": {
+        "median_rent": 5000,
+        "avg_rent": 5000,
+        "count": 1
+      },
+      "2022": {
+        "median_rent": 13000,
+        "avg_rent": 14973,
+        "count": 47
+      },
+      "2023": {
+        "median_rent": 12500,
+        "avg_rent": 14384,
+        "count": 275
+      },
+      "2024": {
+        "median_rent": 13000,
+        "avg_rent": 14433,
+        "count": 564
+      },
+      "2025": {
+        "median_rent": 14000,
+        "avg_rent": 14139,
+        "count": 815
+      }
+    },
+    "districts": {
+      "三義鄉": {},
+      "公館鄉": {
+        "2024": {
+          "median_rent": 16000,
+          "avg_rent": 19600,
+          "count": 5
+        },
+        "2025": {
+          "median_rent": 13400,
+          "avg_rent": 15466,
+          "count": 3
+        }
+      },
+      "大湖鄉": {
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 9533,
+          "count": 3
+        }
+      },
+      "後龍鎮": {
+        "2022": {
+          "median_rent": 10500,
+          "avg_rent": 10500,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 13000,
+          "avg_rent": 14907,
+          "count": 13
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 15286,
+          "count": 15
+        },
+        "2025": {
+          "median_rent": 15500,
+          "avg_rent": 16818,
+          "count": 22
+        }
+      },
+      "竹南鎮": {
+        "2022": {
+          "median_rent": 15000,
+          "avg_rent": 16700,
+          "count": 23
+        },
+        "2023": {
+          "median_rent": 14000,
+          "avg_rent": 15805,
+          "count": 133
+        },
+        "2024": {
+          "median_rent": 14050,
+          "avg_rent": 15460,
+          "count": 210
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 14606,
+          "count": 326
+        }
+      },
+      "苑裡鎮": {
+        "2023": {
+          "median_rent": 17000,
+          "avg_rent": 17000,
+          "count": 2
+        },
+        "2024": {
+          "median_rent": 17250,
+          "avg_rent": 17250,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 14375,
+          "count": 8
+        }
+      },
+      "苗栗市": {
+        "2022": {
+          "median_rent": 12500,
+          "avg_rent": 11575,
+          "count": 4
+        },
+        "2023": {
+          "median_rent": 10800,
+          "avg_rent": 10775,
+          "count": 43
+        },
+        "2024": {
+          "median_rent": 7000,
+          "avg_rent": 10558,
+          "count": 99
+        },
+        "2025": {
+          "median_rent": 8500,
+          "avg_rent": 10020,
+          "count": 148
+        }
+      },
+      "通霄鎮": {},
+      "造橋鄉": {
+        "2022": {
+          "median_rent": 3400,
+          "avg_rent": 3375,
+          "count": 4
+        },
+        "2023": {
+          "median_rent": 3200,
+          "avg_rent": 3271,
+          "count": 33
+        },
+        "2024": {
+          "median_rent": 3500,
+          "avg_rent": 3332,
+          "count": 49
+        },
+        "2025": {
+          "median_rent": 3500,
+          "avg_rent": 4646,
+          "count": 47
+        }
+      },
+      "銅鑼鄉": {
+        "2024": {
+          "median_rent": 14500,
+          "avg_rent": 13537,
+          "count": 8
+        },
+        "2025": {
+          "median_rent": 14000,
+          "avg_rent": 14037,
+          "count": 8
+        }
+      },
+      "頭份市": {
+        "2022": {
+          "median_rent": 14250,
+          "avg_rent": 17450,
+          "count": 13
+        },
+        "2023": {
+          "median_rent": 16000,
+          "avg_rent": 20981,
+          "count": 49
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 18376,
+          "count": 172
+        },
+        "2025": {
+          "median_rent": 16000,
+          "avg_rent": 17580,
+          "count": 249
+        }
+      },
+      "頭屋鄉": {
+        "2024": {
+          "median_rent": 11500,
+          "avg_rent": 11500,
+          "count": 2
+        }
+      }
+    }
+  },
+  "連江縣": {
+    "city_trend": {
+      "2023": {
+        "median_rent": 9500,
+        "avg_rent": 14053,
+        "count": 13
+      },
+      "2024": {
+        "median_rent": 10000,
+        "avg_rent": 13900,
+        "count": 31
+      },
+      "2025": {
+        "median_rent": 8100,
+        "avg_rent": 9985,
+        "count": 78
+      }
+    },
+    "districts": {
+      "湖西鄉": {},
+      "馬公市": {
+        "2023": {
+          "median_rent": 9250,
+          "avg_rent": 12725,
+          "count": 12
+        },
+        "2024": {
+          "median_rent": 10000,
+          "avg_rent": 13900,
+          "count": 31
+        },
+        "2025": {
+          "median_rent": 8100,
+          "avg_rent": 9985,
+          "count": 78
+        }
+      }
+    }
+  },
+  "金門縣": {
+    "city_trend": {
+      "2023": {
+        "median_rent": 29000,
+        "avg_rent": 63625,
+        "count": 4
+      },
+      "2024": {
+        "median_rent": 12500,
+        "avg_rent": 16100,
+        "count": 5
+      },
+      "2025": {
+        "median_rent": 10500,
+        "avg_rent": 10833,
+        "count": 12
+      }
+    },
+    "districts": {
+      "金城鎮": {
+        "2023": {
+          "median_rent": 19250,
+          "avg_rent": 19250,
+          "count": 2
+        },
+        "2024": {
+          "median_rent": 10750,
+          "avg_rent": 10125,
+          "count": 4
+        },
+        "2025": {
+          "median_rent": 9000,
+          "avg_rent": 10400,
+          "count": 5
+        }
+      },
+      "金寧鄉": {
+        "2025": {
+          "median_rent": 13000,
+          "avg_rent": 12100,
+          "count": 5
+        }
+      },
+      "金沙鎮": {},
+      "金湖鎮": {}
+    }
+  },
+  "雲林縣": {
+    "city_trend": {
+      "2022": {
+        "median_rent": 16000,
+        "avg_rent": 19006,
+        "count": 75
+      },
+      "2023": {
+        "median_rent": 16200,
+        "avg_rent": 21868,
+        "count": 392
+      },
+      "2024": {
+        "median_rent": 16500,
+        "avg_rent": 22835,
+        "count": 851
+      },
+      "2025": {
+        "median_rent": 15000,
+        "avg_rent": 19816,
+        "count": 1143
+      }
+    },
+    "districts": {
+      "新竹市": {
+        "2022": {
+          "median_rent": 16000,
+          "avg_rent": 19006,
+          "count": 75
+        },
+        "2023": {
+          "median_rent": 16200,
+          "avg_rent": 21868,
+          "count": 392
+        },
+        "2024": {
+          "median_rent": 16500,
+          "avg_rent": 22835,
+          "count": 851
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 19816,
+          "count": 1143
+        }
+      }
+    }
+  },
+  "高雄市": {
+    "city_trend": {
+      "2013": {
+        "median_rent": 15000,
+        "avg_rent": 15000,
+        "count": 1
+      },
+      "2016": {
+        "median_rent": 23000,
+        "avg_rent": 23000,
+        "count": 1
+      },
+      "2021": {
+        "median_rent": 32000,
+        "avg_rent": 32000,
+        "count": 1
+      },
+      "2022": {
+        "median_rent": 18000,
+        "avg_rent": 22713,
+        "count": 1098
+      },
+      "2023": {
+        "median_rent": 17500,
+        "avg_rent": 21777,
+        "count": 8014
+      },
+      "2024": {
+        "median_rent": 16000,
+        "avg_rent": 20040,
+        "count": 12062
+      },
+      "2025": {
+        "median_rent": 15000,
+        "avg_rent": 17588,
+        "count": 18737
+      }
+    },
+    "districts": {
+      "三民區": {
+        "2022": {
+          "median_rent": 16000,
+          "avg_rent": 21238,
+          "count": 178
+        },
+        "2023": {
+          "median_rent": 16000,
+          "avg_rent": 19660,
+          "count": 1328
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 18098,
+          "count": 1954
+        },
+        "2025": {
+          "median_rent": 13450,
+          "avg_rent": 15805,
+          "count": 3094
+        }
+      },
+      "仁武區": {
+        "2022": {
+          "median_rent": 25000,
+          "avg_rent": 36819,
+          "count": 28
+        },
+        "2023": {
+          "median_rent": 22000,
+          "avg_rent": 28183,
+          "count": 187
+        },
+        "2024": {
+          "median_rent": 23000,
+          "avg_rent": 27970,
+          "count": 270
+        },
+        "2025": {
+          "median_rent": 20500,
+          "avg_rent": 24081,
+          "count": 393
+        }
+      },
+      "六龜區": {},
+      "前金區": {
+        "2022": {
+          "median_rent": 22000,
+          "avg_rent": 21460,
+          "count": 33
+        },
+        "2023": {
+          "median_rent": 20000,
+          "avg_rent": 23407,
+          "count": 319
+        },
+        "2024": {
+          "median_rent": 18000,
+          "avg_rent": 21331,
+          "count": 367
+        },
+        "2025": {
+          "median_rent": 16000,
+          "avg_rent": 18133,
+          "count": 578
+        }
+      },
+      "前鎮區": {
+        "2022": {
+          "median_rent": 20000,
+          "avg_rent": 25664,
+          "count": 102
+        },
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 21980,
+          "count": 698
+        },
+        "2024": {
+          "median_rent": 16000,
+          "avg_rent": 21202,
+          "count": 844
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 18917,
+          "count": 1192
+        }
+      },
+      "大寮區": {
+        "2022": {
+          "median_rent": 8250,
+          "avg_rent": 18837,
+          "count": 24
+        },
+        "2023": {
+          "median_rent": 8750,
+          "avg_rent": 13030,
+          "count": 184
+        },
+        "2024": {
+          "median_rent": 13000,
+          "avg_rent": 14944,
+          "count": 226
+        },
+        "2025": {
+          "median_rent": 12500,
+          "avg_rent": 13418,
+          "count": 421
+        }
+      },
+      "大樹區": {
+        "2022": {
+          "median_rent": 42705,
+          "avg_rent": 42705,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 20950,
+          "avg_rent": 27463,
+          "count": 18
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 22620,
+          "count": 25
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 21183,
+          "count": 34
+        }
+      },
+      "大社區": {
+        "2022": {
+          "median_rent": 15500,
+          "avg_rent": 17700,
+          "count": 8
+        },
+        "2023": {
+          "median_rent": 8000,
+          "avg_rent": 11616,
+          "count": 53
+        },
+        "2024": {
+          "median_rent": 8000,
+          "avg_rent": 13551,
+          "count": 119
+        },
+        "2025": {
+          "median_rent": 8000,
+          "avg_rent": 13687,
+          "count": 227
+        }
+      },
+      "小港區": {
+        "2022": {
+          "median_rent": 17000,
+          "avg_rent": 20974,
+          "count": 27
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 18286,
+          "count": 176
+        },
+        "2024": {
+          "median_rent": 12500,
+          "avg_rent": 16360,
+          "count": 388
+        },
+        "2025": {
+          "median_rent": 11000,
+          "avg_rent": 13647,
+          "count": 772
+        }
+      },
+      "岡山區": {
+        "2022": {
+          "median_rent": 17000,
+          "avg_rent": 19333,
+          "count": 15
+        },
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 25543,
+          "count": 149
+        },
+        "2024": {
+          "median_rent": 18000,
+          "avg_rent": 24143,
+          "count": 202
+        },
+        "2025": {
+          "median_rent": 16500,
+          "avg_rent": 20544,
+          "count": 305
+        }
+      },
+      "左營區": {
+        "2022": {
+          "median_rent": 22000,
+          "avg_rent": 27502,
+          "count": 133
+        },
+        "2023": {
+          "median_rent": 20000,
+          "avg_rent": 26042,
+          "count": 893
+        },
+        "2024": {
+          "median_rent": 20000,
+          "avg_rent": 26061,
+          "count": 1237
+        },
+        "2025": {
+          "median_rent": 19220,
+          "avg_rent": 22898,
+          "count": 1691
+        }
+      },
+      "彌陀區": {
+        "2024": {
+          "median_rent": 10250,
+          "avg_rent": 11250,
+          "count": 4
+        },
+        "2025": {
+          "median_rent": 18000,
+          "avg_rent": 32071,
+          "count": 7
+        }
+      },
+      "新興區": {
+        "2022": {
+          "median_rent": 15900,
+          "avg_rent": 20374,
+          "count": 35
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 22989,
+          "count": 424
+        },
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 18808,
+          "count": 568
+        },
+        "2025": {
+          "median_rent": 12000,
+          "avg_rent": 17088,
+          "count": 972
+        }
+      },
+      "旗山區": {
+        "2023": {
+          "median_rent": 17250,
+          "avg_rent": 16125,
+          "count": 4
+        },
+        "2024": {
+          "median_rent": 9500,
+          "avg_rent": 9607,
+          "count": 14
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 15838,
+          "count": 18
+        }
+      },
+      "旗津區": {
+        "2023": {
+          "median_rent": 10500,
+          "avg_rent": 10500,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 14392,
+          "count": 14
+        }
+      },
+      "杉林區": {},
+      "林園區": {
+        "2022": {
+          "median_rent": 9250,
+          "avg_rent": 9250,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 11688,
+          "avg_rent": 12599,
+          "count": 27
+        },
+        "2024": {
+          "median_rent": 13084,
+          "avg_rent": 13962,
+          "count": 73
+        },
+        "2025": {
+          "median_rent": 12950,
+          "avg_rent": 12701,
+          "count": 124
+        }
+      },
+      "梓官區": {
+        "2023": {
+          "median_rent": 30000,
+          "avg_rent": 35778,
+          "count": 7
+        },
+        "2024": {
+          "median_rent": 15000,
+          "avg_rent": 23831,
+          "count": 23
+        },
+        "2025": {
+          "median_rent": 15000,
+          "avg_rent": 16626,
+          "count": 39
+        }
+      },
+      "楠梓區": {
+        "2022": {
+          "median_rent": 5500,
+          "avg_rent": 12437,
+          "count": 157
+        },
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 16548,
+          "count": 765
+        },
+        "2024": {
+          "median_rent": 15500,
+          "avg_rent": 17050,
+          "count": 1393
+        },
+        "2025": {
+          "median_rent": 16000,
+          "avg_rent": 16561,
+          "count": 2267
+        }
+      },
+      "橋頭區": {
+        "2022": {
+          "median_rent": 17500,
+          "avg_rent": 19250,
+          "count": 12
+        },
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 19884,
+          "count": 131
+        },
+        "2024": {
+          "median_rent": 19000,
+          "avg_rent": 21307,
+          "count": 267
+        },
+        "2025": {
+          "median_rent": 18000,
+          "avg_rent": 19420,
+          "count": 389
+        }
+      },
+      "永安區": {
+        "2023": {
+          "median_rent": 14000,
+          "avg_rent": 14000,
+          "count": 2
+        },
+        "2024": {
+          "median_rent": 19000,
+          "avg_rent": 28000,
+          "count": 3
+        },
+        "2025": {
+          "median_rent": 29500,
+          "avg_rent": 30000,
+          "count": 4
+        }
+      },
+      "湖內區": {
+        "2022": {
+          "median_rent": 6500,
+          "avg_rent": 14720,
+          "count": 5
+        },
+        "2023": {
+          "median_rent": 7050,
+          "avg_rent": 12944,
+          "count": 40
+        },
+        "2024": {
+          "median_rent": 6500,
+          "avg_rent": 9668,
+          "count": 82
+        },
+        "2025": {
+          "median_rent": 5800,
+          "avg_rent": 6628,
+          "count": 302
+        }
+      },
+      "燕巢區": {
+        "2022": {
+          "median_rent": 27900,
+          "avg_rent": 27900,
+          "count": 2
+        },
+        "2023": {
+          "median_rent": 5800,
+          "avg_rent": 12278,
+          "count": 46
+        },
+        "2024": {
+          "median_rent": 5800,
+          "avg_rent": 7962,
+          "count": 173
+        },
+        "2025": {
+          "median_rent": 6000,
+          "avg_rent": 9419,
+          "count": 341
+        }
+      },
+      "田寮區": {},
+      "甲仙區": {
+        "2024": {
+          "median_rent": 5000,
+          "avg_rent": 5000,
+          "count": 2
+        },
+        "2025": {
+          "median_rent": 5000,
+          "avg_rent": 5080,
+          "count": 5
+        }
+      },
+      "美濃區": {
+        "2023": {
+          "median_rent": 36500,
+          "avg_rent": 35750,
+          "count": 4
+        },
+        "2024": {
+          "median_rent": 25000,
+          "avg_rent": 21257,
+          "count": 7
+        },
+        "2025": {
+          "median_rent": 11000,
+          "avg_rent": 10381,
+          "count": 11
+        }
+      },
+      "苓雅區": {
+        "2022": {
+          "median_rent": 18000,
+          "avg_rent": 22161,
+          "count": 114
+        },
+        "2023": {
+          "median_rent": 16000,
+          "avg_rent": 21035,
+          "count": 932
+        },
+        "2024": {
+          "median_rent": 15500,
+          "avg_rent": 18749,
+          "count": 1391
+        },
+        "2025": {
+          "median_rent": 14600,
+          "avg_rent": 16621,
+          "count": 1870
+        }
+      },
+      "茄萣區": {
+        "2023": {
+          "median_rent": 12500,
+          "avg_rent": 14500,
+          "count": 3
+        },
+        "2024": {
+          "median_rent": 12000,
+          "avg_rent": 14788,
+          "count": 17
+        },
+        "2025": {
+          "median_rent": 10500,
+          "avg_rent": 13062,
+          "count": 24
+        }
+      },
+      "路竹區": {
+        "2022": {
+          "median_rent": 29600,
+          "avg_rent": 28244,
+          "count": 3
+        },
+        "2023": {
+          "median_rent": 22000,
+          "avg_rent": 27227,
+          "count": 31
+        },
+        "2024": {
+          "median_rent": 19400,
+          "avg_rent": 29659,
+          "count": 56
+        },
+        "2025": {
+          "median_rent": 17000,
+          "avg_rent": 22621,
+          "count": 44
+        }
+      },
+      "阿蓮區": {
+        "2023": {
+          "median_rent": 15000,
+          "avg_rent": 19357,
+          "count": 7
+        },
+        "2024": {
+          "median_rent": 12500,
+          "avg_rent": 12414,
+          "count": 7
+        },
+        "2025": {
+          "median_rent": 11750,
+          "avg_rent": 12164,
+          "count": 14
+        }
+      },
+      "鳥松區": {
+        "2022": {
+          "median_rent": 8500,
+          "avg_rent": 26500,
+          "count": 19
+        },
+        "2023": {
+          "median_rent": 13800,
+          "avg_rent": 22761,
+          "count": 88
+        },
+        "2024": {
+          "median_rent": 11000,
+          "avg_rent": 18302,
+          "count": 101
+        },
+        "2025": {
+          "median_rent": 10000,
+          "avg_rent": 14160,
+          "count": 196
+        }
+      },
+      "鳳山區": {
+        "2022": {
+          "median_rent": 18000,
+          "avg_rent": 23810,
+          "count": 103
+        },
+        "2023": {
+          "median_rent": 18000,
+          "avg_rent": 22744,
+          "count": 740
+        },
+        "2024": {
+          "median_rent": 17000,
+          "avg_rent": 19827,
+          "count": 1153
+        },
+        "2025": {
+          "median_rent": 16000,
+          "avg_rent": 18305,
+          "count": 1795
+        }
+      },
+      "鹽埕區": {
+        "2022": {
+          "median_rent": 30000,
+          "avg_rent": 25166,
+          "count": 9
+        },
+        "2023": {
+          "median_rent": 8800,
+          "avg_rent": 15113,
+          "count": 149
+        },
+        "2024": {
+          "median_rent": 9000,
+          "avg_rent": 14126,
+          "count": 199
+        },
+        "2025": {
+          "median_rent": 8000,
+          "avg_rent": 10734,
+          "count": 311
+        }
+      },
+      "鼓山區": {
+        "2022": {
+          "median_rent": 22000,
+          "avg_rent": 32376,
+          "count": 85
+        },
+        "2023": {
+          "median_rent": 21165,
+          "avg_rent": 29409,
+          "count": 606
+        },
+        "2024": {
+          "median_rent": 20000,
+          "avg_rent": 26977,
+          "count": 896
+        },
+        "2025": {
+          "median_rent": 19500,
+          "avg_rent": 24591,
+          "count": 1280
+        }
+      }
+    }
+  }
+}

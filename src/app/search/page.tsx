@@ -4,7 +4,11 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import RentChart from "@/components/RentChart";
+import RentTrendChart from "@/components/RentTrendChart";
 import DistrictTable from "@/components/DistrictTable";
+import DistrictProfile from "@/components/DistrictProfile";
+import LiveabilityScore from "@/components/LiveabilityScore";
+import SafetyBadge from "@/components/SafetyBadge";
 import StatCard from "@/components/StatCard";
 import RoadTable from "@/components/RoadTable";
 import RoadSearch from "@/components/RoadSearch";
@@ -88,22 +92,30 @@ function SearchContent() {
 
   const [stats, setStats] = useState<Record<string, CityData>>({});
   const [cities, setCities] = useState<CityInfo[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [rentTrends, setRentTrends] = useState<Record<string, any>>({});
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [districtProfiles, setDistrictProfiles] = useState<Record<string, any>>({});
   const [selectedCity, setSelectedCity] = useState(city);
   const [selectedDistrict, setSelectedDistrict] = useState(district);
   const [selectedType, setSelectedType] = useState(roomType);
   const [selectedRoad, setSelectedRoad] = useState(road);
   const [selectedArea, setSelectedArea] = useState(area);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<"chart" | "map">("chart");
+  const [activeTab, setActiveTab] = useState<"chart" | "map" | "trend">("chart");
 
   useEffect(() => {
     Promise.all([
       fetch("/data/rental_stats.json").then((r) => r.json()),
       fetch("/data/cities.json").then((r) => r.json()),
+      fetch("/data/rent_trends.json").then((r) => r.json()).catch(() => ({})),
+      fetch("/data/district_profiles.json").then((r) => r.json()).catch(() => ({})),
     ])
-      .then(([statsData, citiesData]) => {
+      .then(([statsData, citiesData, trendsData, profilesData]) => {
         setStats(statsData);
         setCities(citiesData);
+        setRentTrends(trendsData);
+        setDistrictProfiles(profilesData);
         setLoading(false);
       })
       .catch(console.error);
@@ -362,12 +374,20 @@ function SearchContent() {
       {city && cityData && (
         <>
           {/* Title */}
-          <h1 className="text-3xl font-bold text-gray-800 mb-6">
-            {city}
-            {district ? ` ${district}` : ""}
-            {road ? ` ${road}` : ""}
-            {roomType ? ` ${roomType}` : ""} 租金行情
-          </h1>
+          <div className="flex items-center gap-4 mb-6 flex-wrap">
+            <h1 className="text-3xl font-bold text-gray-800">
+              {city}
+              {district ? ` ${district}` : ""}
+              {road ? ` ${road}` : ""}
+              {roomType ? ` ${roomType}` : ""} 租金行情
+            </h1>
+            {district && districtProfiles[city]?.[district] && (
+              <SafetyBadge
+                score={districtProfiles[city][district].safety.score}
+                crimeRate={districtProfiles[city][district].safety.crime_rate_per_1000}
+              />
+            )}
+          </div>
 
           {/* Breadcrumb navigation */}
           <div className="flex items-center gap-2 text-sm text-gray-500 mb-6 flex-wrap">
@@ -499,7 +519,7 @@ function SearchContent() {
             </div>
           )}
 
-          {/* Chart / Map Toggle (city level) */}
+          {/* Chart / Map / Trend Toggle (city level) */}
           {!district && Object.keys(displayDistricts).length > 1 && (
             <div className="mb-4">
               <div className="flex border-b border-gray-200">
@@ -512,6 +532,16 @@ function SearchContent() {
                   }`}
                 >
                   📊 圖表
+                </button>
+                <button
+                  onClick={() => setActiveTab("trend")}
+                  className={`px-6 py-3 text-sm font-medium transition-colors cursor-pointer ${
+                    activeTab === "trend"
+                      ? "border-b-2 border-blue-600 text-blue-600"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  📈 趨勢
                 </button>
                 <button
                   onClick={() => setActiveTab("map")}
@@ -536,6 +566,19 @@ function SearchContent() {
               </div>
             )}
 
+          {/* Trend Chart (city level) */}
+          {!district &&
+            Object.keys(displayDistricts).length > 1 &&
+            activeTab === "trend" &&
+            rentTrends[city]?.city_trend && (
+              <div className="mb-8">
+                <RentTrendChart
+                  trends={rentTrends[city].city_trend}
+                  title={`${city} 歷年租金走勢`}
+                />
+              </div>
+            )}
+
           {/* Map */}
           {!district &&
             Object.keys(displayDistricts).length > 1 &&
@@ -556,6 +599,39 @@ function SearchContent() {
                 city={city}
                 districts={{ [district]: cityData.districts[district] }}
                 onDistrictClick={() => {}}
+              />
+            </div>
+          )}
+
+          {/* District Trend + Profile (when viewing a single district) */}
+          {singleDistrict && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+              {/* Rent Trend for this district */}
+              {rentTrends[city]?.districts?.[district] && (
+                <RentTrendChart
+                  trends={rentTrends[city].districts[district]}
+                  title={`${district} 歷年租金走勢`}
+                />
+              )}
+              {/* Livability Score */}
+              {districtProfiles[city]?.[district] && (
+                <LiveabilityScore
+                  overall={districtProfiles[city][district].overall_score}
+                  transport={districtProfiles[city][district].transport.score}
+                  livability={districtProfiles[city][district].livability.score}
+                  demographics={districtProfiles[city][district].demographics.score}
+                  safety={districtProfiles[city][district].safety.score}
+                />
+              )}
+            </div>
+          )}
+
+          {/* District Profile Card (full detail) */}
+          {singleDistrict && districtProfiles[city]?.[district] && (
+            <div className="mb-8">
+              <DistrictProfile
+                profile={districtProfiles[city][district]}
+                districtName={district}
               />
             </div>
           )}
