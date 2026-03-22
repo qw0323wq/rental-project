@@ -2,8 +2,9 @@ name: Update Rental Data
 
 on:
   schedule:
-    # 每週一 01:00 UTC（台灣時間 09:00）
-    - cron: '0 1 * * 1'
+    # 每月 2、12、22 日 01:00 UTC（台灣 09:00）
+    # 配合實價登錄每月 1/11/21 日更新，隔天抓取最新資料
+    - cron: '0 1 2,12,22 * *'
   workflow_dispatch:
     inputs:
       skip_591:
