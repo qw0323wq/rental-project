@@ -163,6 +163,8 @@ function SearchContent() {
   const [rentTrends, setRentTrends] = useState<Record<string, any>>({});
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [districtProfiles, setDistrictProfiles] = useState<Record<string, any>>({});
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [data591, setData591] = useState<Record<string, any> | null>(null);
   const [selectedCity, setSelectedCity] = useState(city);
   const [selectedDistrict, setSelectedDistrict] = useState(district);
   const [selectedType, setSelectedType] = useState(roomType);
@@ -180,12 +182,14 @@ function SearchContent() {
       fetch("/data/cities.json").then((r) => r.json()),
       fetch("/data/rent_trends.json").then((r) => r.json()).catch(() => ({})),
       fetch("/data/district_profiles.json").then((r) => r.json()).catch(() => ({})),
+      fetch("/data/rental_591.json").then((r) => r.json()).catch(() => null),
     ])
-      .then(([statsData, citiesData, trendsData, profilesData]) => {
+      .then(([statsData, citiesData, trendsData, profilesData, data591Result]) => {
         setStats(statsData);
         setCities(citiesData);
         setRentTrends(trendsData);
         setDistrictProfiles(profilesData);
+        setData591(data591Result);
         setLoading(false);
       })
       .catch(console.error);
@@ -653,6 +657,79 @@ function SearchContent() {
                   color="green"
                 />
               )}
+            </div>
+          )}
+
+          {/* 591 問價比較 */}
+          {summary && data591?.cities?.[city] && (
+            <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-4 mb-6">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-lg">📊</span>
+                <h3 className="font-bold text-gray-800">591 當前問價 vs 實價登錄成交價</h3>
+                <span className="text-xs text-gray-400 ml-auto">
+                  591 資料更新：{data591.crawl_date}
+                </span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="bg-white rounded-lg p-3 text-center">
+                  <div className="text-xs text-red-500 mb-1">591 問價中位數</div>
+                  <div className="text-lg font-bold text-red-600">
+                    ${data591.cities[city].median_rent?.toLocaleString()}
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-3 text-center">
+                  <div className="text-xs text-blue-500 mb-1">實價登錄成交中位數</div>
+                  <div className="text-lg font-bold text-blue-600">
+                    ${summary.median.toLocaleString()}
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-3 text-center">
+                  <div className="text-xs text-gray-500 mb-1">問價 vs 成交</div>
+                  <div className={`text-lg font-bold ${
+                    data591.cities[city].median_rent > summary.median
+                      ? "text-red-600"
+                      : "text-green-600"
+                  }`}>
+                    {data591.cities[city].median_rent > summary.median ? "+" : ""}
+                    {Math.round(((data591.cities[city].median_rent - summary.median) / summary.median) * 100)}%
+                  </div>
+                  <div className="text-xs text-gray-400">
+                    {data591.cities[city].median_rent > summary.median ? "問價高於成交" : "問價低於成交"}
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-3 text-center">
+                  <div className="text-xs text-gray-500 mb-1">591 物件數</div>
+                  <div className="text-lg font-bold text-orange-600">
+                    {data591.cities[city].total_count} 筆
+                  </div>
+                  <div className="text-xs text-gray-400">當前掛牌中</div>
+                </div>
+              </div>
+              {data591.cities[city].by_type && Object.keys(data591.cities[city].by_type).length > 0 && (
+                <div className="mt-3 pt-3 border-t border-orange-100">
+                  <div className="text-xs text-gray-500 mb-2">591 各類型問價中位數：</div>
+                  <div className="flex gap-2 flex-wrap">
+                    {Object.entries(data591.cities[city].by_type as Record<string, { median_rent: number; count: number }>)
+                      .filter(([type]) => type !== "未分類")
+                      .sort(([, a], [, b]) => b.count - a.count)
+                      .map(([type, typeStats]) => (
+                        <span
+                          key={type}
+                          className="bg-white px-3 py-1.5 rounded-full text-xs border border-orange-200"
+                        >
+                          {type}{" "}
+                          <span className="font-bold text-orange-600">
+                            ${typeStats.median_rent.toLocaleString()}
+                          </span>
+                          <span className="text-gray-400 ml-1">({typeStats.count})</span>
+                        </span>
+                      ))}
+                  </div>
+                </div>
+              )}
+              <p className="text-xs text-gray-400 mt-2">
+                * 591 為當前掛牌問價，實價登錄為過去成交價。問價通常高於成交價。
+              </p>
             </div>
           )}
 
