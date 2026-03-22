@@ -582,12 +582,26 @@ function SearchContent() {
           </div>
 
           {/* Summary Stats */}
-          {summary && (
+          {summary && (() => {
+            // 計算年度租金變化
+            const trendData = district
+              ? rentTrends[city]?.districts?.[district]
+              : rentTrends[city]?.city_trend;
+            const years = trendData ? Object.keys(trendData).sort() : [];
+            const latestYear = years.length >= 1 ? years[years.length - 1] : null;
+            const prevYear = years.length >= 2 ? years[years.length - 2] : null;
+            const yoyChange = latestYear && prevYear && trendData[prevYear]?.median_rent
+              ? Math.round(((trendData[latestYear].median_rent - trendData[prevYear].median_rent) / trendData[prevYear].median_rent) * 100)
+              : null;
+
+            return (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               <StatCard
                 label="中位數月租"
                 value={`$${summary.median.toLocaleString()}`}
-                sub="50% 的租金低於此價"
+                sub={yoyChange !== null
+                  ? `${yoyChange > 0 ? "↑" : yoyChange < 0 ? "↓" : "→"} 比${prevYear}年${yoyChange > 0 ? "漲" : yoyChange < 0 ? "跌" : "持平"} ${Math.abs(yoyChange)}%`
+                  : "50% 的租金低於此價"}
                 color="blue"
               />
               <StatCard
@@ -657,7 +671,8 @@ function SearchContent() {
                 />
               )}
             </div>
-          )}
+            );
+          })()}
 
           {/* 租屋網 問價比較 */}
           {summary && askingData?.cities?.[city] && (

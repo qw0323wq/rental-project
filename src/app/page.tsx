@@ -23,6 +23,7 @@ export default function HomePage() {
   const [selectedArea, setSelectedArea] = useState("");
   const [selectedFloor, setSelectedFloor] = useState("");
   const [selectedRent, setSelectedRent] = useState("");
+  const [showMoreFilters, setShowMoreFilters] = useState(false);
   const [districts, setDistricts] = useState<string[]>([]);
 
   const RENTAL_TYPES = [
@@ -186,6 +187,17 @@ export default function HomePage() {
                 ))}
               </select>
 
+            </div>
+
+            {/* 更多篩選（手機版收合）*/}
+            <button
+              type="button"
+              onClick={() => setShowMoreFilters(!showMoreFilters)}
+              className="w-full text-sm text-blue-600 hover:text-blue-800 py-1 mb-2 cursor-pointer sm:hidden"
+            >
+              {showMoreFilters ? "▲ 收合篩選" : "▼ 更多篩選（樓層・租金・坪數）"}
+            </button>
+            <div className={`grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3 ${showMoreFilters ? "" : "hidden sm:grid"}`}>
               <select
                 value={selectedFloor}
                 onChange={(e) => setSelectedFloor(e.target.value)}
@@ -255,7 +267,7 @@ export default function HomePage() {
           各縣市租金概覽
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {cities.map((city) => (
+          {[...cities].sort((a, b) => b.sample_count - a.sample_count).map((city) => (
             <button
               key={city.name}
               onClick={() => {
@@ -286,6 +298,42 @@ export default function HomePage() {
               </div>
             </button>
           ))}
+        </div>
+      </section>
+
+      {/* 社宅 & 包租代管快捷入口 */}
+      <section className="max-w-6xl mx-auto px-4 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <button
+            onClick={() => router.push("/search?city=台北市&district=中山區")}
+            className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5 text-left hover:shadow-md transition-all cursor-pointer"
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-2xl">🏘️</span>
+              <h3 className="font-bold text-lg text-gray-800">社宅租金查詢</h3>
+            </div>
+            <p className="text-sm text-gray-600">
+              查看各區社會住宅包租代管的實際租金，與市場行情比較
+            </p>
+            <div className="mt-2 text-xs text-blue-600 font-medium">
+              147,558 筆社宅實價資料 →
+            </div>
+          </button>
+          <button
+            onClick={() => router.push("/search?city=台北市&district=大安區")}
+            className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-5 text-left hover:shadow-md transition-all cursor-pointer"
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-2xl">💡</span>
+              <h3 className="font-bold text-lg text-gray-800">坪效分析工具</h3>
+            </div>
+            <p className="text-sm text-gray-600">
+              整層出租 vs 分租套房/雅房的收入比較，包租代管業者必看
+            </p>
+            <div className="mt-2 text-xs text-emerald-600 font-medium">
+              選擇區域即可查看坪效分析 →
+            </div>
+          </button>
         </div>
       </section>
 
