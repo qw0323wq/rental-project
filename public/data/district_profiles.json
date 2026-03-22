@@ -324,7 +324,14 @@
         "crime_rate_per_1000": 6.8,
         "score": 52.0
       },
-      "overall_score": 64.6
+      "overall_score": 64.6,
+      "vacancy_rate": 14.52,
+      "nearest_mrt": {
+        "station": "四維國小站",
+        "distance_km": 2.61,
+        "walk_minutes": 33,
+        "system": "台中捷運"
+      }
     },
     "北區": {
       "transport": {
@@ -353,7 +360,14 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 67.7
+      "overall_score": 67.7,
+      "vacancy_rate": 8.48,
+      "nearest_mrt": {
+        "station": "四維國小站",
+        "distance_km": 1.15,
+        "walk_minutes": 14,
+        "system": "台中捷運"
+      }
     },
     "北屯區": {
       "transport": {
@@ -382,7 +396,14 @@
         "crime_rate_per_1000": 5.2,
         "score": 68.0
       },
-      "overall_score": 68.1
+      "overall_score": 68.1,
+      "vacancy_rate": 9.25,
+      "nearest_mrt": {
+        "station": "北屯總站",
+        "distance_km": 0.06,
+        "walk_minutes": 1,
+        "system": "台中捷運"
+      }
     },
     "南區": {
       "transport": {
@@ -409,7 +430,8 @@
         "crime_rate_per_1000": 6.2,
         "score": 58.0
       },
-      "overall_score": 59.0
+      "overall_score": 59.0,
+      "vacancy_rate": 9.13
     },
     "南屯區": {
       "transport": {
@@ -438,7 +460,14 @@
         "crime_rate_per_1000": 4.8,
         "score": 72.0
       },
-      "overall_score": 68.8
+      "overall_score": 68.8,
+      "vacancy_rate": 9.78,
+      "nearest_mrt": {
+        "station": "南屯站",
+        "distance_km": 0.02,
+        "walk_minutes": 0,
+        "system": "台中捷運"
+      }
     },
     "后里區": {
       "transport": {
@@ -465,7 +494,8 @@
         "crime_rate_per_1000": 6.3,
         "score": 57.0
       },
-      "overall_score": 65.5
+      "overall_score": 65.5,
+      "vacancy_rate": 11.43
     },
     "外埔區": {
       "transport": {
@@ -492,7 +522,8 @@
         "crime_rate_per_1000": 4.9,
         "score": 71.0
       },
-      "overall_score": 59.6
+      "overall_score": 59.6,
+      "vacancy_rate": 12.47
     },
     "大安區": {
       "transport": {
@@ -519,7 +550,8 @@
         "crime_rate_per_1000": 4.9,
         "score": 71.0
       },
-      "overall_score": 59.6
+      "overall_score": 59.6,
+      "vacancy_rate": 13.72
     },
     "大甲區": {
       "transport": {
@@ -546,7 +578,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 49.4
+      "overall_score": 49.4,
+      "vacancy_rate": 10.25
     },
     "大肚區": {
       "transport": {
@@ -573,7 +606,8 @@
         "crime_rate_per_1000": 5.9,
         "score": 61.0
       },
-      "overall_score": 63.4
+      "overall_score": 63.4,
+      "vacancy_rate": 11.92
     },
     "大里區": {
       "transport": {
@@ -600,7 +634,8 @@
         "crime_rate_per_1000": 5.8,
         "score": 62.0
       },
-      "overall_score": 57.7
+      "overall_score": 57.7,
+      "vacancy_rate": 8.92
     },
     "大雅區": {
       "transport": {
@@ -627,7 +662,8 @@
         "crime_rate_per_1000": 6.3,
         "score": 57.0
       },
-      "overall_score": 64.9
+      "overall_score": 64.9,
+      "vacancy_rate": 10.57
     },
     "太平區": {
       "transport": {
@@ -654,7 +690,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 55.3
+      "overall_score": 55.3,
+      "vacancy_rate": 9.14
     },
     "新社區": {
       "transport": {
@@ -735,7 +772,8 @@
         "crime_rate_per_1000": 6.0,
         "score": 60.0
       },
-      "overall_score": 61.0
+      "overall_score": 61.0,
+      "vacancy_rate": 9.67
     },
     "梧棲區": {
       "transport": {
@@ -762,7 +800,8 @@
         "crime_rate_per_1000": 6.3,
         "score": 57.0
       },
-      "overall_score": 65.4
+      "overall_score": 65.4,
+      "vacancy_rate": 10.15
     },
     "沙鹿區": {
       "transport": {
@@ -789,7 +828,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 52.5
+      "overall_score": 52.5,
+      "vacancy_rate": 10.81
     },
     "清水區": {
       "transport": {
@@ -816,7 +856,8 @@
         "crime_rate_per_1000": 5.8,
         "score": 62.0
       },
-      "overall_score": 50.4
+      "overall_score": 50.4,
+      "vacancy_rate": 11.03
     },
     "潭子區": {
       "transport": {
@@ -843,7 +884,8 @@
         "crime_rate_per_1000": 4.7,
         "score": 73.0
       },
-      "overall_score": 58.6
+      "overall_score": 58.6,
+      "vacancy_rate": 9.62
     },
     "烏日區": {
       "transport": {
@@ -870,7 +912,8 @@
         "crime_rate_per_1000": 6.2,
         "score": 58.0
       },
-      "overall_score": 64.6
+      "overall_score": 64.6,
+      "vacancy_rate": 9.87
     },
     "石岡區": {
       "transport": {
@@ -924,7 +967,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 61.9
+      "overall_score": 61.9,
+      "vacancy_rate": 11.24
     },
     "西區": {
       "transport": {
@@ -953,7 +997,14 @@
         "crime_rate_per_1000": 5.0,
         "score": 70.0
       },
-      "overall_score": 71.1
+      "overall_score": 71.1,
+      "vacancy_rate": 8.67,
+      "nearest_mrt": {
+        "station": "文心中清站",
+        "distance_km": 2.06,
+        "walk_minutes": 26,
+        "system": "台中捷運"
+      }
     },
     "西屯區": {
       "transport": {
@@ -982,7 +1033,14 @@
         "crime_rate_per_1000": 5.0,
         "score": 70.0
       },
-      "overall_score": 72.0
+      "overall_score": 72.0,
+      "vacancy_rate": 10.31,
+      "nearest_mrt": {
+        "station": "市政府站(台中)",
+        "distance_km": 1.32,
+        "walk_minutes": 16,
+        "system": "台中捷運"
+      }
     },
     "豐原區": {
       "transport": {
@@ -1009,7 +1067,8 @@
         "crime_rate_per_1000": 5.6,
         "score": 64.0
       },
-      "overall_score": 56.4
+      "overall_score": 56.4,
+      "vacancy_rate": 9.76
     },
     "霧峰區": {
       "transport": {
@@ -1036,7 +1095,8 @@
         "crime_rate_per_1000": 5.1,
         "score": 69.0
       },
-      "overall_score": 60.3
+      "overall_score": 60.3,
+      "vacancy_rate": 10.48
     },
     "龍井區": {
       "transport": {
@@ -1063,7 +1123,8 @@
         "crime_rate_per_1000": 4.8,
         "score": 72.0
       },
-      "overall_score": 59.5
+      "overall_score": 59.5,
+      "vacancy_rate": 12.36
     }
   },
   "台北市": {
@@ -1097,7 +1158,14 @@
         "crime_rate_per_1000": 3.8,
         "score": 82.0
       },
-      "overall_score": 88.1
+      "overall_score": 88.1,
+      "vacancy_rate": 7.91,
+      "nearest_mrt": {
+        "station": "中山國中站",
+        "distance_km": 1.27,
+        "walk_minutes": 16,
+        "system": "台北捷運"
+      }
     },
     "中正區": {
       "transport": {
@@ -1129,7 +1197,14 @@
         "crime_rate_per_1000": 3.5,
         "score": 85.0
       },
-      "overall_score": 88.0
+      "overall_score": 88.0,
+      "vacancy_rate": 7.49,
+      "nearest_mrt": {
+        "station": "中正紀念堂站",
+        "distance_km": 0.1,
+        "walk_minutes": 1,
+        "system": "台北捷運"
+      }
     },
     "信義區": {
       "transport": {
@@ -1159,7 +1234,14 @@
         "crime_rate_per_1000": 3.3,
         "score": 87.0
       },
-      "overall_score": 87.8
+      "overall_score": 87.8,
+      "vacancy_rate": 7.02,
+      "nearest_mrt": {
+        "station": "台北101/世貿站",
+        "distance_km": 0.2,
+        "walk_minutes": 3,
+        "system": "台北捷運"
+      }
     },
     "內湖區": {
       "transport": {
@@ -1188,7 +1270,14 @@
         "crime_rate_per_1000": 3.6,
         "score": 84.0
       },
-      "overall_score": 81.3
+      "overall_score": 81.3,
+      "vacancy_rate": 6.39,
+      "nearest_mrt": {
+        "station": "內湖站",
+        "distance_km": 0.51,
+        "walk_minutes": 6,
+        "system": "台北捷運"
+      }
     },
     "北投區": {
       "transport": {
@@ -1217,7 +1306,14 @@
         "crime_rate_per_1000": 4.3,
         "score": 77.0
       },
-      "overall_score": 75.8
+      "overall_score": 75.8,
+      "vacancy_rate": 7.19,
+      "nearest_mrt": {
+        "station": "北投站",
+        "distance_km": 0.13,
+        "walk_minutes": 2,
+        "system": "台北捷運"
+      }
     },
     "南港區": {
       "transport": {
@@ -1247,7 +1343,14 @@
         "crime_rate_per_1000": 4.0,
         "score": 80.0
       },
-      "overall_score": 79.5
+      "overall_score": 79.5,
+      "vacancy_rate": 7.62,
+      "nearest_mrt": {
+        "station": "南港站",
+        "distance_km": 0.15,
+        "walk_minutes": 2,
+        "system": "台北捷運"
+      }
     },
     "士林區": {
       "transport": {
@@ -1276,7 +1379,14 @@
         "crime_rate_per_1000": 4.1,
         "score": 79.0
       },
-      "overall_score": 77.5
+      "overall_score": 77.5,
+      "vacancy_rate": 7.68,
+      "nearest_mrt": {
+        "station": "士林站",
+        "distance_km": 0.03,
+        "walk_minutes": 0,
+        "system": "台北捷運"
+      }
     },
     "大同區": {
       "transport": {
@@ -1306,7 +1416,14 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 75.4
+      "overall_score": 75.4,
+      "vacancy_rate": 8.04,
+      "nearest_mrt": {
+        "station": "大橋頭站",
+        "distance_km": 0.24,
+        "walk_minutes": 3,
+        "system": "台北捷運"
+      }
     },
     "大安區": {
       "transport": {
@@ -1338,7 +1455,14 @@
         "crime_rate_per_1000": 3.1,
         "score": 89.0
       },
-      "overall_score": 92.5
+      "overall_score": 92.5,
+      "vacancy_rate": 6.44,
+      "nearest_mrt": {
+        "station": "科技大樓站",
+        "distance_km": 0.03,
+        "walk_minutes": 0,
+        "system": "台北捷運"
+      }
     },
     "文山區": {
       "transport": {
@@ -1367,7 +1491,14 @@
         "crime_rate_per_1000": 3.9,
         "score": 81.0
       },
-      "overall_score": 76.5
+      "overall_score": 76.5,
+      "vacancy_rate": 6.28,
+      "nearest_mrt": {
+        "station": "十四張站",
+        "distance_km": 1.17,
+        "walk_minutes": 15,
+        "system": "台北捷運"
+      }
     },
     "松山區": {
       "transport": {
@@ -1398,7 +1529,14 @@
         "crime_rate_per_1000": 4.0,
         "score": 80.0
       },
-      "overall_score": 84.2
+      "overall_score": 84.2,
+      "vacancy_rate": 6.79,
+      "nearest_mrt": {
+        "station": "南京三民站",
+        "distance_km": 0.4,
+        "walk_minutes": 5,
+        "system": "台北捷運"
+      }
     },
     "萬華區": {
       "transport": {
@@ -1428,7 +1566,14 @@
         "crime_rate_per_1000": 6.2,
         "score": 58.0
       },
-      "overall_score": 70.9
+      "overall_score": 70.9,
+      "vacancy_rate": 8.36,
+      "nearest_mrt": {
+        "station": "龍山寺站",
+        "distance_km": 0.18,
+        "walk_minutes": 2,
+        "system": "台北捷運"
+      }
     }
   },
   "台南市": {
@@ -1538,7 +1683,8 @@
         "crime_rate_per_1000": 6.0,
         "score": 60.0
       },
-      "overall_score": 61.5
+      "overall_score": 61.5,
+      "vacancy_rate": 8.87
     },
     "仁德區": {
       "transport": {
@@ -1565,7 +1711,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 50.8
+      "overall_score": 50.8,
+      "vacancy_rate": 10.23
     },
     "佳里區": {
       "transport": {
@@ -1673,7 +1820,8 @@
         "crime_rate_per_1000": 5.8,
         "score": 62.0
       },
-      "overall_score": 58.2
+      "overall_score": 58.2,
+      "vacancy_rate": 8.72
     },
     "南化區": {
       "transport": {
@@ -1727,7 +1875,8 @@
         "crime_rate_per_1000": 6.0,
         "score": 60.0
       },
-      "overall_score": 55.5
+      "overall_score": 55.5,
+      "vacancy_rate": 9.52
     },
     "善化區": {
       "transport": {
@@ -1754,7 +1903,8 @@
         "crime_rate_per_1000": 6.0,
         "score": 60.0
       },
-      "overall_score": 63.8
+      "overall_score": 63.8,
+      "vacancy_rate": 10.37
     },
     "大內區": {
       "transport": {
@@ -1889,7 +2039,8 @@
         "crime_rate_per_1000": 5.8,
         "score": 62.0
       },
-      "overall_score": 50.8
+      "overall_score": 50.8,
+      "vacancy_rate": 10.13
     },
     "安定區": {
       "transport": {
@@ -1943,7 +2094,8 @@
         "crime_rate_per_1000": 4.8,
         "score": 72.0
       },
-      "overall_score": 59.7
+      "overall_score": 59.7,
+      "vacancy_rate": 8.15
     },
     "官田區": {
       "transport": {
@@ -2105,7 +2257,8 @@
         "crime_rate_per_1000": 4.8,
         "score": 72.0
       },
-      "overall_score": 59.1
+      "overall_score": 59.1,
+      "vacancy_rate": 10.67
     },
     "新市區": {
       "transport": {
@@ -2186,7 +2339,8 @@
         "crime_rate_per_1000": 5.8,
         "score": 62.0
       },
-      "overall_score": 51.7
+      "overall_score": 51.7,
+      "vacancy_rate": 10.52
     },
     "朴子市": {
       "transport": {
@@ -2240,7 +2394,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 61.7
+      "overall_score": 61.7,
+      "vacancy_rate": 7.93
     },
     "東山區": {
       "transport": {
@@ -2402,7 +2557,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 49.3
+      "overall_score": 49.3,
+      "vacancy_rate": 11.32
     },
     "民雄鄉": {
       "transport": {
@@ -2483,7 +2639,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 57.7
+      "overall_score": 57.7,
+      "vacancy_rate": 8.95
     },
     "溪口鄉": {
       "transport": {
@@ -2699,7 +2856,8 @@
         "crime_rate_per_1000": 6.4,
         "score": 56.0
       },
-      "overall_score": 65.9
+      "overall_score": 65.9,
+      "vacancy_rate": 12.14
     },
     "鹽水區": {
       "transport": {
@@ -2726,7 +2884,8 @@
         "crime_rate_per_1000": 5.1,
         "score": 69.0
       },
-      "overall_score": 60.3
+      "overall_score": 60.3,
+      "vacancy_rate": 14.03
     },
     "鹿草鄉": {
       "transport": {
@@ -4466,7 +4625,8 @@
         "crime_rate_per_1000": 5.0,
         "score": 70.0
       },
-      "overall_score": 54.8
+      "overall_score": 54.8,
+      "vacancy_rate": 13.72
     },
     "三芝區": {
       "transport": {
@@ -4493,7 +4653,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 61.8
+      "overall_score": 61.8,
+      "vacancy_rate": 14.03
     },
     "三重區": {
       "transport": {
@@ -4522,7 +4683,14 @@
         "crime_rate_per_1000": 6.2,
         "score": 58.0
       },
-      "overall_score": 67.7
+      "overall_score": 67.7,
+      "vacancy_rate": 7.35,
+      "nearest_mrt": {
+        "station": "菜寮站",
+        "distance_km": 0.33,
+        "walk_minutes": 4,
+        "system": "台北捷運"
+      }
     },
     "中和區": {
       "transport": {
@@ -4552,7 +4720,14 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 71.0
+      "overall_score": 71.0,
+      "vacancy_rate": 6.23,
+      "nearest_mrt": {
+        "station": "中和站",
+        "distance_km": 0.44,
+        "walk_minutes": 5,
+        "system": "台北捷運"
+      }
     },
     "五股區": {
       "transport": {
@@ -4579,7 +4754,8 @@
         "crime_rate_per_1000": 5.2,
         "score": 68.0
       },
-      "overall_score": 56.1
+      "overall_score": 56.1,
+      "vacancy_rate": 9.26
     },
     "八里區": {
       "transport": {
@@ -4606,7 +4782,8 @@
         "crime_rate_per_1000": 4.9,
         "score": 71.0
       },
-      "overall_score": 59.9
+      "overall_score": 59.9,
+      "vacancy_rate": 12.81
     },
     "土城區": {
       "transport": {
@@ -4636,7 +4813,14 @@
         "crime_rate_per_1000": 5.2,
         "score": 68.0
       },
-      "overall_score": 67.5
+      "overall_score": 67.5,
+      "vacancy_rate": 7.21,
+      "nearest_mrt": {
+        "station": "土城站",
+        "distance_km": 0.03,
+        "walk_minutes": 0,
+        "system": "台北捷運"
+      }
     },
     "新店區": {
       "transport": {
@@ -4666,7 +4850,14 @@
         "crime_rate_per_1000": 4.5,
         "score": 75.0
       },
-      "overall_score": 73.0
+      "overall_score": 73.0,
+      "vacancy_rate": 7.46,
+      "nearest_mrt": {
+        "station": "新店區公所站",
+        "distance_km": 0.07,
+        "walk_minutes": 1,
+        "system": "台北捷運"
+      }
     },
     "新莊區": {
       "transport": {
@@ -4695,7 +4886,14 @@
         "crime_rate_per_1000": 5.8,
         "score": 62.0
       },
-      "overall_score": 68.0
+      "overall_score": 68.0,
+      "vacancy_rate": 7.14,
+      "nearest_mrt": {
+        "station": "新莊站",
+        "distance_km": 0.02,
+        "walk_minutes": 0,
+        "system": "台北捷運"
+      }
     },
     "板橋區": {
       "transport": {
@@ -4725,7 +4923,14 @@
         "crime_rate_per_1000": 5.0,
         "score": 70.0
       },
-      "overall_score": 76.8
+      "overall_score": 76.8,
+      "vacancy_rate": 5.92,
+      "nearest_mrt": {
+        "station": "板橋站",
+        "distance_km": 0.03,
+        "walk_minutes": 0,
+        "system": "台北捷運"
+      }
     },
     "林口區": {
       "transport": {
@@ -4752,7 +4957,14 @@
         "crime_rate_per_1000": 4.5,
         "score": 75.0
       },
-      "overall_score": 62.4
+      "overall_score": 62.4,
+      "vacancy_rate": 12.43,
+      "nearest_mrt": {
+        "station": "林口站",
+        "distance_km": 1.42,
+        "walk_minutes": 18,
+        "system": "桃園捷運"
+      }
     },
     "樹林區": {
       "transport": {
@@ -4779,7 +4991,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 56.4
+      "overall_score": 56.4,
+      "vacancy_rate": 8.92
     },
     "永和區": {
       "transport": {
@@ -4808,7 +5021,14 @@
         "crime_rate_per_1000": 4.8,
         "score": 72.0
       },
-      "overall_score": 74.1
+      "overall_score": 74.1,
+      "vacancy_rate": 5.81,
+      "nearest_mrt": {
+        "station": "頂溪站",
+        "distance_km": 0.43,
+        "walk_minutes": 5,
+        "system": "台北捷運"
+      }
     },
     "汐止區": {
       "transport": {
@@ -4835,7 +5055,14 @@
         "crime_rate_per_1000": 4.8,
         "score": 72.0
       },
-      "overall_score": 61.5
+      "overall_score": 61.5,
+      "vacancy_rate": 8.35,
+      "nearest_mrt": {
+        "station": "南港展覽館站",
+        "distance_km": 2.75,
+        "walk_minutes": 34,
+        "system": "台北捷運"
+      }
     },
     "泰山區": {
       "transport": {
@@ -4862,7 +5089,8 @@
         "crime_rate_per_1000": 5.4,
         "score": 66.0
       },
-      "overall_score": 56.7
+      "overall_score": 56.7,
+      "vacancy_rate": 8.52
     },
     "淡水區": {
       "transport": {
@@ -4891,7 +5119,14 @@
         "crime_rate_per_1000": 5.0,
         "score": 70.0
       },
-      "overall_score": 65.2
+      "overall_score": 65.2,
+      "vacancy_rate": 14.23,
+      "nearest_mrt": {
+        "station": "淡水站",
+        "distance_km": 0.16,
+        "walk_minutes": 2,
+        "system": "台北捷運"
+      }
     },
     "深坑區": {
       "transport": {
@@ -4918,7 +5153,8 @@
         "crime_rate_per_1000": 6.3,
         "score": 57.0
       },
-      "overall_score": 65.1
+      "overall_score": 65.1,
+      "vacancy_rate": 9.86
     },
     "瑞芳區": {
       "transport": {
@@ -4945,7 +5181,8 @@
         "crime_rate_per_1000": 5.2,
         "score": 68.0
       },
-      "overall_score": 60.5
+      "overall_score": 60.5,
+      "vacancy_rate": 14.17
     },
     "石碇區": {
       "transport": {
@@ -4972,7 +5209,8 @@
         "crime_rate_per_1000": 4.5,
         "score": 75.0
       },
-      "overall_score": 58.3
+      "overall_score": 58.3,
+      "vacancy_rate": 16.05
     },
     "石門區": {
       "transport": {
@@ -4999,7 +5237,8 @@
         "crime_rate_per_1000": 4.8,
         "score": 72.0
       },
-      "overall_score": 59.4
+      "overall_score": 59.4,
+      "vacancy_rate": 15.72
     },
     "萬里區": {
       "transport": {
@@ -5026,7 +5265,8 @@
         "crime_rate_per_1000": 5.4,
         "score": 66.0
       },
-      "overall_score": 61.7
+      "overall_score": 61.7,
+      "vacancy_rate": 12.83
     },
     "蘆洲區": {
       "transport": {
@@ -5055,7 +5295,14 @@
         "crime_rate_per_1000": 5.9,
         "score": 61.0
       },
-      "overall_score": 65.8
+      "overall_score": 65.8,
+      "vacancy_rate": 6.85,
+      "nearest_mrt": {
+        "station": "蘆洲站",
+        "distance_km": 0.04,
+        "walk_minutes": 1,
+        "system": "台北捷運"
+      }
     },
     "貢寮區": {
       "transport": {
@@ -5082,7 +5329,8 @@
         "crime_rate_per_1000": 5.9,
         "score": 61.0
       },
-      "overall_score": 63.9
+      "overall_score": 63.9,
+      "vacancy_rate": 19.61
     },
     "金山區": {
       "transport": {
@@ -5109,7 +5357,8 @@
         "crime_rate_per_1000": 6.2,
         "score": 58.0
       },
-      "overall_score": 64.7
+      "overall_score": 64.7,
+      "vacancy_rate": 12.14
     },
     "雙溪區": {
       "transport": {
@@ -5136,7 +5385,8 @@
         "crime_rate_per_1000": 6.6,
         "score": 54.0
       },
-      "overall_score": 66.3
+      "overall_score": 66.3,
+      "vacancy_rate": 20.53
     },
     "鶯歌區": {
       "transport": {
@@ -5163,7 +5413,8 @@
         "crime_rate_per_1000": 5.3,
         "score": 67.0
       },
-      "overall_score": 54.6
+      "overall_score": 54.6,
+      "vacancy_rate": 10.14
     }
   },
   "新竹縣": {
@@ -5439,7 +5690,14 @@
         "crime_rate_per_1000": 5.8,
         "score": 62.0
       },
-      "overall_score": 64.6
+      "overall_score": 64.6,
+      "vacancy_rate": 8.95,
+      "nearest_mrt": {
+        "station": "老街溪站",
+        "distance_km": 1.13,
+        "walk_minutes": 14,
+        "system": "桃園捷運"
+      }
     },
     "八德區": {
       "transport": {
@@ -5466,7 +5724,8 @@
         "crime_rate_per_1000": 5.2,
         "score": 68.0
       },
-      "overall_score": 60.1
+      "overall_score": 60.1,
+      "vacancy_rate": 8.74
     },
     "大園區": {
       "transport": {
@@ -5495,7 +5754,8 @@
         "crime_rate_per_1000": 5.2,
         "score": 68.0
       },
-      "overall_score": 57.8
+      "overall_score": 57.8,
+      "vacancy_rate": 13.58
     },
     "大溪區": {
       "transport": {
@@ -5522,7 +5782,8 @@
         "crime_rate_per_1000": 4.7,
         "score": 73.0
       },
-      "overall_score": 58.6
+      "overall_score": 58.6,
+      "vacancy_rate": 10.82
     },
     "平鎮區": {
       "transport": {
@@ -5549,7 +5810,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 55.9
+      "overall_score": 55.9,
+      "vacancy_rate": 8.15
     },
     "新屋區": {
       "transport": {
@@ -5576,7 +5838,8 @@
         "crime_rate_per_1000": 4.7,
         "score": 73.0
       },
-      "overall_score": 58.8
+      "overall_score": 58.8,
+      "vacancy_rate": 14.65
     },
     "桃園區": {
       "transport": {
@@ -5605,7 +5868,14 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 66.7
+      "overall_score": 66.7,
+      "vacancy_rate": 8.37,
+      "nearest_mrt": {
+        "station": "長庚醫院站",
+        "distance_km": 7.33,
+        "walk_minutes": 92,
+        "system": "桃園捷運"
+      }
     },
     "楊梅區": {
       "transport": {
@@ -5632,7 +5902,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 52.8
+      "overall_score": 52.8,
+      "vacancy_rate": 10.67
     },
     "蘆竹區": {
       "transport": {
@@ -5661,7 +5932,8 @@
         "crime_rate_per_1000": 5.0,
         "score": 70.0
       },
-      "overall_score": 63.3
+      "overall_score": 63.3,
+      "vacancy_rate": 10.55
     },
     "觀音區": {
       "transport": {
@@ -5688,7 +5960,8 @@
         "crime_rate_per_1000": 4.9,
         "score": 71.0
       },
-      "overall_score": 59.4
+      "overall_score": 59.4,
+      "vacancy_rate": 14.97
     },
     "龍潭區": {
       "transport": {
@@ -5715,7 +5988,8 @@
         "crime_rate_per_1000": 5.3,
         "score": 67.0
       },
-      "overall_score": 51.5
+      "overall_score": 51.5,
+      "vacancy_rate": 10.38
     },
     "龜山區": {
       "transport": {
@@ -5742,7 +6016,14 @@
         "crime_rate_per_1000": 5.0,
         "score": 70.0
       },
-      "overall_score": 59.7
+      "overall_score": 59.7,
+      "vacancy_rate": 9.46,
+      "nearest_mrt": {
+        "station": "長庚醫院站",
+        "distance_km": 2.6,
+        "walk_minutes": 33,
+        "system": "桃園捷運"
+      }
     }
   },
   "澎湖縣": {
@@ -7381,7 +7662,14 @@
         "crime_rate_per_1000": 6.5,
         "score": 55.0
       },
-      "overall_score": 68.0
+      "overall_score": 68.0,
+      "vacancy_rate": 8.17,
+      "nearest_mrt": {
+        "station": "高雄車站",
+        "distance_km": 0.02,
+        "walk_minutes": 0,
+        "system": "高雄捷運"
+      }
     },
     "仁武區": {
       "transport": {
@@ -7408,7 +7696,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 53.2
+      "overall_score": 53.2,
+      "vacancy_rate": 10.36
     },
     "六龜區": {
       "transport": {
@@ -7464,7 +7753,8 @@
         "crime_rate_per_1000": 6.0,
         "score": 60.0
       },
-      "overall_score": 68.0
+      "overall_score": 68.0,
+      "vacancy_rate": 9.48
     },
     "前鎮區": {
       "transport": {
@@ -7494,7 +7784,14 @@
         "crime_rate_per_1000": 6.0,
         "score": 60.0
       },
-      "overall_score": 68.6
+      "overall_score": 68.6,
+      "vacancy_rate": 9.15,
+      "nearest_mrt": {
+        "station": "前鎮高中站",
+        "distance_km": 0.04,
+        "walk_minutes": 1,
+        "system": "高雄捷運"
+      }
     },
     "大寮區": {
       "transport": {
@@ -7521,7 +7818,8 @@
         "crime_rate_per_1000": 4.8,
         "score": 72.0
       },
-      "overall_score": 58.9
+      "overall_score": 58.9,
+      "vacancy_rate": 10.47
     },
     "大樹區": {
       "transport": {
@@ -7604,7 +7902,8 @@
         "crime_rate_per_1000": 6.5,
         "score": 55.0
       },
-      "overall_score": 59.2
+      "overall_score": 59.2,
+      "vacancy_rate": 9.93
     },
     "岡山區": {
       "transport": {
@@ -7631,7 +7930,8 @@
         "crime_rate_per_1000": 5.8,
         "score": 62.0
       },
-      "overall_score": 53.9
+      "overall_score": 53.9,
+      "vacancy_rate": 10.14
     },
     "左營區": {
       "transport": {
@@ -7660,7 +7960,14 @@
         "crime_rate_per_1000": 5.2,
         "score": 68.0
       },
-      "overall_score": 69.1
+      "overall_score": 69.1,
+      "vacancy_rate": 7.85,
+      "nearest_mrt": {
+        "station": "左營站",
+        "distance_km": 0.06,
+        "walk_minutes": 1,
+        "system": "高雄捷運"
+      }
     },
     "彌陀區": {
       "transport": {
@@ -7717,7 +8024,14 @@
         "crime_rate_per_1000": 5.8,
         "score": 62.0
       },
-      "overall_score": 70.6
+      "overall_score": 70.6,
+      "vacancy_rate": 9.25,
+      "nearest_mrt": {
+        "station": "美麗島站",
+        "distance_km": 0.16,
+        "walk_minutes": 2,
+        "system": "高雄捷運"
+      }
     },
     "旗山區": {
       "transport": {
@@ -7744,7 +8058,8 @@
         "crime_rate_per_1000": 5.7,
         "score": 63.0
       },
-      "overall_score": 62.6
+      "overall_score": 62.6,
+      "vacancy_rate": 12.93
     },
     "旗津區": {
       "transport": {
@@ -7771,7 +8086,8 @@
         "crime_rate_per_1000": 5.9,
         "score": 61.0
       },
-      "overall_score": 63.5
+      "overall_score": 63.5,
+      "vacancy_rate": 12.81
     },
     "杉林區": {
       "transport": {
@@ -7881,7 +8197,14 @@
         "crime_rate_per_1000": 5.8,
         "score": 62.0
       },
-      "overall_score": 62.9
+      "overall_score": 62.9,
+      "vacancy_rate": 8.73,
+      "nearest_mrt": {
+        "station": "橋頭火車站",
+        "distance_km": 2.39,
+        "walk_minutes": 30,
+        "system": "高雄捷運"
+      }
     },
     "橋頭區": {
       "transport": {
@@ -7908,7 +8231,8 @@
         "crime_rate_per_1000": 4.5,
         "score": 75.0
       },
-      "overall_score": 57.9
+      "overall_score": 57.9,
+      "vacancy_rate": 10.63
     },
     "永安區": {
       "transport": {
@@ -8070,7 +8394,8 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 61.8
+      "overall_score": 61.8,
+      "vacancy_rate": 13.82
     },
     "苓雅區": {
       "transport": {
@@ -8100,7 +8425,14 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 71.4
+      "overall_score": 71.4,
+      "vacancy_rate": 8.64,
+      "nearest_mrt": {
+        "station": "後驛站",
+        "distance_km": 0.76,
+        "walk_minutes": 9,
+        "system": "高雄捷運"
+      }
     },
     "茄萣區": {
       "transport": {
@@ -8208,7 +8540,8 @@
         "crime_rate_per_1000": 5.9,
         "score": 61.0
       },
-      "overall_score": 63.5
+      "overall_score": 63.5,
+      "vacancy_rate": 9.72
     },
     "鳳山區": {
       "transport": {
@@ -8237,7 +8570,14 @@
         "crime_rate_per_1000": 6.0,
         "score": 60.0
       },
-      "overall_score": 65.0
+      "overall_score": 65.0,
+      "vacancy_rate": 8.36,
+      "nearest_mrt": {
+        "station": "鳳山站",
+        "distance_km": 0.06,
+        "walk_minutes": 1,
+        "system": "高雄捷運"
+      }
     },
     "鹽埕區": {
       "transport": {
@@ -8267,7 +8607,8 @@
         "crime_rate_per_1000": 6.2,
         "score": 58.0
       },
-      "overall_score": 64.3
+      "overall_score": 64.3,
+      "vacancy_rate": 10.93
     },
     "鼓山區": {
       "transport": {
@@ -8297,7 +8638,14 @@
         "crime_rate_per_1000": 5.5,
         "score": 65.0
       },
-      "overall_score": 67.3
+      "overall_score": 67.3,
+      "vacancy_rate": 8.42,
+      "nearest_mrt": {
+        "station": "凹子底站",
+        "distance_km": 2.82,
+        "walk_minutes": 35,
+        "system": "高雄捷運"
+      }
     }
   }
 }
