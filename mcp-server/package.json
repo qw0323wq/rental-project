@@ -1,0 +1,17 @@
+{
+  "name": "rental-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for Taiwan rental price query (台灣租金行情查詢)",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^22.15.0"
+  }
+}

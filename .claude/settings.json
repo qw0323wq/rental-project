@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "rental-query": {
+      "command": "node",
+      "args": ["D:\\rental-project\\mcp-server\\build\\index.js"],
+      "env": {}
+    }
+  }
+}
