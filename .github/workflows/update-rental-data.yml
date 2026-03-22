@@ -5,7 +5,12 @@ on:
     # 每週一 01:00 UTC（台灣時間 09:00）
     - cron: '0 1 * * 1'
   workflow_dispatch:
-    # 手動觸發
+    inputs:
+      skip_591:
+        description: '跳過 591 爬蟲'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -13,7 +18,7 @@ permissions:
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
 
     steps:
       - name: Checkout repository
@@ -35,7 +40,11 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r data-pipeline/requirements.txt
 
-      - name: Run main ETL pipeline
+      - name: Install Playwright browser
+        run: playwright install chromium
+
+      # === 實價登錄 ETL ===
+      - name: Run main ETL pipeline (實價登錄)
         run: python data-pipeline/01_download_and_process.py
         env:
           PYTHONIOENCODING: utf-8
@@ -45,17 +54,26 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
 
+      # === 591 爬蟲（可選跳過）===
+      - name: Crawl 591 rental listings
+        if: ${{ !inputs.skip_591 }}
+        run: python data-pipeline/03_crawl_591.py
+        env:
+          PYTHONIOENCODING: utf-8
+        continue-on-error: true
+
+      # === 提交更新 ===
       - name: Check for data changes
         id: check_changes
         run: |
-          git diff --stat public/data/
-          if git diff --quiet public/data/; then
+          git add public/data/
+          if git diff --cached --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "No data changes detected"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
             echo "Data changes detected!"
-            git diff --stat public/data/
+            git diff --cached --stat
           fi
 
       - name: Commit and push updated data
@@ -63,9 +81,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/
           git commit -m "chore: update rental data (auto-scheduled)
 
-          Automated data refresh from 內政部實價登錄
+          Automated data refresh from 內政部實價登錄 + 591 爬蟲
           $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
