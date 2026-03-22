@@ -362,7 +362,7 @@ function SearchContent() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Search Bar - always visible */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-4">
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-3">
           <select
             value={selectedCity}
             onChange={(e) => {
@@ -412,20 +412,11 @@ function SearchContent() {
           </select>
 
           <select
-            value={selectedType}
-            onChange={(e) => setSelectedType(e.target.value)}
-            className="border border-gray-300 rounded-lg px-3 py-2 text-gray-800 focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">全部房型</option>
-            <option value="套房">套房</option>
-            <option value="雅房">雅房</option>
-            <option value="整層">整層住家</option>
-            <option value="電梯大樓">電梯大樓</option>
-          </select>
-
-          <select
             value={selectedRentalType}
-            onChange={(e) => setSelectedRentalType(e.target.value)}
+            onChange={(e) => {
+              setSelectedRentalType(e.target.value);
+              setSelectedType("");
+            }}
             className="border border-gray-300 rounded-lg px-3 py-2 text-gray-800 focus:ring-2 focus:ring-blue-500"
           >
             <option value="">全部出租型態</option>

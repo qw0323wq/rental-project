@@ -18,10 +18,20 @@ export default function HomePage() {
   const [stats, setStats] = useState<Record<string, unknown>>({});
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
-  const [selectedType, setSelectedType] = useState("");
+  const [selectedRentalType, setSelectedRentalType] = useState("");
   const [selectedRoad, setSelectedRoad] = useState("");
   const [selectedArea, setSelectedArea] = useState("");
+  const [selectedFloor, setSelectedFloor] = useState("");
+  const [selectedRent, setSelectedRent] = useState("");
   const [districts, setDistricts] = useState<string[]>([]);
+
+  const RENTAL_TYPES = [
+    { label: "整戶出租", value: "整棟(戶)出租" },
+    { label: "獨立套房", value: "獨立套房" },
+    { label: "分租套房", value: "分租套房" },
+    { label: "分租雅房", value: "分租雅房" },
+    { label: "分層出租", value: "分層出租" },
+  ];
 
   const AREA_RANGES = [
     { label: "10坪以下", value: "0-10" },
@@ -30,6 +40,20 @@ export default function HomePage() {
     { label: "30-40坪", value: "30-40" },
     { label: "40坪以上", value: "40-999" },
   ];
+
+  const RENT_RANGES = [
+    { label: "5千以下", value: "0-5000" },
+    { label: "5千-1萬", value: "5000-10000" },
+    { label: "1萬-2萬", value: "10000-20000" },
+    { label: "2萬-3萬", value: "20000-30000" },
+    { label: "3萬-5萬", value: "30000-50000" },
+    { label: "5萬以上", value: "50000+" },
+  ];
+
+  const FLOORS = Array.from({ length: 25 }, (_, i) => ({
+    label: `${i + 1}樓`,
+    value: String(i + 1),
+  }));
 
   useEffect(() => {
     Promise.all([
@@ -79,8 +103,10 @@ export default function HomePage() {
     const params = new URLSearchParams({ city: selectedCity });
     if (selectedDistrict) params.set("district", selectedDistrict);
     if (selectedRoad) params.set("road", selectedRoad);
-    if (selectedType) params.set("type", selectedType);
+    if (selectedRentalType) params.set("rentalType", selectedRentalType);
     if (selectedArea) params.set("area", selectedArea);
+    if (selectedFloor) params.set("floor", selectedFloor);
+    if (selectedRent) params.set("rent", selectedRent);
     router.push(`/search?${params.toString()}`);
   };
 
@@ -97,104 +123,107 @@ export default function HomePage() {
           </p>
 
           {/* Search Form */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1 text-left">
-                  縣市
-                </label>
-                <select
-                  value={selectedCity}
-                  onChange={(e) => {
-                    setSelectedCity(e.target.value);
-                    setSelectedDistrict("");
-                    setSelectedRoad("");
-                  }}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option value="">選擇縣市</option>
-                  {cities.map((city) => (
-                    <option key={city.name} value={city.name}>
-                      {city.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
+          <div className="bg-white rounded-2xl shadow-xl p-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-3">
+              <select
+                value={selectedCity}
+                onChange={(e) => {
+                  setSelectedCity(e.target.value);
+                  setSelectedDistrict("");
+                  setSelectedRoad("");
+                }}
+                className="border border-gray-300 rounded-lg px-3 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">選擇縣市</option>
+                {cities.map((city) => (
+                  <option key={city.name} value={city.name}>
+                    {city.name}
+                  </option>
+                ))}
+              </select>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1 text-left">
-                  鄉鎮市區
-                </label>
-                <select
-                  value={selectedDistrict}
-                  onChange={(e) => {
-                    setSelectedDistrict(e.target.value);
-                    setSelectedRoad("");
-                  }}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  disabled={!selectedCity}
-                >
-                  <option value="">全部區域</option>
-                  {districts.map((d) => (
-                    <option key={d} value={d}>
-                      {d}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <select
+                value={selectedDistrict}
+                onChange={(e) => {
+                  setSelectedDistrict(e.target.value);
+                  setSelectedRoad("");
+                }}
+                className="border border-gray-300 rounded-lg px-3 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500"
+                disabled={!selectedCity}
+              >
+                <option value="">全部區域</option>
+                {districts.map((d) => (
+                  <option key={d} value={d}>
+                    {d}
+                  </option>
+                ))}
+              </select>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1 text-left">
-                  路段
-                </label>
-                <select
-                  value={selectedRoad}
-                  onChange={(e) => setSelectedRoad(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  disabled={!selectedDistrict}
-                >
-                  <option value="">全部路段</option>
-                  {availableRoads.map((r) => (
-                    <option key={r} value={r}>
-                      {r}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <select
+                value={selectedRoad}
+                onChange={(e) => setSelectedRoad(e.target.value)}
+                className="border border-gray-300 rounded-lg px-3 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500"
+                disabled={!selectedDistrict}
+              >
+                <option value="">全部路段</option>
+                {availableRoads.map((r) => (
+                  <option key={r} value={r}>
+                    {r}
+                  </option>
+                ))}
+              </select>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1 text-left">
-                  房型
-                </label>
-                <select
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option value="">全部房型</option>
-                  <option value="套房">套房</option>
-                  <option value="雅房">雅房</option>
-                  <option value="整層">整層住家</option>
-                </select>
-              </div>
+              <select
+                value={selectedRentalType}
+                onChange={(e) => setSelectedRentalType(e.target.value)}
+                className="border border-gray-300 rounded-lg px-3 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">全部出租型態</option>
+                {RENTAL_TYPES.map((r) => (
+                  <option key={r.value} value={r.value}>
+                    {r.label}
+                  </option>
+                ))}
+              </select>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1 text-left">
-                  坪數
-                </label>
-                <select
-                  value={selectedArea}
-                  onChange={(e) => setSelectedArea(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option value="">全部坪數</option>
-                  {AREA_RANGES.map((r) => (
-                    <option key={r.value} value={r.value}>
-                      {r.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <select
+                value={selectedFloor}
+                onChange={(e) => setSelectedFloor(e.target.value)}
+                className="border border-gray-300 rounded-lg px-3 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">全部樓層</option>
+                {FLOORS.map((r) => (
+                  <option key={r.value} value={r.value}>
+                    {r.label}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                value={selectedRent}
+                onChange={(e) => setSelectedRent(e.target.value)}
+                className="border border-gray-300 rounded-lg px-3 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">全部租金</option>
+                {RENT_RANGES.map((r) => (
+                  <option key={r.value} value={r.value}>
+                    {r.label}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                value={selectedArea}
+                onChange={(e) => setSelectedArea(e.target.value)}
+                className="border border-gray-300 rounded-lg px-3 py-3 text-gray-800 focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">全部坪數</option>
+                {AREA_RANGES.map((r) => (
+                  <option key={r.value} value={r.value}>
+                    {r.label}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <button
