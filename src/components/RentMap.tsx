@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import dynamic from "next/dynamic";
 
-// Leaflet needs to be loaded client-side only
 const MapContainer = dynamic(
   () => import("react-leaflet").then((mod) => mod.MapContainer),
   { ssr: false }
@@ -44,16 +43,15 @@ interface RentMapProps {
   onDistrictClick?: (district: string) => void;
 }
 
-// 租金顏色漸層
 function getRentColor(rent: number): string {
-  if (rent >= 50000) return "#7f1d1d"; // dark red
-  if (rent >= 30000) return "#dc2626"; // red
-  if (rent >= 20000) return "#ea580c"; // orange
-  if (rent >= 15000) return "#d97706"; // amber
-  if (rent >= 10000) return "#65a30d"; // lime
-  if (rent >= 8000) return "#16a34a"; // green
-  if (rent >= 5000) return "#0891b2"; // cyan
-  return "#2563eb"; // blue
+  if (rent >= 50000) return "#7f1d1d";
+  if (rent >= 30000) return "#dc2626";
+  if (rent >= 20000) return "#ea580c";
+  if (rent >= 15000) return "#d97706";
+  if (rent >= 10000) return "#65a30d";
+  if (rent >= 8000) return "#16a34a";
+  if (rent >= 5000) return "#0891b2";
+  return "#2563eb";
 }
 
 const LEGEND_ITEMS = [
@@ -75,12 +73,39 @@ function getRadius(count: number): number {
   return 7;
 }
 
+// 熱力圖組件（用 CSS 漸層模擬，不依賴 leaflet.heat）
+function HeatOverlay({ markers }: { markers: Array<{ name: string; position: [number, number]; rent: number; count: number }> }) {
+  // 熱力圖用更大的半透明圓圈疊加
+  return (
+    <>
+      {markers.map((m) => {
+        const intensity = Math.min(m.count / 200, 1);
+        const radius = 20 + intensity * 25;
+        return (
+          <CircleMarker
+            key={`heat-${m.name}`}
+            center={m.position}
+            radius={radius}
+            pathOptions={{
+              color: "transparent",
+              fillColor: getRentColor(m.rent),
+              fillOpacity: 0.25 + intensity * 0.2,
+              weight: 0,
+            }}
+          />
+        );
+      })}
+    </>
+  );
+}
+
 export default function RentMap({
   city,
   districts,
   onDistrictClick,
 }: RentMapProps) {
   const [mounted, setMounted] = useState(false);
+  const [mapMode, setMapMode] = useState<"marker" | "heat">("heat");
 
   useEffect(() => {
     setMounted(true);
@@ -94,7 +119,6 @@ export default function RentMap({
     );
   }
 
-  // Determine center and zoom
   let center: [number, number] = TAIWAN_CENTER;
   let zoom = 7;
 
@@ -103,7 +127,6 @@ export default function RentMap({
     zoom = 12;
   }
 
-  // Build markers
   const markers: Array<{
     name: string;
     position: [number, number];
@@ -112,7 +135,6 @@ export default function RentMap({
   }> = [];
 
   if (city && districts) {
-    // District level markers for a single city
     const cityDistricts = DISTRICT_COORDS[city] || {};
     for (const [distName, data] of Object.entries(districts)) {
       const pos = cityDistricts[distName];
@@ -126,7 +148,6 @@ export default function RentMap({
       }
     }
   } else {
-    // City level markers
     for (const [cityName, coords] of Object.entries(CITY_COORDS)) {
       markers.push({
         name: cityName,
@@ -139,10 +160,36 @@ export default function RentMap({
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-      <div className="p-4 border-b border-gray-200 flex items-center justify-between">
-        <h3 className="font-bold text-lg text-gray-800">
-          {city ? `${city} 各區租金地圖` : "全台租金分布"}
-        </h3>
+      <div className="p-4 border-b border-gray-200 flex items-center justify-between flex-wrap gap-2">
+        <div className="flex items-center gap-3">
+          <h3 className="font-bold text-lg text-gray-800">
+            {city ? `${city} 各區租金地圖` : "全台租金分布"}
+          </h3>
+          {city && (
+            <div className="flex bg-gray-100 rounded-lg p-0.5">
+              <button
+                onClick={() => setMapMode("heat")}
+                className={`px-3 py-1 text-xs rounded-md transition-colors cursor-pointer ${
+                  mapMode === "heat"
+                    ? "bg-white shadow text-blue-600 font-medium"
+                    : "text-gray-500"
+                }`}
+              >
+                熱力圖
+              </button>
+              <button
+                onClick={() => setMapMode("marker")}
+                className={`px-3 py-1 text-xs rounded-md transition-colors cursor-pointer ${
+                  mapMode === "marker"
+                    ? "bg-white shadow text-blue-600 font-medium"
+                    : "text-gray-500"
+                }`}
+              >
+                標記圖
+              </button>
+            </div>
+          )}
+        </div>
         {city && (
           <div className="flex items-center gap-2 text-xs text-gray-500 flex-wrap">
             {LEGEND_ITEMS.map((item) => (
@@ -171,15 +218,18 @@ export default function RentMap({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        {/* 熱力圖模式：大圓圈疊加 */}
+        {mapMode === "heat" && <HeatOverlay markers={markers} />}
+        {/* 標記模式 + 熱力圖上方的小標記 */}
         {markers.map((m) => (
           <CircleMarker
             key={m.name}
             center={m.position}
-            radius={getRadius(m.count)}
+            radius={mapMode === "heat" ? 6 : getRadius(m.count)}
             pathOptions={{
               color: getRentColor(m.rent),
               fillColor: getRentColor(m.rent),
-              fillOpacity: 0.7,
+              fillOpacity: mapMode === "heat" ? 0.9 : 0.7,
               weight: 2,
             }}
             eventHandlers={{

@@ -15,6 +15,7 @@ import RoadTable from "@/components/RoadTable";
 import RoadSearch from "@/components/RoadSearch";
 import CpiRentChart from "@/components/CpiRentChart";
 import SocialHousingCard from "@/components/SocialHousingCard";
+import RentPricing from "@/components/RentPricing";
 
 // Dynamic import for map (SSR-safe)
 const RentMap = dynamic(() => import("@/components/RentMap"), {
@@ -1369,6 +1370,17 @@ function SearchContent() {
               })()}
             />
           </div>
+
+          {/* Rent Pricing Tool */}
+          {city && (
+            <div className="mt-8 mb-8">
+              <RentPricing
+                stats={stats}
+                city={city}
+                district={district || undefined}
+              />
+            </div>
+          )}
 
           {/* Data Note */}
           <div className="mt-8 text-sm text-gray-400 text-center">
