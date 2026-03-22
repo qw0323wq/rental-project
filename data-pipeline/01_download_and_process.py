@@ -41,34 +41,50 @@ CITY_NAME_MAP = {
     "臺中縣": "台中市", "臺南縣": "台南市", "高雄縣": "高雄市",
 }
 
-# 下載季度
-SEASONS = []
-for year in range(112, 116):
-    for q in range(1, 5):
-        SEASONS.append(f"{year}S{q}")
-SEASONS = sorted(set(SEASONS))
+# 下載季度（動態計算：從 112 年到當前民國年+1，自動涵蓋最新季度）
+import time as _time
+from datetime import datetime as _datetime
+
+def _build_seasons() -> list[str]:
+    """動態產生季度列表，自動包含最新可能有資料的季度。"""
+    now = _datetime.now()
+    # 民國年 = 西元年 - 1911
+    current_roc_year = now.year - 1911
+    seasons = []
+    for year in range(112, current_roc_year + 2):
+        for q in range(1, 5):
+            seasons.append(f"{year}S{q}")
+    return sorted(set(seasons))
+
+SEASONS = _build_seasons()
 
 
-def download_season(season: str) -> Path | None:
-    """下載某一季度的實價登錄資料"""
+def download_season(season: str, max_retries: int = 3) -> Path | None:
+    """下載某一季度的實價登錄資料（含 retry 邏輯）"""
     zip_path = RAW_DIR / f"lvr_land_{season}.zip"
     if zip_path.exists():
         return zip_path
 
     url = f"https://plvr.land.moi.gov.tw/DownloadSeason?season={season}&type=zip&fileName=lvr_landcsv.zip"
-    try:
-        resp = requests.get(url, timeout=60, stream=True)
-        if resp.status_code == 200 and len(resp.content) > 1000:
-            with open(zip_path, "wb") as f:
-                f.write(resp.content)
-            print(f"  [OK] {season} ({len(resp.content) / 1024 / 1024:.1f} MB)")
-            return zip_path
-        else:
-            print(f"  [--] {season} no data")
-            return None
-    except Exception as e:
-        print(f"  [ERR] {season}: {e}")
-        return None
+    for attempt in range(1, max_retries + 1):
+        try:
+            resp = requests.get(url, timeout=60, stream=True)
+            if resp.status_code == 200 and len(resp.content) > 1000:
+                with open(zip_path, "wb") as f:
+                    f.write(resp.content)
+                print(f"  [OK] {season} ({len(resp.content) / 1024 / 1024:.1f} MB)")
+                return zip_path
+            else:
+                print(f"  [--] {season} no data")
+                return None
+        except Exception as e:
+            if attempt < max_retries:
+                wait = attempt * 5
+                print(f"  [RETRY] {season} attempt {attempt}/{max_retries}: {e}, waiting {wait}s...")
+                _time.sleep(wait)
+            else:
+                print(f"  [ERR] {season}: {e} (gave up after {max_retries} attempts)")
+                return None
 
 
 def extract_rental_csv(zip_path: Path) -> list[pd.DataFrame]:

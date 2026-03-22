@@ -1,0 +1,71 @@
+name: Update Rental Data
+
+on:
+  schedule:
+    # 每週一 01:00 UTC（台灣時間 09:00）
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+    # 手動觸發
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache raw ZIP files
+        uses: actions/cache@v4
+        with:
+          path: data-pipeline/raw
+          key: rental-raw-${{ hashFiles('data-pipeline/01_download_and_process.py') }}
+          restore-keys: |
+            rental-raw-
+
+      - name: Install Python dependencies
+        run: pip install -r data-pipeline/requirements.txt
+
+      - name: Run main ETL pipeline
+        run: python data-pipeline/01_download_and_process.py
+        env:
+          PYTHONIOENCODING: utf-8
+
+      - name: Run supplementary data generation
+        run: python data-pipeline/02_generate_supplementary.py
+        env:
+          PYTHONIOENCODING: utf-8
+
+      - name: Check for data changes
+        id: check_changes
+        run: |
+          git diff --stat public/data/
+          if git diff --quiet public/data/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No data changes detected"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Data changes detected!"
+            git diff --stat public/data/
+          fi
+
+      - name: Commit and push updated data
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/
+          git commit -m "chore: update rental data (auto-scheduled)
+
+          Automated data refresh from 內政部實價登錄
+          $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
