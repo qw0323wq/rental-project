@@ -40,6 +40,22 @@ yarn-error.log*
 /data-pipeline/processed/
 /data-pipeline/downloads/
 /data-pipeline/raw/
+/data-pipeline/__pycache__/
+/data-pipeline/verify_*.json
+/data-pipeline/inspect_*.json
+/data-pipeline/inspect_*.py
+/data-pipeline/sh_*.json
+
+# mcp server
+mcp-server/node_modules/
+mcp-server/build/
+mcp-server/*.txt
+
+# temp / debug files
+temp_*
+
+# python venv
+.venv/
 
 # typescript
 *.tsbuildinfo
