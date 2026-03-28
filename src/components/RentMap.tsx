@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 const MapContainer = dynamic(
@@ -30,12 +30,7 @@ import {
   TAIWAN_CENTER,
 } from "@/lib/coordinates";
 
-interface DistrictData {
-  median_rent: number;
-  avg_rent: number;
-  sample_count: number;
-  [key: string]: unknown;
-}
+import type { DistrictData } from "@/types";
 
 interface RentMapProps {
   city?: string;

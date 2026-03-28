@@ -1,15 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-
-interface RoadData {
-  median_rent: number;
-  avg_rent: number;
-  min_rent: number;
-  max_rent: number;
-  sample_count: number;
-  avg_area_ping?: number;
-}
+import type { RoadData } from "@/types";
 
 interface RoadTableProps {
   roads: Record<string, RoadData>;

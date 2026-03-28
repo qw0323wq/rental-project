@@ -2,7 +2,7 @@
 
 interface SafetyBadgeProps {
   score: number;
-  crimeRate: number;
+  crimeRate?: number;
 }
 
 // Clamp value between 0 and 100

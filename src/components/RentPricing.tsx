@@ -1,42 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-interface RentalTypeStats {
-  median_rent: number;
-  avg_rent: number;
-  min_rent: number;
-  max_rent: number;
-  sample_count: number;
-  avg_area_ping?: number;
-  avg_rooms?: number;
-}
-
-interface DistrictData {
-  median_rent: number;
-  avg_rent: number;
-  sample_count: number;
-  avg_area_ping?: number;
-  by_rental_type?: Record<string, RentalTypeStats>;
-}
-
-interface CityData {
-  districts: Record<string, DistrictData>;
-  summary: { median_rent: number; avg_rent: number };
-}
+import type { CityData } from "@/types";
+import { RENTAL_TYPES } from "@/lib/constants";
 
 interface RentPricingProps {
   stats: Record<string, CityData>;
   city?: string;
   district?: string;
 }
-
-const RENTAL_TYPES = [
-  { label: "整戶出租", value: "整棟(戶)出租" },
-  { label: "獨立套房", value: "獨立套房" },
-  { label: "分租套房", value: "分租套房" },
-  { label: "分租雅房", value: "分租雅房" },
-];
 
 export default function RentPricing({ stats, city, district }: RentPricingProps) {
   const [inputArea, setInputArea] = useState("");

@@ -13,8 +13,10 @@ interface RoadInfo {
   avg_area_ping?: number;
 }
 
+import type { CityData } from "@/types";
+
 interface RoadSearchProps {
-  stats: Record<string, { districts: Record<string, { roads?: Record<string, { median_rent: number; avg_rent: number; sample_count: number; avg_area_ping?: number }> }> }>;
+  stats: Record<string, CityData>;
 }
 
 export default function RoadSearch({ stats }: RoadSearchProps) {

@@ -2,20 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import type { CityInfo, CityData } from "@/types";
+import { RENTAL_TYPES, AREA_RANGES, RENT_RANGES, FLOORS } from "@/lib/constants";
 import RoadSearch from "@/components/RoadSearch";
-
-interface CityInfo {
-  name: string;
-  median_rent: number;
-  sample_count: number;
-  district_count: number;
-  districts: string[];
-}
 
 export default function HomePage() {
   const router = useRouter();
   const [cities, setCities] = useState<CityInfo[]>([]);
-  const [stats, setStats] = useState<Record<string, unknown>>({});
+  const [stats, setStats] = useState<Record<string, CityData>>({});
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedRentalType, setSelectedRentalType] = useState("");
@@ -25,36 +19,6 @@ export default function HomePage() {
   const [selectedRent, setSelectedRent] = useState("");
   const [showMoreFilters, setShowMoreFilters] = useState(false);
   const [districts, setDistricts] = useState<string[]>([]);
-
-  const RENTAL_TYPES = [
-    { label: "整戶出租", value: "整棟(戶)出租" },
-    { label: "獨立套房", value: "獨立套房" },
-    { label: "分租套房", value: "分租套房" },
-    { label: "分租雅房", value: "分租雅房" },
-    { label: "分層出租", value: "分層出租" },
-  ];
-
-  const AREA_RANGES = [
-    { label: "10坪以下", value: "0-10" },
-    { label: "10-20坪", value: "10-20" },
-    { label: "20-30坪", value: "20-30" },
-    { label: "30-40坪", value: "30-40" },
-    { label: "40坪以上", value: "40-999" },
-  ];
-
-  const RENT_RANGES = [
-    { label: "5千以下", value: "0-5000" },
-    { label: "5千-1萬", value: "5000-10000" },
-    { label: "1萬-2萬", value: "10000-20000" },
-    { label: "2萬-3萬", value: "20000-30000" },
-    { label: "3萬-5萬", value: "30000-50000" },
-    { label: "5萬以上", value: "50000+" },
-  ];
-
-  const FLOORS = Array.from({ length: 25 }, (_, i) => ({
-    label: `${i + 1}樓`,
-    value: String(i + 1),
-  }));
 
   useEffect(() => {
     Promise.all([
@@ -75,26 +39,11 @@ export default function HomePage() {
     setSelectedRoad("");
   }, [selectedCity, cities]);
 
-  // Available roads for selected district
-  const typedStats = stats as Record<
-    string,
-    {
-      districts: Record<
-        string,
-        {
-          roads?: Record<string, { sample_count: number }>;
-        }
-      >;
-    }
-  >;
-
   const availableRoads =
     selectedCity &&
     selectedDistrict &&
-    typedStats[selectedCity]?.districts?.[selectedDistrict]?.roads
-      ? Object.entries(
-          typedStats[selectedCity].districts[selectedDistrict].roads!
-        )
+    stats[selectedCity]?.districts?.[selectedDistrict]?.roads
+      ? Object.entries(stats[selectedCity].districts[selectedDistrict].roads!)
           .sort(([, a], [, b]) => b.sample_count - a.sample_count)
           .map(([name]) => name)
       : [];
@@ -255,7 +204,7 @@ export default function HomePage() {
 
             {/* Road Search */}
             {Object.keys(stats).length > 0 && (
-              <RoadSearch stats={stats as Record<string, { districts: Record<string, { roads?: Record<string, { median_rent: number; avg_rent: number; sample_count: number; avg_area_ping?: number }> }> }>} />
+              <RoadSearch stats={stats} />
             )}
           </div>
         </div>

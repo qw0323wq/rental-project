@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { RENTAL_TYPE_CONFIG } from "@/lib/constants";
 import {
   BarChart,
   Bar,
@@ -132,15 +133,6 @@ function getCityColor(units: number): string {
   if (units >= 100) return "#93C5FD";
   return "#BFDBFE";
 }
-
-// Rental type display labels and colors
-const RENTAL_TYPE_CONFIG: Record<string, { label: string; color: string; icon: string }> = {
-  "整棟(戶)出租": { label: "整戶出租", color: "#3B82F6", icon: "🏠" },
-  "獨立套房": { label: "獨立套房", color: "#8B5CF6", icon: "🚪" },
-  "分租套房": { label: "分租套房", color: "#F59E0B", icon: "🛏️" },
-  "分租雅房": { label: "分租雅房", color: "#10B981", icon: "📦" },
-  "分層出租": { label: "分層出租", color: "#6B7280", icon: "🏢" },
-};
 
 // === Props ===
 

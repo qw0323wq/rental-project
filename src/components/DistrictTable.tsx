@@ -1,24 +1,6 @@
 "use client";
 
-interface DistrictData {
-  median_rent: number;
-  avg_rent: number;
-  min_rent: number;
-  max_rent: number;
-  sample_count: number;
-  avg_area_ping?: number;
-  by_type?: Record<
-    string,
-    {
-      median_rent: number;
-      avg_rent: number;
-      min_rent: number;
-      max_rent: number;
-      sample_count: number;
-      avg_area_ping?: number;
-    }
-  >;
-}
+import type { DistrictData } from "@/types";
 
 interface DistrictTableProps {
   districts: Record<string, DistrictData>;
