@@ -11,6 +11,7 @@ import type {
   CityRentTrends,
 } from "@/types";
 import { RENTAL_TYPES, AREA_RANGES, RENT_RANGES, FLOORS } from "@/lib/constants";
+import { getRentSummary, filterDistrictsByArea, filterRoadsByArea } from "@/lib/rental-utils";
 import RentChart from "@/components/RentChart";
 import RentTrendChart from "@/components/RentTrendChart";
 import DistrictTable from "@/components/DistrictTable";
@@ -21,14 +22,15 @@ import StatCard from "@/components/StatCard";
 import BuildingInfo from "@/components/BuildingInfo";
 import RoadTable from "@/components/RoadTable";
 import RoadSearch from "@/components/RoadSearch";
-import CpiRentChart from "@/components/CpiRentChart";
-import SocialHousingCard from "@/components/SocialHousingCard";
+import CpiRentChart from "@/components/cpi-rent-chart";
+import SocialHousingCard from "@/components/social-housing";
 import RentPricing from "@/components/RentPricing";
 import AskingPriceComparison from "@/components/AskingPriceComparison";
 import RentalTypeAnalysis from "@/components/RentalTypeAnalysis";
 import SquareEfficiency from "@/components/SquareEfficiency";
 import RoadDetail from "@/components/RoadDetail";
 
+// CRITICAL: Leaflet requires `window` — must disable SSR or build will fail
 const RentMap = dynamic(() => import("@/components/RentMap"), {
   ssr: false,
   loading: () => (
@@ -54,6 +56,7 @@ function SearchContent() {
   const [stats, setStats] = useState<Record<string, CityData>>({});
   const [cities, setCities] = useState<CityInfo[]>([]);
   const [rentTrends, setRentTrends] = useState<Record<string, CityRentTrends>>({});
+  // CRITICAL: districtProfiles JSON shape is deeply nested and varies per district — typed as any intentionally
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [districtProfiles, setDistrictProfiles] = useState<Record<string, Record<string, any>>>({});
   const [askingData, setAskingData] = useState<AskingData | null>(null);
@@ -144,65 +147,19 @@ function SearchContent() {
     if (district) {
       return singleDistrict ? { [district]: cityData.districts[district] } : {};
     }
-    const allDistricts = cityData?.districts || {};
-    if (!areaRange) return allDistricts;
-    return Object.fromEntries(
-      Object.entries(allDistricts).filter(([, d]) => {
-        if (!d.avg_area_ping) return true;
-        return d.avg_area_ping >= areaRange[0] && d.avg_area_ping <= areaRange[1];
-      })
-    );
+    return filterDistrictsByArea(cityData?.districts || {}, areaRange);
   })();
 
   const currentRoads = (() => {
     if (!singleDistrict?.roads) return null;
-    const roads = singleDistrict.roads;
-    if (!areaRange) return roads;
-    return Object.fromEntries(
-      Object.entries(roads).filter(([, r]) => {
-        if (!r.avg_area_ping) return true;
-        return r.avg_area_ping >= areaRange[0] && r.avg_area_ping <= areaRange[1];
-      })
-    );
+    return filterRoadsByArea(singleDistrict.roads, areaRange);
   })();
 
   const singleRoad = road && currentRoads ? currentRoads[road] : null;
 
-  const getSummary = () => {
-    if (singleRoad) {
-      return {
-        median: singleRoad.median_rent,
-        avg: singleRoad.avg_rent,
-        count: singleRoad.sample_count,
-        area: singleRoad.avg_area_ping,
-      };
-    }
-    if (singleDistrict) {
-      if (rentalType && singleDistrict.by_rental_type?.[rentalType]) {
-        const rt = singleDistrict.by_rental_type[rentalType];
-        return { median: rt.median_rent, avg: rt.avg_rent, count: rt.sample_count, area: rt.avg_area_ping, rooms: rt.avg_rooms };
-      }
-      if (roomType && singleDistrict.by_type?.[roomType]) {
-        const t = singleDistrict.by_type[roomType];
-        return { median: t.median_rent, avg: t.avg_rent, count: t.sample_count, area: t.avg_area_ping };
-      }
-      if (floorRange && singleDistrict.by_floor?.[floorRange]) {
-        const f = singleDistrict.by_floor[floorRange];
-        return { median: f.median_rent, avg: f.avg_rent, count: f.sample_count, area: f.avg_area_ping };
-      }
-      if (rentRange && singleDistrict.by_rent_range?.[rentRange]) {
-        const r = singleDistrict.by_rent_range[rentRange];
-        return { median: r.median_rent, avg: r.avg_rent, count: r.sample_count, area: r.avg_area_ping };
-      }
-      return { median: singleDistrict.median_rent, avg: singleDistrict.avg_rent, count: singleDistrict.sample_count, area: singleDistrict.avg_area_ping };
-    }
-    if (cityData?.summary) {
-      return { median: cityData.summary.median_rent, avg: cityData.summary.avg_rent, count: cityData.summary.sample_count, area: undefined };
-    }
-    return null;
-  };
-
-  const summary = !loading && city ? getSummary() : null;
+  const summary = !loading && city
+    ? getRentSummary({ cityData, singleDistrict, singleRoad, rentalType, roomType, floorRange, rentRange })
+    : null;
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
