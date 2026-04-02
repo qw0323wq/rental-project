@@ -2,7 +2,7 @@
   {
     "name": "桃園市",
     "median_rent": 15000,
-    "sample_count": 61976,
+    "sample_count": 67898,
     "district_count": 12,
     "districts": [
       "中壢區",
@@ -22,8 +22,8 @@
   {
     "name": "新北市",
     "median_rent": 20000,
-    "sample_count": 59124,
-    "district_count": 26,
+    "sample_count": 65229,
+    "district_count": 27,
     "districts": [
       "三峽區",
       "三芝區",
@@ -54,7 +54,7 @@
   {
     "name": "高雄市",
     "median_rent": 16000,
-    "sample_count": 39914,
+    "sample_count": 43830,
     "district_count": 34,
     "districts": [
       "三民區",
@@ -93,7 +93,7 @@
   {
     "name": "台中市",
     "median_rent": 15000,
-    "sample_count": 37917,
+    "sample_count": 41368,
     "district_count": 28,
     "districts": [
       "中區",
@@ -127,8 +127,8 @@
   },
   {
     "name": "台北市",
-    "median_rent": 26800,
-    "sample_count": 36867,
+    "median_rent": 26600,
+    "sample_count": 40193,
     "district_count": 12,
     "districts": [
       "中山區",
@@ -148,8 +148,8 @@
   {
     "name": "台南市",
     "median_rent": 15000,
-    "sample_count": 23160,
-    "district_count": 50,
+    "sample_count": 25467,
+    "district_count": 51,
     "districts": [
       "七股區",
       "下營區",
@@ -160,6 +160,7 @@
       "六甲區",
       "六腳鄉",
       "北區",
+      "北門區",
       "南區",
       "善化區",
       "大內區",
@@ -199,7 +200,7 @@
   {
     "name": "基隆市",
     "median_rent": 12000,
-    "sample_count": 4634,
+    "sample_count": 5070,
     "district_count": 7,
     "districts": [
       "七堵區",
@@ -214,7 +215,7 @@
   {
     "name": "嘉義市",
     "median_rent": 11000,
-    "sample_count": 2825,
+    "sample_count": 3143,
     "district_count": 1,
     "districts": [
       "嘉義市"
@@ -223,7 +224,7 @@
   {
     "name": "宜蘭縣",
     "median_rent": 13000,
-    "sample_count": 2700,
+    "sample_count": 2978,
     "district_count": 10,
     "districts": [
       "三星鄉",
@@ -239,9 +240,25 @@
     ]
   },
   {
+    "name": "新竹縣",
+    "median_rent": 20000,
+    "sample_count": 2855,
+    "district_count": 9,
+    "districts": [
+      "寶山鄉",
+      "新埔鎮",
+      "新豐鄉",
+      "湖口鄉",
+      "竹北市",
+      "竹東鎮",
+      "芎林鄉",
+      "關西鎮"
+    ]
+  },
+  {
     "name": "花蓮縣",
-    "median_rent": 5800,
-    "sample_count": 2568,
+    "median_rent": 6000,
+    "sample_count": 2762,
     "district_count": 23,
     "districts": [
       "九如鄉",
@@ -265,25 +282,9 @@
     ]
   },
   {
-    "name": "新竹縣",
-    "median_rent": 20000,
-    "sample_count": 2554,
-    "district_count": 9,
-    "districts": [
-      "寶山鄉",
-      "新埔鎮",
-      "新豐鄉",
-      "湖口鄉",
-      "竹北市",
-      "竹東鎮",
-      "芎林鄉",
-      "關西鎮"
-    ]
-  },
-  {
     "name": "雲林縣",
     "median_rent": 16000,
-    "sample_count": 2461,
+    "sample_count": 2690,
     "district_count": 1,
     "districts": [
       "新竹市"
@@ -291,8 +292,8 @@
   },
   {
     "name": "彰化縣",
-    "median_rent": 12400,
-    "sample_count": 2163,
+    "median_rent": 12500,
+    "sample_count": 2451,
     "district_count": 25,
     "districts": [
       "二林鎮",
@@ -324,7 +325,7 @@
   {
     "name": "臺東縣",
     "median_rent": 13000,
-    "sample_count": 2102,
+    "sample_count": 2253,
     "district_count": 10,
     "districts": [
       "光復鄉",
@@ -340,9 +341,10 @@
   {
     "name": "苗栗縣",
     "median_rent": 13500,
-    "sample_count": 1702,
+    "sample_count": 1933,
     "district_count": 12,
     "districts": [
+      "三義鄉",
       "公館鄉",
       "大湖鄉",
       "後龍鎮",
@@ -356,8 +358,8 @@
   },
   {
     "name": "嘉義縣",
-    "median_rent": 5500,
-    "sample_count": 1403,
+    "median_rent": 6500,
+    "sample_count": 1544,
     "district_count": 18,
     "districts": [
       "元長鄉",
@@ -368,6 +370,7 @@
       "崙背鄉",
       "斗六市",
       "斗南鎮",
+      "林內鄉",
       "莿桐鄉",
       "虎尾鎮",
       "西螺鎮"
@@ -375,8 +378,8 @@
   },
   {
     "name": "南投縣",
-    "median_rent": 10000,
-    "sample_count": 1050,
+    "median_rent": 10500,
+    "sample_count": 1172,
     "district_count": 11,
     "districts": [
       "南投市",
@@ -387,13 +390,14 @@
       "竹山鎮",
       "草屯鎮",
       "集集鎮",
-      "魚池鄉"
+      "魚池鄉",
+      "鹿谷鄉"
     ]
   },
   {
     "name": "澎湖縣",
     "median_rent": 12000,
-    "sample_count": 364,
+    "sample_count": 431,
     "district_count": 7,
     "districts": [
       "卑南鄉",
@@ -402,8 +406,8 @@
   },
   {
     "name": "連江縣",
-    "median_rent": 8800,
-    "sample_count": 122,
+    "median_rent": 9000,
+    "sample_count": 127,
     "district_count": 2,
     "districts": [
       "馬公市"
@@ -411,8 +415,8 @@
   },
   {
     "name": "金門縣",
-    "median_rent": 12500,
-    "sample_count": 21,
+    "median_rent": 12000,
+    "sample_count": 22,
     "district_count": 4,
     "districts": [
       "金城鎮",
