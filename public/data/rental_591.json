@@ -1,663 +1,656 @@
 {
-  "crawl_date": "2026-04-12",
+  "crawl_date": "2026-04-22",
   "source": "591租屋網",
   "data_type": "asking_price",
   "note": "此為當前掛牌問價，非成交價。資料僅供參考。",
   "cities": {
     "台北市": {
       "total_count": 360,
-      "median_rent": 25000,
-      "avg_rent": 34209,
-      "min_rent": 2500,
-      "max_rent": 184999,
-      "avg_area_ping": 20.1,
+      "median_rent": 32000,
+      "avg_rent": 36423,
+      "min_rent": 6000,
+      "max_rent": 180000,
+      "avg_area_ping": 21.1,
       "by_type": {
-        "套房": {
-          "count": 26,
-          "median_rent": 17500,
-          "avg_rent": 16115,
-          "min_rent": 10000,
-          "max_rent": 26000
-        },
         "獨立套房": {
           "count": 60,
           "median_rent": 17000,
-          "avg_rent": 18215,
-          "min_rent": 8500,
-          "max_rent": 38500
+          "avg_rent": 21796,
+          "min_rent": 11999,
+          "max_rent": 44998
         },
         "未分類": {
-          "count": 105,
-          "median_rent": 23000,
-          "avg_rent": 30965,
-          "min_rent": 2500,
-          "max_rent": 184999
-        },
-        "整層住家": {
-          "count": 150,
-          "median_rent": 37800,
-          "avg_rent": 48885,
-          "min_rent": 16000,
-          "max_rent": 184999
+          "count": 90,
+          "median_rent": 32000,
+          "avg_rent": 36423,
+          "min_rent": 6000,
+          "max_rent": 180000
         },
         "雅房": {
-          "count": 9,
-          "median_rent": 6800,
-          "avg_rent": 8433,
-          "min_rent": 6500,
-          "max_rent": 12000
+          "count": 18,
+          "median_rent": 13000,
+          "avg_rent": 11950,
+          "min_rent": 6000,
+          "max_rent": 14900
+        },
+        "套房": {
+          "count": 32,
+          "median_rent": 16499,
+          "avg_rent": 16987,
+          "min_rent": 11999,
+          "max_rent": 23500
+        },
+        "整層住家": {
+          "count": 159,
+          "median_rent": 44900,
+          "avg_rent": 48775,
+          "min_rent": 15500,
+          "max_rent": 180000
         },
         "分租套房": {
-          "count": 10,
-          "median_rent": 13500,
-          "avg_rent": 14350,
-          "min_rent": 10000,
-          "max_rent": 20000
+          "count": 1,
+          "median_rent": 12500,
+          "avg_rent": 12500,
+          "min_rent": 12500,
+          "max_rent": 12500
         }
       },
       "samples": [
         {
-          "rent": 18999,
-          "area_ping": 15.0,
-          "title": "南京三民站，獨洗、有陽台、收垃圾、電梯套房、天然氣",
-          "type": "套房"
-        },
-        {
-          "rent": 18999,
-          "area_ping": 15.0,
-          "title": "南京三民站，獨洗、有陽台、收垃圾、電梯套房、天然氣",
-          "type": "套房"
-        },
-        {
-          "rent": 18999,
-          "area_ping": 15.0,
+          "rent": 16500,
+          "area_ping": 7.0,
+          "title": "新裝潢~免爬高樓層~垃圾代收~飲水機可使用~採光通風佳",
           "type": "獨立套房"
         },
         {
-          "rent": 18999
+          "rent": 16500,
+          "area_ping": 7.0,
+          "title": "新裝潢~免爬高樓層~垃圾代收~飲水機可使用~採光通風佳",
+          "type": "獨立套房"
         },
         {
-          "rent": 26800,
-          "area_ping": 26.0,
-          "title": "經典鄉村風透天3房",
-          "type": "整層住家"
+          "rent": 16500,
+          "area_ping": 7.0,
+          "type": "獨立套房"
         },
         {
-          "rent": 26800,
-          "area_ping": 26.0,
-          "title": "經典鄉村風透天3房",
-          "type": "整層住家"
+          "rent": 16500
         },
         {
-          "rent": 26800,
-          "area_ping": 26.0,
-          "type": "整層住家"
+          "rent": 6000,
+          "area_ping": 4.0,
+          "title": "*吳興商圈*超明亮邊間雅房*北醫學生首選",
+          "type": "雅房"
         },
         {
-          "rent": 26800
+          "rent": 6000,
+          "area_ping": 4.0,
+          "title": "*吳興商圈*超明亮邊間雅房*北醫學生首選",
+          "type": "雅房"
         },
         {
-          "rent": 11991,
+          "rent": 6000,
+          "area_ping": 4.0,
+          "type": "雅房"
+        },
+        {
+          "rent": 6000
+        },
+        {
+          "rent": 23499,
           "area_ping": 8.0,
-          "title": "南京三民捷運，新裝潢大套房，獨立洗衣，低樓免爬，限女性優選好屋",
+          "title": "🍑精美大套房🍑圓山捷運站🍑垃圾代收🍑採光機能超好優選好屋",
           "type": "套房"
         },
         {
-          "rent": 11991,
+          "rent": 23499,
           "area_ping": 8.0,
-          "title": "南京三民捷運，新裝潢大套房，獨立洗衣，低樓免爬，限女性優選好屋",
+          "title": "🍑精美大套房🍑圓山捷運站🍑垃圾代收🍑採光機能超好優選好屋",
           "type": "套房"
         }
       ]
     },
     "新北市": {
       "total_count": 360,
-      "median_rent": 26700,
-      "avg_rent": 27593,
-      "min_rent": 2000,
-      "max_rent": 56500,
-      "avg_area_ping": 20.6,
+      "median_rent": 22000,
+      "avg_rent": 22602,
+      "min_rent": 2900,
+      "max_rent": 60000,
+      "avg_area_ping": 21.3,
       "by_type": {
+        "整層": {
+          "count": 2,
+          "median_rent": 28000,
+          "avg_rent": 28000,
+          "min_rent": 28000,
+          "max_rent": 28000
+        },
         "整層住家": {
-          "count": 201,
-          "median_rent": 32000,
-          "avg_rent": 32061,
-          "min_rent": 14500,
-          "max_rent": 56500
+          "count": 183,
+          "median_rent": 25000,
+          "avg_rent": 28215,
+          "min_rent": 9900,
+          "max_rent": 60000
         },
         "未分類": {
-          "count": 91,
-          "median_rent": 26700,
-          "avg_rent": 27894,
-          "min_rent": 2000,
-          "max_rent": 56500
+          "count": 96,
+          "median_rent": 21000,
+          "avg_rent": 21421,
+          "min_rent": 2900,
+          "max_rent": 60000
+        },
+        "雅房": {
+          "count": 18,
+          "median_rent": 9200,
+          "avg_rent": 8433,
+          "min_rent": 6300,
+          "max_rent": 11800
         },
         "套房": {
-          "count": 16,
-          "median_rent": 13000,
-          "avg_rent": 12812,
+          "count": 18,
+          "median_rent": 9900,
+          "avg_rent": 11055,
           "min_rent": 8000,
-          "max_rent": 22000
+          "max_rent": 18000
         },
         "獨立套房": {
           "count": 33,
-          "median_rent": 15000,
-          "avg_rent": 14252,
-          "min_rent": 2000,
-          "max_rent": 26000
-        },
-        "整層": {
-          "count": 2,
-          "median_rent": 55000,
-          "avg_rent": 55000,
-          "min_rent": 55000,
-          "max_rent": 55000
+          "median_rent": 11499,
+          "avg_rent": 12645,
+          "min_rent": 7800,
+          "max_rent": 21000
         },
         "分租套房": {
-          "count": 14,
-          "median_rent": 10000,
-          "avg_rent": 10321,
-          "min_rent": 7000,
-          "max_rent": 15000
-        },
-        "雅房": {
-          "count": 3,
-          "median_rent": 7000,
-          "avg_rent": 7000,
-          "min_rent": 7000,
-          "max_rent": 7000
+          "count": 10,
+          "median_rent": 8500,
+          "avg_rent": 9290,
+          "min_rent": 7300,
+          "max_rent": 12500
         }
       },
       "samples": [
         {
-          "rent": 52000,
-          "area_ping": 60.0,
-          "title": "租府中捷運站步行10分鐘四川路旁透天金店面店住合一適百業",
+          "rent": 28000,
+          "area_ping": 25.0,
+          "title": "復興路｜近景安捷運站｜整層出租",
+          "type": "整層"
+        },
+        {
+          "rent": 28000,
+          "area_ping": 25.0,
+          "title": "復興路｜近景安捷運站｜整層出租",
+          "type": "整層"
+        },
+        {
+          "rent": 28000,
+          "area_ping": 25.0,
           "type": "整層住家"
         },
         {
-          "rent": 52000,
-          "area_ping": 60.0,
-          "title": "租府中捷運站步行10分鐘四川路旁透天金店面店住合一適百業",
+          "rent": 28000
+        },
+        {
+          "rent": 25000,
+          "area_ping": 42.2,
+          "title": "✨免服務費✨大空間四房✨北新商圈",
           "type": "整層住家"
         },
         {
-          "rent": 52000,
-          "area_ping": 60.0,
+          "rent": 25000,
+          "area_ping": 42.2,
+          "title": "✨免服務費✨大空間四房✨北新商圈",
           "type": "整層住家"
         },
         {
-          "rent": 52000
-        },
-        {
-          "rent": 38000,
-          "area_ping": 30.6,
-          "title": "SINDY★A9春木日曜3房雙車位",
+          "rent": 25000,
+          "area_ping": 42.2,
           "type": "整層住家"
         },
         {
-          "rent": 38000,
-          "area_ping": 30.6,
-          "title": "SINDY★A9春木日曜3房雙車位",
+          "rent": 25000
+        },
+        {
+          "rent": 13000,
+          "area_ping": 25.0,
+          "title": "性價比高🐥~男女皆可🐥現代美宅",
           "type": "整層住家"
         },
         {
-          "rent": 38000,
-          "area_ping": 30.6,
+          "rent": 13000,
+          "area_ping": 25.0,
+          "title": "性價比高🐥~男女皆可🐥現代美宅",
           "type": "整層住家"
-        },
-        {
-          "rent": 38000
-        },
-        {
-          "rent": 12500,
-          "area_ping": 12.0,
-          "title": "501獨立大套房出租，雙衛浴(限女性)優選好屋",
-          "type": "套房"
-        },
-        {
-          "rent": 12500,
-          "area_ping": 12.0,
-          "title": "501獨立大套房出租，雙衛浴(限女性)優選好屋",
-          "type": "套房"
         }
       ]
     },
     "桃園市": {
       "total_count": 360,
-      "median_rent": 14000,
-      "avg_rent": 17420,
-      "min_rent": 2500,
-      "max_rent": 38000,
-      "avg_area_ping": 17.3,
+      "median_rent": 18000,
+      "avg_rent": 18844,
+      "min_rent": 7000,
+      "max_rent": 75000,
+      "avg_area_ping": 23.4,
       "by_type": {
         "整層住家": {
-          "count": 120,
-          "median_rent": 26800,
-          "avg_rent": 26328,
-          "min_rent": 11000,
-          "max_rent": 38000
+          "count": 225,
+          "median_rent": 19000,
+          "avg_rent": 20687,
+          "min_rent": 12300,
+          "max_rent": 75000
         },
         "未分類": {
-          "count": 99,
-          "median_rent": 14000,
-          "avg_rent": 17609,
-          "min_rent": 2500,
-          "max_rent": 38000
+          "count": 90,
+          "median_rent": 18000,
+          "avg_rent": 18844,
+          "min_rent": 7000,
+          "max_rent": 75000
         },
         "套房": {
-          "count": 48,
-          "median_rent": 10000,
-          "avg_rent": 10279,
-          "min_rent": 5700,
-          "max_rent": 15000
+          "count": 30,
+          "median_rent": 8500,
+          "avg_rent": 9340,
+          "min_rent": 7000,
+          "max_rent": 16000
         },
         "獨立套房": {
-          "count": 70,
-          "median_rent": 9500,
-          "avg_rent": 9631,
-          "min_rent": 5700,
-          "max_rent": 15500
-        },
-        "雅房": {
-          "count": 12,
-          "median_rent": 6500,
-          "avg_rent": 5250,
-          "min_rent": 3000,
-          "max_rent": 6500
+          "count": 11,
+          "median_rent": 8500,
+          "avg_rent": 10873,
+          "min_rent": 7000,
+          "max_rent": 18200
         },
         "分租套房": {
-          "count": 11,
-          "median_rent": 12000,
-          "avg_rent": 12545,
-          "min_rent": 6500,
-          "max_rent": 18500
+          "count": 4,
+          "median_rent": 9000,
+          "avg_rent": 8400,
+          "min_rent": 7600,
+          "max_rent": 9000
         }
       },
       "samples": [
         {
-          "rent": 15000,
-          "area_ping": 17.0,
-          "title": "社宅免仲可租捕〃觀音工業區空屋急租",
-          "type": "整層住家"
-        },
-        {
-          "rent": 15000,
-          "area_ping": 17.0,
-          "title": "社宅免仲可租捕〃觀音工業區空屋急租",
-          "type": "整層住家"
-        },
-        {
-          "rent": 15000,
-          "area_ping": 17.0,
-          "type": "整層住家"
-        },
-        {
-          "rent": 15000
-        },
-        {
-          "rent": 30000,
-          "area_ping": 36.8,
-          "title": "近藝文/風禾公園旁~舒適景觀2房~可租補優選好屋",
-          "type": "整層住家"
-        },
-        {
-          "rent": 30000,
-          "area_ping": 36.8,
-          "title": "近藝文/風禾公園旁~舒適景觀2房~可租補優選好屋",
-          "type": "整層住家"
-        },
-        {
-          "rent": 30000,
-          "area_ping": 36.8,
-          "type": "整層住家"
-        },
-        {
-          "rent": 30000
-        },
-        {
           "rent": 25000,
-          "area_ping": 19.0,
-          "title": "近藝文區二房/安靜高樓層景觀好/全配",
+          "area_ping": 30.8,
+          "title": "寵可議✨青埔A18國家大院✨全配兩房車",
           "type": "整層住家"
         },
         {
           "rent": 25000,
-          "area_ping": 19.0,
-          "title": "近藝文區二房/安靜高樓層景觀好/全配",
+          "area_ping": 30.8,
+          "title": "寵可議✨青埔A18國家大院✨全配兩房車",
+          "type": "整層住家"
+        },
+        {
+          "rent": 25000,
+          "area_ping": 30.8,
+          "type": "整層住家"
+        },
+        {
+          "rent": 25000
+        },
+        {
+          "rent": 20000,
+          "area_ping": 16.8,
+          "title": "AL【免仲介費可租補】⭐含車含管⭐客運園區景(警)觀兩房車",
+          "type": "整層住家"
+        },
+        {
+          "rent": 20000,
+          "area_ping": 16.8,
+          "title": "AL【免仲介費可租補】⭐含車含管⭐客運園區景(警)觀兩房車",
+          "type": "整層住家"
+        },
+        {
+          "rent": 20000,
+          "area_ping": 16.8,
+          "type": "整層住家"
+        },
+        {
+          "rent": 20000
+        },
+        {
+          "rent": 28000,
+          "area_ping": 44.1,
+          "title": "菁美學三房車-簡配含車管",
+          "type": "整層住家"
+        },
+        {
+          "rent": 28000,
+          "area_ping": 44.1,
+          "title": "菁美學三房車-簡配含車管",
           "type": "整層住家"
         }
       ]
     },
     "台中市": {
       "total_count": 360,
-      "median_rent": 9000,
-      "avg_rent": 11958,
-      "min_rent": 3800,
-      "max_rent": 35999,
-      "avg_area_ping": 19.3,
+      "median_rent": 9800,
+      "avg_rent": 12691,
+      "min_rent": 3000,
+      "max_rent": 37000,
+      "avg_area_ping": 18.6,
       "by_type": {
         "套房": {
-          "count": 74,
-          "median_rent": 6000,
-          "avg_rent": 7635,
-          "min_rent": 4000,
-          "max_rent": 32999
+          "count": 68,
+          "median_rent": 6600,
+          "avg_rent": 6724,
+          "min_rent": 3000,
+          "max_rent": 12000
         },
         "獨立套房": {
           "count": 72,
-          "median_rent": 6500,
-          "avg_rent": 7758,
-          "min_rent": 4000,
+          "median_rent": 7200,
+          "avg_rent": 7747,
+          "min_rent": 3500,
           "max_rent": 15500
         },
         "未分類": {
           "count": 93,
-          "median_rent": 9000,
-          "avg_rent": 12701,
-          "min_rent": 3800,
-          "max_rent": 35999
+          "median_rent": 9999,
+          "avg_rent": 12798,
+          "min_rent": 3000,
+          "max_rent": 37000
         },
         "整層住家": {
-          "count": 95,
-          "median_rent": 16500,
-          "avg_rent": 19577,
-          "min_rent": 10000,
-          "max_rent": 35999
-        },
-        "雅房": {
-          "count": 12,
-          "median_rent": 4950,
-          "avg_rent": 4988,
-          "min_rent": 3800,
-          "max_rent": 7000
+          "count": 102,
+          "median_rent": 20000,
+          "avg_rent": 21438,
+          "min_rent": 8000,
+          "max_rent": 37000
         },
         "分租套房": {
-          "count": 14,
-          "median_rent": 5700,
-          "avg_rent": 5743,
-          "min_rent": 4000,
-          "max_rent": 9000
+          "count": 16,
+          "median_rent": 6000,
+          "avg_rent": 7138,
+          "min_rent": 3000,
+          "max_rent": 12000
+        },
+        "雅房": {
+          "count": 7,
+          "median_rent": 4500,
+          "avg_rent": 4100,
+          "min_rent": 3500,
+          "max_rent": 4700
+        },
+        "整層": {
+          "count": 2,
+          "median_rent": 17000,
+          "avg_rent": 17000,
+          "min_rent": 17000,
+          "max_rent": 17000
         }
       },
       "samples": [
         {
-          "rent": 7000,
-          "area_ping": 6.0,
-          "title": "全新彰濱工業區（鹿港區住宅區）透天別墅套房（獨洗）優選好屋",
+          "rent": 12000,
+          "area_ping": 12.8,
+          "title": "💖全新💖多戶可選~家具家電超齊全室內空間超大電梯套房優選好屋",
           "type": "套房"
         },
         {
-          "rent": 7000,
-          "area_ping": 6.0,
-          "title": "全新彰濱工業區（鹿港區住宅區）透天別墅套房（獨洗）優選好屋",
+          "rent": 12000,
+          "area_ping": 12.8,
+          "title": "💖全新💖多戶可選~家具家電超齊全室內空間超大電梯套房優選好屋",
           "type": "套房"
         },
         {
-          "rent": 7000,
-          "area_ping": 6.0,
+          "rent": 12000,
+          "area_ping": 12.8,
           "type": "獨立套房"
         },
         {
-          "rent": 7000
+          "rent": 12000
         },
         {
           "rent": 5500,
-          "area_ping": 7.0,
-          "title": "麗禧飯店後面,近員基,近公園夜市賣場",
-          "type": "獨立套房"
-        },
-        {
-          "rent": 5500,
-          "area_ping": 7.0,
-          "title": "麗禧飯店後面,近員基,近公園夜市賣場",
+          "area_ping": 5.0,
+          "title": "市中心店面.乾淨明亮.",
           "type": "獨立套房"
         },
         {
           "rent": 5500,
-          "area_ping": 7.0,
+          "area_ping": 5.0,
+          "title": "市中心店面.乾淨明亮.",
+          "type": "獨立套房"
+        },
+        {
+          "rent": 5500,
+          "area_ping": 5.0,
           "type": "獨立套房"
         },
         {
           "rent": 5500
         },
         {
-          "rent": 15000,
-          "area_ping": 29.2,
-          "title": "全新未住｜富旺艾美莊園次頂樓全新兩房含平車★芳修",
+          "rent": 24500,
+          "area_ping": 20.0,
+          "title": "金馬之櫻🔥裝潢戶2房平車｜傢具全配｜可租補｜視野戶✨優選好屋",
           "type": "整層住家"
         },
         {
-          "rent": 15000,
-          "area_ping": 29.2,
-          "title": "全新未住｜富旺艾美莊園次頂樓全新兩房含平車★芳修",
+          "rent": 24500,
+          "area_ping": 20.0,
+          "title": "金馬之櫻🔥裝潢戶2房平車｜傢具全配｜可租補｜視野戶✨優選好屋",
           "type": "整層住家"
         }
       ]
     },
     "台南市": {
       "total_count": 360,
-      "median_rent": 19500,
-      "avg_rent": 19982,
-      "min_rent": 4000,
-      "max_rent": 65000,
-      "avg_area_ping": 19.4,
+      "median_rent": 22000,
+      "avg_rent": 21383,
+      "min_rent": 5500,
+      "max_rent": 80000,
+      "avg_area_ping": 25.4,
       "by_type": {
-        "獨立套房": {
-          "count": 44,
-          "median_rent": 9000,
-          "avg_rent": 9870,
-          "min_rent": 4500,
-          "max_rent": 19500
+        "整層住家": {
+          "count": 190,
+          "median_rent": 23800,
+          "avg_rent": 26618,
+          "min_rent": 10000,
+          "max_rent": 80000
         },
         "未分類": {
-          "count": 102,
-          "median_rent": 22000,
-          "avg_rent": 21455,
-          "min_rent": 4000,
-          "max_rent": 65000
-        },
-        "整層住家": {
-          "count": 146,
-          "median_rent": 25000,
-          "avg_rent": 27647,
-          "min_rent": 8800,
-          "max_rent": 65000
+          "count": 93,
+          "median_rent": 20500,
+          "avg_rent": 20887,
+          "min_rent": 5500,
+          "max_rent": 80000
         },
         "套房": {
-          "count": 40,
-          "median_rent": 8000,
-          "avg_rent": 7720,
-          "min_rent": 4500,
-          "max_rent": 12800
+          "count": 32,
+          "median_rent": 7500,
+          "avg_rent": 9344,
+          "min_rent": 5500,
+          "max_rent": 25000
         },
         "分租套房": {
-          "count": 16,
-          "median_rent": 8000,
-          "avg_rent": 7862,
+          "count": 17,
+          "median_rent": 6500,
+          "avg_rent": 8141,
+          "min_rent": 5500,
+          "max_rent": 13000
+        },
+        "獨立套房": {
+          "count": 21,
+          "median_rent": 7800,
+          "avg_rent": 8129,
           "min_rent": 5500,
           "max_rent": 15000
         },
         "雅房": {
-          "count": 6,
-          "median_rent": 6000,
-          "avg_rent": 5000,
-          "min_rent": 4000,
-          "max_rent": 6000
+          "count": 3,
+          "median_rent": 10000,
+          "avg_rent": 10000,
+          "min_rent": 10000,
+          "max_rent": 10000
         },
         "整層": {
-          "count": 6,
-          "median_rent": 10000,
-          "avg_rent": 11667,
-          "min_rent": 10000,
-          "max_rent": 15000
+          "count": 4,
+          "median_rent": 16000,
+          "avg_rent": 15000,
+          "min_rent": 14000,
+          "max_rent": 16000
         }
       },
       "samples": [
         {
-          "rent": 14720,
-          "area_ping": 10.0,
-          "title": "租滿一年送一個月|可寵物|可補助|採光電梯一房一廳優選好屋",
-          "type": "獨立套房"
-        },
-        {
-          "rent": 14720,
-          "area_ping": 10.0,
-          "title": "租滿一年送一個月|可寵物|可補助|採光電梯一房一廳優選好屋",
-          "type": "獨立套房"
-        },
-        {
-          "rent": 14720,
-          "area_ping": 10.0,
-          "type": "獨立套房"
-        },
-        {
-          "rent": 14720
-        },
-        {
-          "rent": 30000,
-          "area_ping": 31.8,
-          "title": "左營博愛大道#高鐵精品宅(含平車)",
+          "rent": 22500,
+          "area_ping": 29.8,
+          "title": "🎉免仲介費✅可租補│巨蛋商圈│採光大三房有平車🏆嘉暘社宅",
           "type": "整層住家"
         },
         {
-          "rent": 30000,
-          "area_ping": 31.8,
-          "title": "左營博愛大道#高鐵精品宅(含平車)",
+          "rent": 22500,
+          "area_ping": 29.8,
+          "title": "🎉免仲介費✅可租補│巨蛋商圈│採光大三房有平車🏆嘉暘社宅",
           "type": "整層住家"
         },
         {
-          "rent": 30000,
-          "area_ping": 31.8,
+          "rent": 22500,
+          "area_ping": 29.8,
           "type": "整層住家"
         },
         {
-          "rent": 30000
+          "rent": 22500
         },
         {
-          "rent": 25000,
-          "area_ping": 32.0,
-          "title": "巨蛋商圈★全新整理★明亮寬敞大坪數３房★可租補",
+          "rent": 18500,
+          "area_ping": 14.0,
+          "title": "<租補>楠梓德賢商圈《超越100》精美兩房",
           "type": "整層住家"
         },
         {
-          "rent": 25000,
-          "area_ping": 32.0,
-          "title": "巨蛋商圈★全新整理★明亮寬敞大坪數３房★可租補",
+          "rent": 18500,
+          "area_ping": 14.0,
+          "title": "<租補>楠梓德賢商圈《超越100》精美兩房",
+          "type": "整層住家"
+        },
+        {
+          "rent": 18500,
+          "area_ping": 14.0,
+          "type": "整層住家"
+        },
+        {
+          "rent": 18500
+        },
+        {
+          "rent": 19800,
+          "area_ping": 30.9,
+          "title": "岡山★核心生活圈★雙鐵共構透天出租",
+          "type": "整層住家"
+        },
+        {
+          "rent": 19800,
+          "area_ping": 30.9,
+          "title": "岡山★核心生活圈★雙鐵共構透天出租",
           "type": "整層住家"
         }
       ]
     },
     "高雄市": {
-      "total_count": 356,
-      "median_rent": 9000,
-      "avg_rent": 12329,
-      "min_rent": 3500,
-      "max_rent": 37000,
-      "avg_area_ping": 19.9,
+      "total_count": 360,
+      "median_rent": 9500,
+      "avg_rent": 14687,
+      "min_rent": 3700,
+      "max_rent": 160000,
+      "avg_area_ping": 18.7,
       "by_type": {
-        "套房": {
-          "count": 72,
-          "median_rent": 6500,
-          "avg_rent": 7339,
-          "min_rent": 4400,
-          "max_rent": 16000
-        },
-        "分租套房": {
-          "count": 30,
-          "median_rent": 7000,
-          "avg_rent": 7387,
-          "min_rent": 4300,
-          "max_rent": 16000
+        "整層住家": {
+          "count": 110,
+          "median_rent": 19000,
+          "avg_rent": 23013,
+          "min_rent": 9000,
+          "max_rent": 160000
         },
         "未分類": {
-          "count": 98,
-          "median_rent": 9000,
-          "avg_rent": 14227,
-          "min_rent": 3500,
-          "max_rent": 37000
+          "count": 96,
+          "median_rent": 10000,
+          "avg_rent": 15175,
+          "min_rent": 3700,
+          "max_rent": 160000
+        },
+        "分租套房": {
+          "count": 47,
+          "median_rent": 6500,
+          "avg_rent": 7016,
+          "min_rent": 4467,
+          "max_rent": 15000
         },
         "獨立套房": {
-          "count": 55,
-          "median_rent": 5800,
-          "avg_rent": 6179,
-          "min_rent": 3500,
-          "max_rent": 10300
+          "count": 56,
+          "median_rent": 5500,
+          "avg_rent": 11230,
+          "min_rent": 3700,
+          "max_rent": 100000
         },
-        "整層住家": {
-          "count": 87,
-          "median_rent": 21000,
-          "avg_rent": 20743,
-          "min_rent": 6000,
-          "max_rent": 37000
+        "套房": {
+          "count": 48,
+          "median_rent": 5634,
+          "avg_rent": 6499,
+          "min_rent": 3700,
+          "max_rent": 18000
         },
         "雅房": {
-          "count": 12,
-          "median_rent": 6500,
-          "avg_rent": 6367,
-          "min_rent": 3500,
-          "max_rent": 9000
-        },
-        "整層": {
-          "count": 2,
-          "median_rent": 12000,
-          "avg_rent": 12000,
-          "min_rent": 12000,
-          "max_rent": 12000
+          "count": 3,
+          "median_rent": 9500,
+          "avg_rent": 9500,
+          "min_rent": 9500,
+          "max_rent": 9500
         }
       },
       "samples": [
         {
-          "rent": 16000,
-          "area_ping": 10.0,
-          "title": "2.2米海量收納北歐實木質感分租雙人套房｜玄關外出櫃+鞋櫃｜優選好屋",
-          "type": "套房"
+          "rent": 19000,
+          "area_ping": 27.4,
+          "title": "兆基社宅🏡輕屋齡傢俱齊全電梯兩房/可租補/免服務費優選好屋",
+          "type": "整層住家"
         },
         {
-          "rent": 16000,
-          "area_ping": 10.0,
-          "title": "2.2米海量收納北歐實木質感分租雙人套房｜玄關外出櫃+鞋櫃｜優選好屋",
-          "type": "套房"
+          "rent": 19000,
+          "area_ping": 27.4,
+          "title": "兆基社宅🏡輕屋齡傢俱齊全電梯兩房/可租補/免服務費優選好屋",
+          "type": "整層住家"
         },
         {
-          "rent": 16000,
-          "area_ping": 10.0,
+          "rent": 19000,
+          "area_ping": 27.4,
+          "type": "整層住家"
+        },
+        {
+          "rent": 19000
+        },
+        {
+          "rent": 6000,
+          "area_ping": 5.0,
+          "title": "屏東達亞大樓/可申請租屋補助開立發票優選好屋",
           "type": "分租套房"
         },
         {
-          "rent": 16000
-        },
-        {
-          "rent": 4500,
-          "area_ping": 6.0,
-          "title": "可租補潮州火車站星巴客圓環延平商圈一級冷氣優選好屋",
+          "rent": 6000,
+          "area_ping": 5.0,
+          "title": "屏東達亞大樓/可申請租屋補助開立發票優選好屋",
           "type": "分租套房"
         },
         {
-          "rent": 4500,
-          "area_ping": 6.0,
-          "title": "可租補潮州火車站星巴客圓環延平商圈一級冷氣優選好屋",
+          "rent": 6000,
+          "area_ping": 5.0,
           "type": "分租套房"
         },
         {
-          "rent": 4500,
-          "area_ping": 6.0,
+          "rent": 6000
+        },
+        {
+          "rent": 7500,
+          "area_ping": 7.0,
+          "title": "屏東大學/屏東工業區/加工區7500雙人房優選好屋",
           "type": "分租套房"
         },
         {
-          "rent": 4500
-        },
-        {
-          "rent": 7100,
-          "area_ping": 8.0,
-          "title": "🌈屏東市全新套房免仲介費優選好屋",
-          "type": "套房"
-        },
-        {
-          "rent": 7100,
-          "area_ping": 8.0,
-          "title": "🌈屏東市全新套房免仲介費優選好屋",
-          "type": "套房"
+          "rent": 7500,
+          "area_ping": 7.0,
+          "title": "屏東大學/屏東工業區/加工區7500雙人房優選好屋",
+          "type": "分租套房"
         }
       ]
     }
