@@ -208,15 +208,23 @@ export default function RentTrendChart({
       </div>
 
       {/* Data quality notice */}
-      <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800 leading-relaxed">
-        <span className="font-semibold">資料品質說明：</span>
-        實價登錄租賃 2021/7 才上路，
-        {filteredOutCount > 0 &&
-          !usingFallback &&
-          `已過濾 ${filteredOutCount} 個樣本 < ${MIN_SAMPLES_FOR_TREND} 筆的年份；`}
-        {usingFallback &&
-          "本區樣本量普遍偏低，趨勢解讀宜謹慎；"}
-        早期登錄偏向業者管理物件，2023 年後較具代表性。標 * 為進行中年度，樣本未滿全年。
+      <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800 leading-relaxed space-y-1.5">
+        <p>
+          <span className="font-semibold">⚠ 中位數下降 ≠ 市場下跌。</span>
+          實價登錄申報義務逐步擴大（2021/7 業者強制 → 2024/7 房東個人），
+          早期樣本偏向業者管理的高單價物件，近年涵蓋全市場 → 中位數結構性下移。
+          真實漲跌請看下方
+          <span className="font-semibold">CPI 住宅租金指數</span>
+          （主計總處 2022→2023 全國 +1.79%、北部連年正成長）。
+        </p>
+        <p className="text-amber-700/80">
+          <span className="font-semibold">資料處理：</span>
+          {filteredOutCount > 0 &&
+            !usingFallback &&
+            `已過濾 ${filteredOutCount} 個樣本 < ${MIN_SAMPLES_FOR_TREND} 筆的年份；`}
+          {usingFallback && "本區樣本量普遍偏低，趨勢解讀宜謹慎；"}
+          標 * 為進行中年度，樣本未滿全年。
+        </p>
       </div>
 
       {/* Year-over-year change annotations */}
