@@ -1,0 +1,20 @@
+# python venv (255 MB, contains 112 MB playwright driver)
+.venv/
+
+# python data pipeline (build-time only, not used at runtime)
+data-pipeline/
+
+# mcp server tooling (49 MB, dev only)
+mcp-server/
+
+# claude code memory
+memory/
+
+# local docs/scripts not needed by build
+setup-claude-memory.sh
+setup-mac.sh
+
+# already-ignored by .gitignore but explicit here for vercel
+.next/
+.git/
+*.bak-*
