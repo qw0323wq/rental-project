@@ -54,6 +54,12 @@ mcp-server/*.txt
 # temp / debug files
 temp_*
 
+# claude code memory (global system, not per-project)
+memory/
+
+# data backups (timestamped local snapshots)
+public/data/*.bak-*
+
 # python venv
 .venv/
 
