@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Project-specific: vendored / non-frontend code that shouldn't be linted
+    ".venv/**",
+    "mcp-server/**",
+    "data-pipeline/**",
   ]),
 ]);
 

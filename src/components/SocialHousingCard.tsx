@@ -200,8 +200,6 @@ export default function SocialHousingCard({
     }))
     .sort((a, b) => b.units - a.units);
 
-  const currentCityData = city ? overviewData.cities[city] : null;
-
   // Future plan data
   const futureData = Object.entries(overviewData.future_plan)
     .map(([year, units]) => ({
