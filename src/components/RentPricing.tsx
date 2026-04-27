@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import type { CityData } from "@/types";
 import { RENTAL_TYPES } from "@/lib/constants";
 
@@ -10,30 +10,31 @@ interface RentPricingProps {
   district?: string;
 }
 
+interface PricingResult {
+  suggested: number;
+  low: number;
+  high: number;
+  perPing: number;
+  basis: string;
+  sampleCount: number;
+}
+
 export default function RentPricing({ stats, city, district }: RentPricingProps) {
   const [inputArea, setInputArea] = useState("");
   const [inputType, setInputType] = useState("整棟(戶)出租");
   const [inputFloor, setInputFloor] = useState("mid");
   const [inputAge, setInputAge] = useState("10");
-  const [result, setResult] = useState<{
-    suggested: number;
-    low: number;
-    high: number;
-    perPing: number;
-    basis: string;
-    sampleCount: number;
-  } | null>(null);
 
-  const calculate = () => {
+  // CRITICAL: result 是 inputs 純衍生 — 用 useMemo 直接計算，避免 effect-setState
+  // 造成 cascading render（React 19 推薦做法）。空 inputs / 無 city 時回 null，UI fallback。
+  const result = useMemo<PricingResult | null>(() => {
     const area = parseFloat(inputArea);
-    if (!area || area <= 0 || !city) return;
+    if (!area || area <= 0 || !city) return null;
 
-    // 取得區域或城市層級的出租型態資料
     const distData = district ? stats[city]?.districts?.[district] : null;
     const cityData = stats[city];
-    if (!cityData) return;
+    if (!cityData) return null;
 
-    // 優先用區域的 by_rental_type，沒有就用區域整體
     let baseRent = 0;
     let baseArea = 0;
     let sampleCount = 0;
@@ -44,7 +45,7 @@ export default function RentPricing({ stats, city, district }: RentPricingProps)
       baseRent = rt.median_rent;
       baseArea = rt.avg_area_ping || area;
       sampleCount = rt.sample_count;
-      basis = `${district} ${RENTAL_TYPES.find(r => r.value === inputType)?.label}`;
+      basis = `${district} ${RENTAL_TYPES.find((r) => r.value === inputType)?.label}`;
     } else if (distData) {
       baseRent = distData.median_rent;
       baseArea = distData.avg_area_ping || area;
@@ -57,41 +58,30 @@ export default function RentPricing({ stats, city, district }: RentPricingProps)
       basis = `${city} 全市`;
     }
 
-    // 每坪單價
     const perPing = baseArea > 0 ? baseRent / baseArea : baseRent / 20;
-
-    // 用每坪單價 × 輸入坪數 = 基礎估算
     let suggested = Math.round(perPing * area);
 
-    // 樓層調整
     if (inputFloor === "high") suggested = Math.round(suggested * 1.05);
     if (inputFloor === "low") suggested = Math.round(suggested * 0.95);
 
-    // 屋齡調整
     const age = parseInt(inputAge) || 10;
     if (age <= 5) suggested = Math.round(suggested * 1.08);
     else if (age <= 10) suggested = Math.round(suggested * 1.03);
     else if (age >= 30) suggested = Math.round(suggested * 0.9);
     else if (age >= 20) suggested = Math.round(suggested * 0.95);
 
-    // 租金範圍（±15%）
     const low = Math.round(suggested * 0.85);
     const high = Math.round(suggested * 1.15);
 
-    setResult({
+    return {
       suggested,
       low,
       high,
       perPing: Math.round(perPing),
       basis,
       sampleCount,
-    });
-  };
-
-  // 自動計算
-  useEffect(() => {
-    if (inputArea && city) calculate();
-  }, [inputArea, inputType, inputFloor, inputAge, city, district]);
+    };
+  }, [inputArea, inputType, inputFloor, inputAge, city, district, stats]);
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">

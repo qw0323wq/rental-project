@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import dynamic from "next/dynamic";
 
 const MapContainer = dynamic(
@@ -31,6 +31,13 @@ import {
 } from "@/lib/coordinates";
 
 import type { DistrictData } from "@/types";
+
+// CRITICAL: 用 useSyncExternalStore 偵測 client mount，避免 effect 內 setState
+// 造成的 cascading render。Leaflet 需要 window，必須等 hydrate 完才能渲染地圖。
+// SSR 與首次 render 都回 false（顯示 loading），hydrate 後 client snapshot 回 true。
+const subscribeNoop = () => () => {};
+const getMountedClient = () => true;
+const getMountedServer = () => false;
 
 interface RentMapProps {
   city?: string;
@@ -99,12 +106,12 @@ export default function RentMap({
   districts,
   onDistrictClick,
 }: RentMapProps) {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    subscribeNoop,
+    getMountedClient,
+    getMountedServer
+  );
   const [mapMode, setMapMode] = useState<"marker" | "heat">("heat");
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   if (!mounted) {
     return (

@@ -90,7 +90,14 @@ function SearchContent() {
       .catch(console.error);
   }, []);
 
-  useEffect(() => {
+  // CRITICAL: URL params 是 source of truth、selected* 是「編輯中暫存」(被 select onChange 修改)。
+  // 當 URL 從外部變動 (breadcrumb / 區域點擊 / 外部連結)，需把 selected* 重設為新 URL 值。
+  // 用 setState-in-render 取代 effect-sync (React 19 推薦)，避免 cascading render。
+  // React 偵測到同一次 render setState 後會 bail out 重 render，但不會額外 paint。
+  const currentParamsKey = `${city}|${district}|${roomType}|${rentalType}|${road}|${area}|${floorRange}|${rentRange}`;
+  const [prevParamsKey, setPrevParamsKey] = useState(currentParamsKey);
+  if (currentParamsKey !== prevParamsKey) {
+    setPrevParamsKey(currentParamsKey);
     setSelectedCity(city);
     setSelectedDistrict(district);
     setSelectedType(roomType);
@@ -99,7 +106,7 @@ function SearchContent() {
     setSelectedArea(area);
     setSelectedFloor(floorRange);
     setSelectedRent(rentRange);
-  }, [city, district, roomType, rentalType, road, area, floorRange, rentRange]);
+  }
 
   const availableRoads =
     selectedCity &&

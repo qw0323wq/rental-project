@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import type { CityInfo, CityData } from "@/types";
 import { RENTAL_TYPES, AREA_RANGES, RENT_RANGES, FLOORS } from "@/lib/constants";
@@ -18,7 +18,6 @@ export default function HomePage() {
   const [selectedFloor, setSelectedFloor] = useState("");
   const [selectedRent, setSelectedRent] = useState("");
   const [showMoreFilters, setShowMoreFilters] = useState(false);
-  const [districts, setDistricts] = useState<string[]>([]);
 
   useEffect(() => {
     Promise.all([
@@ -32,12 +31,12 @@ export default function HomePage() {
       .catch(console.error);
   }, []);
 
-  useEffect(() => {
-    const city = cities.find((c) => c.name === selectedCity);
-    setDistricts(city?.districts || []);
-    setSelectedDistrict("");
-    setSelectedRoad("");
-  }, [selectedCity, cities]);
+  // CRITICAL: districts 是純衍生狀態（從 cities + selectedCity），用 useMemo 避免 effect-setState
+  // cascading render；selectedCity 變動時的 district/road reset 由下方 select onChange 處理。
+  const districts = useMemo(
+    () => cities.find((c) => c.name === selectedCity)?.districts || [],
+    [cities, selectedCity]
+  );
 
   const availableRoads =
     selectedCity &&
