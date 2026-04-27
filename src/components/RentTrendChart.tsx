@@ -1,5 +1,6 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import {
   LineChart,
   Line,
@@ -11,6 +12,14 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from "recharts";
+
+// CRITICAL: 用 useSyncExternalStore 取當前年，避免 render 期 new Date() 造成
+// SSR/CSR hydration mismatch（跨午夜或 server-client 時區差）。getServerSnapshot
+// 回 null → SSR 不標任何 partial year；hydrate 後 getSnapshot 回 client 的當前年。
+// 這是 React 18+ 官方推薦處理「server 取不到，client 才有」資料的做法。
+const subscribeNoop = () => () => {};
+const getCurrentYearClient = () => new Date().getFullYear();
+const getCurrentYearServer = () => null;
 
 interface RentTrendChartProps {
   trends: Record<
@@ -52,11 +61,6 @@ function CustomTooltip({ active, payload, label }: CustomTooltipProps) {
   if (!active || !payload || payload.length === 0) return null;
 
   const dataPoint = payload[0];
-  const medianChange =
-    payload.find((p) => p.name === "中位數") &&
-    (payload[0] as TooltipPayloadItem & { payload?: ChartDataPoint }).payload
-      ?.medianChange;
-
   const tooltipPoint = (
     payload[0] as TooltipPayloadItem & { payload?: ChartDataPoint }
   ).payload;
@@ -125,6 +129,13 @@ export default function RentTrendChart({
   trends,
   title = "租金趨勢走勢",
 }: RentTrendChartProps) {
+  // hooks 必須在任何 early return 之前 call（rules-of-hooks）。
+  const currentYear = useSyncExternalStore(
+    subscribeNoop,
+    getCurrentYearClient,
+    getCurrentYearServer
+  );
+
   const sortedYears = Object.keys(trends).sort();
 
   if (sortedYears.length < 2) return null;
@@ -136,8 +147,6 @@ export default function RentTrendChart({
     significantYears.length >= 2 ? significantYears : sortedYears;
   const filteredOutCount = sortedYears.length - usableYears.length;
   const usingFallback = significantYears.length < 2;
-
-  const currentYear = new Date().getFullYear();
 
   const chartData: ChartDataPoint[] = usableYears.map((year, index) => {
     const current = trends[year];
@@ -160,7 +169,7 @@ export default function RentTrendChart({
       count: current.count,
       medianChange,
       avgChange,
-      isPartial: parseInt(year, 10) === currentYear,
+      isPartial: currentYear !== null && parseInt(year, 10) === currentYear,
     };
   });
 
@@ -173,15 +182,18 @@ export default function RentTrendChart({
 
   // CRITICAL: 整體趨勢只用「完整年度」算 — 進行中年度（current year）樣本還沒收完，
   // 跟整年資料比是不公平比較，會讓「整體 -X%」變成失真的數字。
+  // 若可用的完整年份不足 2 個（極小縣市或剛上線資料），不顯示百分比改顯示「樣本不足」。
   const stableData = chartData.filter((d) => !d.isPartial);
-  const trendBase = stableData.length >= 2 ? stableData : chartData;
-  const firstData = trendBase[0];
-  const lastData = trendBase[trendBase.length - 1];
+  const hasStableTrend = stableData.length >= 2;
+  const firstData = hasStableTrend ? stableData[0] : chartData[0];
+  const lastData = hasStableTrend
+    ? stableData[stableData.length - 1]
+    : chartData[chartData.length - 1];
   const latestData = chartData[chartData.length - 1];
-  const overallChange =
-    firstData.中位數 > 0
+  const overallChange: number | null =
+    hasStableTrend && firstData.中位數 > 0
       ? ((lastData.中位數 - firstData.中位數) / firstData.中位數) * 100
-      : 0;
+      : null;
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
@@ -190,20 +202,28 @@ export default function RentTrendChart({
         <h3 className="font-bold text-lg text-gray-800">{title}</h3>
         <div className="flex items-center gap-2">
           <span className="text-xs text-gray-500">
-            整體趨勢（{firstData.year}–{lastData.year}）
+            {hasStableTrend
+              ? `整體趨勢（${firstData.year}–${lastData.year}）`
+              : "整體趨勢"}
           </span>
-          <span
-            className={`text-sm font-bold px-2 py-0.5 rounded-full ${
-              overallChange > 0
-                ? "bg-red-50 text-red-600"
-                : overallChange < 0
-                ? "bg-green-50 text-green-600"
-                : "bg-gray-100 text-gray-500"
-            }`}
-          >
-            {overallChange > 0 ? "▲" : overallChange < 0 ? "▼" : "—"}
-            {Math.abs(overallChange).toFixed(1)}%
-          </span>
+          {overallChange !== null ? (
+            <span
+              className={`text-sm font-bold px-2 py-0.5 rounded-full ${
+                overallChange > 0
+                  ? "bg-red-50 text-red-600"
+                  : overallChange < 0
+                  ? "bg-green-50 text-green-600"
+                  : "bg-gray-100 text-gray-500"
+              }`}
+            >
+              {overallChange > 0 ? "▲" : overallChange < 0 ? "▼" : "—"}
+              {Math.abs(overallChange).toFixed(1)}%
+            </span>
+          ) : (
+            <span className="text-sm font-medium px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">
+              樣本不足
+            </span>
+          )}
         </div>
       </div>
 
@@ -268,7 +288,9 @@ export default function RentTrendChart({
             tickLine={false}
             axisLine={{ stroke: "#E5E7EB" }}
             tickFormatter={(v: string) =>
-              parseInt(v, 10) === currentYear ? `${v}*` : v
+              currentYear !== null && parseInt(v, 10) === currentYear
+                ? `${v}*`
+                : v
             }
           />
           <YAxis
