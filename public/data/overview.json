@@ -1,102 +1,102 @@
 {
   "南投縣": {
-    "median_rent": 10500,
-    "avg_rent": 12437,
-    "sample_count": 1172
+    "median_rent": 10200,
+    "avg_rent": 12355,
+    "sample_count": 1321
   },
   "台中市": {
-    "median_rent": 15000,
-    "avg_rent": 18230,
-    "sample_count": 41368
+    "median_rent": 15100,
+    "avg_rent": 18340,
+    "sample_count": 45053
   },
   "台北市": {
-    "median_rent": 26600,
-    "avg_rent": 38142,
-    "sample_count": 40193
+    "median_rent": 26500,
+    "avg_rent": 38161,
+    "sample_count": 43659
   },
   "台南市": {
     "median_rent": 15000,
-    "avg_rent": 16740,
-    "sample_count": 25467
+    "avg_rent": 16825,
+    "sample_count": 27927
   },
   "嘉義市": {
-    "median_rent": 11000,
-    "avg_rent": 13094,
-    "sample_count": 3143
+    "median_rent": 11500,
+    "avg_rent": 13304,
+    "sample_count": 3412
   },
   "嘉義縣": {
-    "median_rent": 6500,
-    "avg_rent": 9957,
-    "sample_count": 1544
+    "median_rent": 7000,
+    "avg_rent": 10425,
+    "sample_count": 1678
   },
   "基隆市": {
     "median_rent": 12000,
-    "avg_rent": 13166,
-    "sample_count": 5070
+    "avg_rent": 13198,
+    "sample_count": 5422
   },
   "宜蘭縣": {
     "median_rent": 13000,
-    "avg_rent": 14492,
-    "sample_count": 2978
+    "avg_rent": 14594,
+    "sample_count": 3244
   },
   "彰化縣": {
     "median_rent": 12500,
-    "avg_rent": 14585,
-    "sample_count": 2451
+    "avg_rent": 14461,
+    "sample_count": 2766
   },
   "新北市": {
     "median_rent": 20000,
-    "avg_rent": 22961,
-    "sample_count": 65229
+    "avg_rent": 23041,
+    "sample_count": 71083
   },
   "新竹縣": {
     "median_rent": 20000,
-    "avg_rent": 28436,
-    "sample_count": 2855
+    "avg_rent": 28562,
+    "sample_count": 3138
   },
   "桃園市": {
     "median_rent": 15000,
-    "avg_rent": 16515,
-    "sample_count": 67898
+    "avg_rent": 16601,
+    "sample_count": 73604
   },
   "澎湖縣": {
     "median_rent": 12000,
-    "avg_rent": 13692,
-    "sample_count": 431
+    "avg_rent": 13791,
+    "sample_count": 482
   },
   "臺東縣": {
     "median_rent": 13000,
-    "avg_rent": 15413,
-    "sample_count": 2253
+    "avg_rent": 15213,
+    "sample_count": 2480
   },
   "花蓮縣": {
     "median_rent": 6000,
-    "avg_rent": 10313,
-    "sample_count": 2762
+    "avg_rent": 10625,
+    "sample_count": 2992
   },
   "苗栗縣": {
-    "median_rent": 13500,
-    "avg_rent": 14384,
-    "sample_count": 1933
+    "median_rent": 14000,
+    "avg_rent": 14881,
+    "sample_count": 2136
   },
   "連江縣": {
-    "median_rent": 9000,
-    "avg_rent": 11877,
-    "sample_count": 127
+    "median_rent": 8800,
+    "avg_rent": 11777,
+    "sample_count": 134
   },
   "金門縣": {
-    "median_rent": 12000,
-    "avg_rent": 21340,
-    "sample_count": 22
+    "median_rent": 10000,
+    "avg_rent": 19700,
+    "sample_count": 25
   },
   "雲林縣": {
     "median_rent": 16000,
-    "avg_rent": 21162,
-    "sample_count": 2690
+    "avg_rent": 21370,
+    "sample_count": 2951
   },
   "高雄市": {
     "median_rent": 16000,
-    "avg_rent": 19328,
-    "sample_count": 43830
+    "avg_rent": 19403,
+    "sample_count": 47705
   }
 }
