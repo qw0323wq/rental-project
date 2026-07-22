@@ -1,7 +1,222 @@
 {
-  "crawl_date": "2026-07-12",
+  "crawl_date": "2026-07-22",
   "source": "591租屋網",
   "data_type": "asking_price",
   "note": "此為當前掛牌問價，非成交價。資料僅供參考。",
-  "cities": {}
+  "cities": {
+    "台北市": {
+      "total_count": 440,
+      "median_rent": 45000,
+      "avg_rent": 54741,
+      "min_rent": 8500,
+      "max_rent": 188888,
+      "avg_area_ping": 30.1,
+      "by_type": {
+        "套房": {
+          "count": 14,
+          "median_rent": 15500,
+          "avg_rent": 21527,
+          "min_rent": 11000,
+          "max_rent": 52000
+        },
+        "獨立套房": {
+          "count": 37,
+          "median_rent": 12000,
+          "avg_rent": 16769,
+          "min_rent": 8500,
+          "max_rent": 52000
+        },
+        "未分類": {
+          "count": 176,
+          "median_rent": 45000,
+          "avg_rent": 54741,
+          "min_rent": 8500,
+          "max_rent": 188888
+        },
+        "整層住家": {
+          "count": 190,
+          "median_rent": 61999,
+          "avg_rent": 69255,
+          "min_rent": 13500,
+          "max_rent": 188888
+        },
+        "雅房": {
+          "count": 9,
+          "median_rent": 9500,
+          "avg_rent": 11100,
+          "min_rent": 9500,
+          "max_rent": 14300
+        },
+        "分租套房": {
+          "count": 12,
+          "median_rent": 19000,
+          "avg_rent": 17625,
+          "min_rent": 9500,
+          "max_rent": 24500
+        },
+        "整層": {
+          "count": 2,
+          "median_rent": 30000,
+          "avg_rent": 30000,
+          "min_rent": 30000,
+          "max_rent": 30000
+        }
+      },
+      "samples": [
+        {
+          "rent": 15500,
+          "area_ping": 5.0,
+          "title": "民權西路站電梯套房獨立陽台高樓層優選好屋",
+          "type": "套房"
+        },
+        {
+          "rent": 15500,
+          "area_ping": 5.0,
+          "title": "民權西路站電梯套房獨立陽台高樓層優選好屋",
+          "type": "套房"
+        },
+        {
+          "rent": 15500,
+          "area_ping": 5.0,
+          "type": "獨立套房"
+        },
+        {
+          "rent": 15500
+        },
+        {
+          "rent": 15500
+        },
+        {
+          "rent": 14800,
+          "area_ping": 5.0,
+          "title": "公館商圈舒適套房",
+          "type": "套房"
+        },
+        {
+          "rent": 14800,
+          "area_ping": 5.0,
+          "title": "公館商圈舒適套房",
+          "type": "套房"
+        },
+        {
+          "rent": 14800,
+          "area_ping": 5.0,
+          "type": "獨立套房"
+        },
+        {
+          "rent": 14800
+        },
+        {
+          "rent": 14800
+        }
+      ]
+    },
+    "新北市": {
+      "total_count": 150,
+      "median_rent": 23000,
+      "avg_rent": 21663,
+      "min_rent": 6000,
+      "max_rent": 60000,
+      "avg_area_ping": 18.4,
+      "by_type": {
+        "整層住家": {
+          "count": 52,
+          "median_rent": 26000,
+          "avg_rent": 28711,
+          "min_rent": 11500,
+          "max_rent": 60000
+        },
+        "未分類": {
+          "count": 60,
+          "median_rent": 23000,
+          "avg_rent": 21663,
+          "min_rent": 6000,
+          "max_rent": 60000
+        },
+        "套房": {
+          "count": 16,
+          "median_rent": 10000,
+          "avg_rent": 10375,
+          "min_rent": 6000,
+          "max_rent": 15500
+        },
+        "獨立套房": {
+          "count": 9,
+          "median_rent": 12200,
+          "avg_rent": 11567,
+          "min_rent": 7999,
+          "max_rent": 15500
+        },
+        "分租套房": {
+          "count": 5,
+          "median_rent": 18500,
+          "avg_rent": 14200,
+          "min_rent": 6000,
+          "max_rent": 18500
+        },
+        "整層": {
+          "count": 2,
+          "median_rent": 24500,
+          "avg_rent": 24500,
+          "min_rent": 24500,
+          "max_rent": 24500
+        },
+        "雅房": {
+          "count": 6,
+          "median_rent": 16000,
+          "avg_rent": 11100,
+          "min_rent": 6200,
+          "max_rent": 16000
+        }
+      },
+      "samples": [
+        {
+          "rent": 23000,
+          "area_ping": 14.0,
+          "title": "✨全新首住！三和國中站🔥兩房一廳可開伙✨大空間採光極佳！優選好屋",
+          "type": "整層住家"
+        },
+        {
+          "rent": 23000,
+          "area_ping": 14.0,
+          "title": "✨全新首住！三和國中站🔥兩房一廳可開伙✨大空間採光極佳！優選好屋",
+          "type": "整層住家"
+        },
+        {
+          "rent": 23000,
+          "area_ping": 14.0,
+          "type": "整層住家"
+        },
+        {
+          "rent": 23000
+        },
+        {
+          "rent": 23000
+        },
+        {
+          "rent": 32000,
+          "area_ping": 19.6,
+          "title": "三和國中捷運幸福市場重陽橋碧華國小景觀歐式古典建築附平面車位優選好屋",
+          "type": "整層住家"
+        },
+        {
+          "rent": 32000,
+          "area_ping": 19.6,
+          "title": "三和國中捷運幸福市場重陽橋碧華國小景觀歐式古典建築附平面車位優選好屋",
+          "type": "整層住家"
+        },
+        {
+          "rent": 32000,
+          "area_ping": 19.6,
+          "type": "整層住家"
+        },
+        {
+          "rent": 32000
+        },
+        {
+          "rent": 32000
+        }
+      ]
+    }
+  }
 }
