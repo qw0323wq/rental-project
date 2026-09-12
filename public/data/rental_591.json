@@ -1,7 +1,115 @@
 {
-  "crawl_date": "2026-09-02",
+  "crawl_date": "2026-09-12",
   "source": "591租屋網",
   "data_type": "asking_price",
   "note": "此為當前掛牌問價，非成交價。資料僅供參考。",
-  "cities": {}
+  "cities": {
+    "新北市": {
+      "total_count": 445,
+      "median_rent": 23000,
+      "avg_rent": 24311,
+      "min_rent": 3300,
+      "max_rent": 78000,
+      "avg_area_ping": 19.8,
+      "by_type": {
+        "整層住家": {
+          "count": 172,
+          "median_rent": 26000,
+          "avg_rent": 29322,
+          "min_rent": 8000,
+          "max_rent": 78000
+        },
+        "未分類": {
+          "count": 187,
+          "median_rent": 23000,
+          "avg_rent": 23707,
+          "min_rent": 3300,
+          "max_rent": 78000
+        },
+        "雅房": {
+          "count": 6,
+          "median_rent": 11800,
+          "avg_rent": 9650,
+          "min_rent": 7500,
+          "max_rent": 11800
+        },
+        "分租套房": {
+          "count": 25,
+          "median_rent": 8500,
+          "avg_rent": 11296,
+          "min_rent": 7000,
+          "max_rent": 21000
+        },
+        "獨立套房": {
+          "count": 37,
+          "median_rent": 16000,
+          "avg_rent": 19716,
+          "min_rent": 9000,
+          "max_rent": 41000
+        },
+        "套房": {
+          "count": 16,
+          "median_rent": 15000,
+          "avg_rent": 13875,
+          "min_rent": 8500,
+          "max_rent": 28000
+        },
+        "整層": {
+          "count": 2,
+          "median_rent": 25000,
+          "avg_rent": 25000,
+          "min_rent": 25000,
+          "max_rent": 25000
+        }
+      },
+      "samples": [
+        {
+          "rent": 45000,
+          "area_ping": 37.2,
+          "title": "幸福璞園3房車稀有釋出",
+          "type": "整層住家"
+        },
+        {
+          "rent": 45000,
+          "area_ping": 37.2,
+          "title": "幸福璞園3房車稀有釋出",
+          "type": "整層住家"
+        },
+        {
+          "rent": 45000,
+          "area_ping": 37.2,
+          "type": "整層住家"
+        },
+        {
+          "rent": 45000
+        },
+        {
+          "rent": 45000
+        },
+        {
+          "rent": 7500,
+          "area_ping": 6.0,
+          "title": "中正路採光大雅房（女生為主可貓）優選好屋",
+          "type": "雅房"
+        },
+        {
+          "rent": 7500,
+          "area_ping": 6.0,
+          "title": "中正路採光大雅房（女生為主可貓）優選好屋",
+          "type": "雅房"
+        },
+        {
+          "rent": 7500,
+          "area_ping": 6.0,
+          "type": "雅房"
+        },
+        {
+          "rent": 7500
+        },
+        {
+          "rent": 7500
+        }
+      ]
+    }
+  }
 }
