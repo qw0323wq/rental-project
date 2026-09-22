@@ -1,113 +1,206 @@
 {
-  "crawl_date": "2026-09-12",
+  "crawl_date": "2026-09-22",
   "source": "591租屋網",
   "data_type": "asking_price",
   "note": "此為當前掛牌問價，非成交價。資料僅供參考。",
   "cities": {
-    "新北市": {
-      "total_count": 445,
-      "median_rent": 23000,
-      "avg_rent": 24311,
-      "min_rent": 3300,
-      "max_rent": 78000,
-      "avg_area_ping": 19.8,
+    "台北市": {
+      "total_count": 435,
+      "median_rent": 52000,
+      "avg_rent": 56608,
+      "min_rent": 8000,
+      "max_rent": 180000,
+      "avg_area_ping": 29.2,
       "by_type": {
         "整層住家": {
-          "count": 172,
-          "median_rent": 26000,
-          "avg_rent": 29322,
-          "min_rent": 8000,
-          "max_rent": 78000
+          "count": 219,
+          "median_rent": 56999,
+          "avg_rent": 63073,
+          "min_rent": 20000,
+          "max_rent": 180000
         },
         "未分類": {
-          "count": 187,
-          "median_rent": 23000,
-          "avg_rent": 23707,
-          "min_rent": 3300,
-          "max_rent": 78000
-        },
-        "雅房": {
-          "count": 6,
-          "median_rent": 11800,
-          "avg_rent": 9650,
-          "min_rent": 7500,
-          "max_rent": 11800
-        },
-        "分租套房": {
-          "count": 25,
-          "median_rent": 8500,
-          "avg_rent": 11296,
-          "min_rent": 7000,
-          "max_rent": 21000
+          "count": 177,
+          "median_rent": 54999,
+          "avg_rent": 58191,
+          "min_rent": 8000,
+          "max_rent": 180000
         },
         "獨立套房": {
-          "count": 37,
-          "median_rent": 16000,
-          "avg_rent": 19716,
-          "min_rent": 9000,
-          "max_rent": 41000
+          "count": 19,
+          "median_rent": 13380,
+          "avg_rent": 15088,
+          "min_rent": 11400,
+          "max_rent": 22000
         },
         "套房": {
-          "count": 16,
-          "median_rent": 15000,
-          "avg_rent": 13875,
-          "min_rent": 8500,
-          "max_rent": 28000
+          "count": 6,
+          "median_rent": 11400,
+          "avg_rent": 11467,
+          "min_rent": 10000,
+          "max_rent": 13000
         },
-        "整層": {
-          "count": 2,
-          "median_rent": 25000,
-          "avg_rent": 25000,
-          "min_rent": 25000,
-          "max_rent": 25000
+        "雅房": {
+          "count": 9,
+          "median_rent": 8000,
+          "avg_rent": 8133,
+          "min_rent": 8000,
+          "max_rent": 8400
+        },
+        "分租套房": {
+          "count": 5,
+          "median_rent": 20000,
+          "avg_rent": 16600,
+          "min_rent": 10000,
+          "max_rent": 20000
         }
       },
       "samples": [
         {
-          "rent": 45000,
-          "area_ping": 37.2,
-          "title": "幸福璞園3房車稀有釋出",
+          "rent": 67999,
+          "area_ping": 49.7,
+          "title": "信義計畫區，3+1溫馨裝潢，機能強，近捷運，優質住宅優選好屋",
           "type": "整層住家"
         },
         {
-          "rent": 45000,
-          "area_ping": 37.2,
-          "title": "幸福璞園3房車稀有釋出",
+          "rent": 67999,
+          "area_ping": 49.7,
+          "title": "信義計畫區，3+1溫馨裝潢，機能強，近捷運，優質住宅優選好屋",
           "type": "整層住家"
         },
         {
-          "rent": 45000,
-          "area_ping": 37.2,
+          "rent": 67999,
+          "area_ping": 49.7,
           "type": "整層住家"
         },
         {
-          "rent": 45000
+          "rent": 67999
         },
         {
-          "rent": 45000
+          "rent": 67999
         },
         {
-          "rent": 7500,
-          "area_ping": 6.0,
-          "title": "中正路採光大雅房（女生為主可貓）優選好屋",
-          "type": "雅房"
+          "rent": 61999,
+          "area_ping": 44.2,
+          "title": "師大商圈，機能強，可入籍，鬧中取靜，優質住宅",
+          "type": "整層住家"
         },
         {
-          "rent": 7500,
-          "area_ping": 6.0,
-          "title": "中正路採光大雅房（女生為主可貓）優選好屋",
-          "type": "雅房"
+          "rent": 61999,
+          "area_ping": 44.2,
+          "title": "師大商圈，機能強，可入籍，鬧中取靜，優質住宅",
+          "type": "整層住家"
         },
         {
-          "rent": 7500,
-          "area_ping": 6.0,
-          "type": "雅房"
+          "rent": 61999,
+          "area_ping": 44.2,
+          "type": "整層住家"
         },
         {
-          "rent": 7500
+          "rent": 61999
         },
         {
-          "rent": 7500
+          "rent": 61999
+        }
+      ]
+    },
+    "新北市": {
+      "total_count": 450,
+      "median_rent": 25000,
+      "avg_rent": 26119,
+      "min_rent": 6800,
+      "max_rent": 130000,
+      "avg_area_ping": 19.6,
+      "by_type": {
+        "套房": {
+          "count": 6,
+          "median_rent": 14000,
+          "avg_rent": 14000,
+          "min_rent": 13000,
+          "max_rent": 15000
+        },
+        "獨立套房": {
+          "count": 25,
+          "median_rent": 9500,
+          "avg_rent": 10016,
+          "min_rent": 6800,
+          "max_rent": 15000
+        },
+        "未分類": {
+          "count": 186,
+          "median_rent": 25000,
+          "avg_rent": 25959,
+          "min_rent": 6800,
+          "max_rent": 130000
+        },
+        "整層住家": {
+          "count": 201,
+          "median_rent": 26000,
+          "avg_rent": 30689,
+          "min_rent": 14000,
+          "max_rent": 130000
+        },
+        "雅房": {
+          "count": 18,
+          "median_rent": 10000,
+          "avg_rent": 10050,
+          "min_rent": 7500,
+          "max_rent": 14000
+        },
+        "分租套房": {
+          "count": 14,
+          "median_rent": 15500,
+          "avg_rent": 17236,
+          "min_rent": 11000,
+          "max_rent": 25800
+        }
+      },
+      "samples": [
+        {
+          "rent": 14000,
+          "area_ping": 7.6,
+          "title": "可租補~近三重國小獨立門牌開放式套房",
+          "type": "套房"
+        },
+        {
+          "rent": 14000,
+          "area_ping": 7.6,
+          "title": "可租補~近三重國小獨立門牌開放式套房",
+          "type": "套房"
+        },
+        {
+          "rent": 14000,
+          "area_ping": 7.6,
+          "type": "獨立套房"
+        },
+        {
+          "rent": 14000
+        },
+        {
+          "rent": 14000
+        },
+        {
+          "rent": 26000,
+          "area_ping": 30.6,
+          "title": "臨近台北港台61.64通往南北/含管理費",
+          "type": "整層住家"
+        },
+        {
+          "rent": 26000,
+          "area_ping": 30.6,
+          "title": "臨近台北港台61.64通往南北/含管理費",
+          "type": "整層住家"
+        },
+        {
+          "rent": 26000,
+          "area_ping": 30.6,
+          "type": "整層住家"
+        },
+        {
+          "rent": 26000
+        },
+        {
+          "rent": 26000
         }
       ]
     }
