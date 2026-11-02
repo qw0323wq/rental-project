@@ -1,206 +1,206 @@
 {
-  "crawl_date": "2026-10-22",
+  "crawl_date": "2026-11-02",
   "source": "591租屋網",
   "data_type": "asking_price",
   "note": "此為當前掛牌問價，非成交價。資料僅供參考。",
   "cities": {
     "台北市": {
-      "total_count": 430,
-      "median_rent": 65999,
-      "avg_rent": 70784,
-      "min_rent": 3800,
-      "max_rent": 188888,
-      "avg_area_ping": 35.7,
+      "total_count": 445,
+      "median_rent": 51999,
+      "avg_rent": 59453,
+      "min_rent": 9500,
+      "max_rent": 168000,
+      "avg_area_ping": 31.0,
       "by_type": {
         "整層住家": {
-          "count": 213,
-          "median_rent": 68000,
-          "avg_rent": 80178,
-          "min_rent": 21000,
-          "max_rent": 188888
+          "count": 225,
+          "median_rent": 57999,
+          "avg_rent": 67301,
+          "min_rent": 24000,
+          "max_rent": 168000
         },
         "未分類": {
-          "count": 184,
-          "median_rent": 65999,
-          "avg_rent": 69735,
-          "min_rent": 3800,
-          "max_rent": 188888
+          "count": 178,
+          "median_rent": 51999,
+          "avg_rent": 59453,
+          "min_rent": 9500,
+          "max_rent": 168000
         },
-        "套房": {
-          "count": 6,
-          "median_rent": 13000,
-          "avg_rent": 13333,
-          "min_rent": 12000,
-          "max_rent": 15000
-        },
-        "分租套房": {
-          "count": 2,
-          "median_rent": 13000,
-          "avg_rent": 12500,
-          "min_rent": 12000,
-          "max_rent": 13000
+        "獨立套房": {
+          "count": 23,
+          "median_rent": 15500,
+          "avg_rent": 18083,
+          "min_rent": 9800,
+          "max_rent": 30000
         },
         "雅房": {
           "count": 6,
           "median_rent": 11000,
-          "avg_rent": 9500,
-          "min_rent": 8000,
+          "avg_rent": 10250,
+          "min_rent": 9500,
           "max_rent": 11000
         },
-        "獨立套房": {
-          "count": 19,
-          "median_rent": 17000,
-          "avg_rent": 19262,
-          "min_rent": 15000,
-          "max_rent": 26000
+        "分租套房": {
+          "count": 9,
+          "median_rent": 16000,
+          "avg_rent": 16000,
+          "min_rent": 16000,
+          "max_rent": 16000
+        },
+        "套房": {
+          "count": 4,
+          "median_rent": 30000,
+          "avg_rent": 27500,
+          "min_rent": 25000,
+          "max_rent": 30000
         }
       },
       "samples": [
         {
-          "rent": 21000,
-          "area_ping": 12.6,
-          "title": "信義區超值兩房可申請租屋補助興隆國宅溫馨居高樓層通風採光絕佳",
+          "rent": 66000,
+          "area_ping": 54.4,
+          "title": "明德站√奎山中學★電梯4房大露台+坡車",
           "type": "整層住家"
         },
         {
-          "rent": 21000,
-          "area_ping": 12.6,
-          "title": "信義區超值兩房可申請租屋補助興隆國宅溫馨居高樓層通風採光絕佳",
+          "rent": 66000,
+          "area_ping": 54.4,
+          "title": "明德站√奎山中學★電梯4房大露台+坡車",
           "type": "整層住家"
         },
         {
-          "rent": 21000,
-          "area_ping": 12.6,
+          "rent": 66000,
+          "area_ping": 54.4,
           "type": "整層住家"
         },
         {
-          "rent": 21000
+          "rent": 66000
         },
         {
-          "rent": 21000
+          "rent": 66000
         },
         {
-          "rent": 13000,
-          "area_ping": 6.0,
-          "title": "萬大路莒光路口頂級套房~",
-          "type": "套房"
+          "rent": 57500,
+          "area_ping": 23.7,
+          "title": "●MRT忠孝敦化●東區商圈●靜巷華廈●拎包入住●機能強",
+          "type": "整層住家"
         },
         {
-          "rent": 13000,
-          "area_ping": 6.0,
-          "title": "萬大路莒光路口頂級套房~",
-          "type": "套房"
+          "rent": 57500,
+          "area_ping": 23.7,
+          "title": "●MRT忠孝敦化●東區商圈●靜巷華廈●拎包入住●機能強",
+          "type": "整層住家"
         },
         {
-          "rent": 13000,
-          "area_ping": 6.0,
-          "type": "分租套房"
+          "rent": 57500,
+          "area_ping": 23.7,
+          "type": "整層住家"
         },
         {
-          "rent": 13000
+          "rent": 57500
         },
         {
-          "rent": 13000
+          "rent": 57500
         }
       ]
     },
     "新北市": {
-      "total_count": 450,
-      "median_rent": 22000,
-      "avg_rent": 22349,
-      "min_rent": 3600,
-      "max_rent": 55000,
-      "avg_area_ping": 20.7,
+      "total_count": 451,
+      "median_rent": 21000,
+      "avg_rent": 22418,
+      "min_rent": 2500,
+      "max_rent": 84000,
+      "avg_area_ping": 16.7,
       "by_type": {
         "整層住家": {
-          "count": 180,
-          "median_rent": 26000,
-          "avg_rent": 27426,
-          "min_rent": 12999,
-          "max_rent": 55000
+          "count": 139,
+          "median_rent": 30000,
+          "avg_rent": 31976,
+          "min_rent": 10500,
+          "max_rent": 84000
         },
         "未分類": {
-          "count": 189,
-          "median_rent": 21500,
-          "avg_rent": 21495,
-          "min_rent": 3600,
-          "max_rent": 55000
+          "count": 199,
+          "median_rent": 18000,
+          "avg_rent": 21408,
+          "min_rent": 2500,
+          "max_rent": 84000
         },
         "獨立套房": {
-          "count": 37,
-          "median_rent": 13500,
-          "avg_rent": 14984,
-          "min_rent": 6500,
-          "max_rent": 28000
-        },
-        "套房": {
-          "count": 24,
-          "median_rent": 12500,
-          "avg_rent": 12558,
-          "min_rent": 5200,
-          "max_rent": 23000
+          "count": 48,
+          "median_rent": 12900,
+          "avg_rent": 13563,
+          "min_rent": 6800,
+          "max_rent": 29000
         },
         "雅房": {
-          "count": 8,
-          "median_rent": 11000,
-          "avg_rent": 10438,
+          "count": 6,
+          "median_rent": 8500,
+          "avg_rent": 8000,
           "min_rent": 7500,
-          "max_rent": 14000
+          "max_rent": 8500
         },
         "分租套房": {
-          "count": 12,
-          "median_rent": 10000,
-          "avg_rent": 9850,
-          "min_rent": 5200,
-          "max_rent": 14000
+          "count": 23,
+          "median_rent": 11000,
+          "avg_rent": 12795,
+          "min_rent": 6000,
+          "max_rent": 21000
+        },
+        "套房": {
+          "count": 36,
+          "median_rent": 11000,
+          "avg_rent": 11454,
+          "min_rent": 6000,
+          "max_rent": 17000
         }
       },
       "samples": [
         {
-          "rent": 33000,
-          "area_ping": 41.0,
-          "title": "電梯景觀精美方正採光大三房｜可補助｜可寵物",
+          "rent": 25000,
+          "area_ping": 27.0,
+          "title": "近南港交流道🍎漂亮木質~溫馨家庭寶貝最愛~有書房",
           "type": "整層住家"
         },
         {
-          "rent": 33000,
-          "area_ping": 41.0,
-          "title": "電梯景觀精美方正採光大三房｜可補助｜可寵物",
+          "rent": 25000,
+          "area_ping": 27.0,
+          "title": "近南港交流道🍎漂亮木質~溫馨家庭寶貝最愛~有書房",
           "type": "整層住家"
         },
         {
-          "rent": 33000,
-          "area_ping": 41.0,
+          "rent": 25000,
+          "area_ping": 27.0,
           "type": "整層住家"
         },
         {
-          "rent": 33000
+          "rent": 25000
         },
         {
-          "rent": 33000
+          "rent": 25000
         },
         {
-          "rent": 14999,
-          "area_ping": 26.0,
-          "title": "捷運江子翠2分【秒殺2房2廳】可養貓★雙陽台★附家具優選好屋",
-          "type": "整層住家"
+          "rent": 12999,
+          "area_ping": 17.0,
+          "title": "碧潭大橋【超值租案】洗衣機★採光優★低樓層優選好屋",
+          "type": "獨立套房"
         },
         {
-          "rent": 14999,
-          "area_ping": 26.0,
-          "title": "捷運江子翠2分【秒殺2房2廳】可養貓★雙陽台★附家具優選好屋",
-          "type": "整層住家"
+          "rent": 12999,
+          "area_ping": 17.0,
+          "title": "碧潭大橋【超值租案】洗衣機★採光優★低樓層優選好屋",
+          "type": "獨立套房"
         },
         {
-          "rent": 14999,
-          "area_ping": 26.0,
-          "type": "整層住家"
+          "rent": 12999,
+          "area_ping": 17.0,
+          "type": "獨立套房"
         },
         {
-          "rent": 14999
+          "rent": 12999
         },
         {
-          "rent": 14999
+          "rent": 12999
         }
       ]
     }
