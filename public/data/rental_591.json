@@ -1,206 +1,196 @@
 {
-  "crawl_date": "2026-11-02",
+  "crawl_date": "2026-11-12",
   "source": "591租屋網",
   "data_type": "asking_price",
   "note": "此為當前掛牌問價，非成交價。資料僅供參考。",
   "cities": {
     "台北市": {
-      "total_count": 445,
-      "median_rent": 51999,
-      "avg_rent": 59453,
-      "min_rent": 9500,
-      "max_rent": 168000,
-      "avg_area_ping": 31.0,
+      "total_count": 450,
+      "median_rent": 49799,
+      "avg_rent": 51584,
+      "min_rent": 8500,
+      "max_rent": 135000,
+      "avg_area_ping": 27.3,
       "by_type": {
         "整層住家": {
-          "count": 225,
-          "median_rent": 57999,
-          "avg_rent": 67301,
-          "min_rent": 24000,
-          "max_rent": 168000
+          "count": 255,
+          "median_rent": 49999,
+          "avg_rent": 52859,
+          "min_rent": 20000,
+          "max_rent": 135000
         },
         "未分類": {
-          "count": 178,
-          "median_rent": 51999,
-          "avg_rent": 59453,
-          "min_rent": 9500,
-          "max_rent": 168000
-        },
-        "獨立套房": {
-          "count": 23,
-          "median_rent": 15500,
-          "avg_rent": 18083,
-          "min_rent": 9800,
-          "max_rent": 30000
-        },
-        "雅房": {
-          "count": 6,
-          "median_rent": 11000,
-          "avg_rent": 10250,
-          "min_rent": 9500,
-          "max_rent": 11000
-        },
-        "分租套房": {
-          "count": 9,
-          "median_rent": 16000,
-          "avg_rent": 16000,
-          "min_rent": 16000,
-          "max_rent": 16000
+          "count": 183,
+          "median_rent": 49799,
+          "avg_rent": 51853,
+          "min_rent": 8500,
+          "max_rent": 135000
         },
         "套房": {
           "count": 4,
-          "median_rent": 30000,
-          "avg_rent": 27500,
-          "min_rent": 25000,
-          "max_rent": 30000
+          "median_rent": 38000,
+          "avg_rent": 31500,
+          "min_rent": 24999,
+          "max_rent": 38000
+        },
+        "獨立套房": {
+          "count": 8,
+          "median_rent": 9999,
+          "avg_rent": 14812,
+          "min_rent": 8500,
+          "max_rent": 38000
         }
       },
       "samples": [
         {
-          "rent": 66000,
-          "area_ping": 54.4,
-          "title": "明德站√奎山中學★電梯4房大露台+坡車",
+          "rent": 98000,
+          "area_ping": 79.7,
+          "title": "🔥MRT北門站🔥4房雙主臥｜平車｜高樓景觀｜可寵",
           "type": "整層住家"
         },
         {
-          "rent": 66000,
-          "area_ping": 54.4,
-          "title": "明德站√奎山中學★電梯4房大露台+坡車",
+          "rent": 98000,
+          "area_ping": 79.7,
+          "title": "🔥MRT北門站🔥4房雙主臥｜平車｜高樓景觀｜可寵",
           "type": "整層住家"
         },
         {
-          "rent": 66000,
-          "area_ping": 54.4,
+          "rent": 98000,
+          "area_ping": 79.7,
           "type": "整層住家"
         },
         {
-          "rent": 66000
+          "rent": 98000
         },
         {
-          "rent": 66000
+          "rent": 98000
         },
         {
-          "rent": 57500,
-          "area_ping": 23.7,
-          "title": "●MRT忠孝敦化●東區商圈●靜巷華廈●拎包入住●機能強",
+          "rent": 45000,
+          "area_ping": 14.1,
+          "title": "🌟西門町🌟市中心全新美2房🌟優選好屋",
           "type": "整層住家"
         },
         {
-          "rent": 57500,
-          "area_ping": 23.7,
-          "title": "●MRT忠孝敦化●東區商圈●靜巷華廈●拎包入住●機能強",
+          "rent": 45000,
+          "area_ping": 14.1,
+          "title": "🌟西門町🌟市中心全新美2房🌟優選好屋",
           "type": "整層住家"
         },
         {
-          "rent": 57500,
-          "area_ping": 23.7,
+          "rent": 45000,
+          "area_ping": 14.1,
           "type": "整層住家"
         },
         {
-          "rent": 57500
+          "rent": 45000
         },
         {
-          "rent": 57500
+          "rent": 45000
         }
       ]
     },
     "新北市": {
-      "total_count": 451,
-      "median_rent": 21000,
-      "avg_rent": 22418,
-      "min_rent": 2500,
-      "max_rent": 84000,
-      "avg_area_ping": 16.7,
+      "total_count": 450,
+      "median_rent": 20000,
+      "avg_rent": 23219,
+      "min_rent": 3500,
+      "max_rent": 110000,
+      "avg_area_ping": 21.4,
       "by_type": {
-        "整層住家": {
-          "count": 139,
-          "median_rent": 30000,
-          "avg_rent": 31976,
-          "min_rent": 10500,
-          "max_rent": 84000
-        },
         "未分類": {
-          "count": 199,
-          "median_rent": 18000,
-          "avg_rent": 21408,
-          "min_rent": 2500,
-          "max_rent": 84000
+          "count": 195,
+          "median_rent": 19800,
+          "avg_rent": 22505,
+          "min_rent": 3500,
+          "max_rent": 110000
         },
-        "獨立套房": {
-          "count": 48,
-          "median_rent": 12900,
-          "avg_rent": 13563,
-          "min_rent": 6800,
-          "max_rent": 29000
-        },
-        "雅房": {
-          "count": 6,
-          "median_rent": 8500,
-          "avg_rent": 8000,
-          "min_rent": 7500,
-          "max_rent": 8500
-        },
-        "分租套房": {
-          "count": 23,
-          "median_rent": 11000,
-          "avg_rent": 12795,
-          "min_rent": 6000,
-          "max_rent": 21000
+        "整層住家": {
+          "count": 162,
+          "median_rent": 27400,
+          "avg_rent": 30620,
+          "min_rent": 13000,
+          "max_rent": 110000
         },
         "套房": {
-          "count": 36,
-          "median_rent": 11000,
-          "avg_rent": 11454,
-          "min_rent": 6000,
-          "max_rent": 17000
+          "count": 24,
+          "median_rent": 12000,
+          "avg_rent": 12633,
+          "min_rent": 3500,
+          "max_rent": 20000
+        },
+        "獨立套房": {
+          "count": 46,
+          "median_rent": 12000,
+          "avg_rent": 12282,
+          "min_rent": 3500,
+          "max_rent": 20000
+        },
+        "分租套房": {
+          "count": 9,
+          "median_rent": 8000,
+          "avg_rent": 9655,
+          "min_rent": 7800,
+          "max_rent": 19500
+        },
+        "雅房": {
+          "count": 12,
+          "median_rent": 12000,
+          "avg_rent": 10700,
+          "min_rent": 7500,
+          "max_rent": 12500
+        },
+        "整層": {
+          "count": 2,
+          "median_rent": 8000,
+          "avg_rent": 8000,
+          "min_rent": 8000,
+          "max_rent": 8000
         }
       },
       "samples": [
         {
-          "rent": 25000,
-          "area_ping": 27.0,
-          "title": "近南港交流道🍎漂亮木質~溫馨家庭寶貝最愛~有書房",
+          "rent": 45000,
+          "area_ping": 47.0,
+          "title": "一橋進南港電梯大樓景觀戶"
+        },
+        {
+          "rent": 45000,
+          "area_ping": 47.0,
+          "title": "一橋進南港電梯大樓景觀戶"
+        },
+        {
+          "rent": 45000,
+          "area_ping": 47.0
+        },
+        {
+          "rent": 45000
+        },
+        {
+          "rent": 45000
+        },
+        {
+          "rent": 26500,
+          "area_ping": 30.0,
+          "title": "林蔭夾道幽靜，生活機能優佳。優選好屋",
           "type": "整層住家"
         },
         {
-          "rent": 25000,
-          "area_ping": 27.0,
-          "title": "近南港交流道🍎漂亮木質~溫馨家庭寶貝最愛~有書房",
+          "rent": 26500,
+          "area_ping": 30.0,
+          "title": "林蔭夾道幽靜，生活機能優佳。優選好屋",
           "type": "整層住家"
         },
         {
-          "rent": 25000,
-          "area_ping": 27.0,
+          "rent": 26500,
+          "area_ping": 30.0,
           "type": "整層住家"
         },
         {
-          "rent": 25000
+          "rent": 26500
         },
         {
-          "rent": 25000
-        },
-        {
-          "rent": 12999,
-          "area_ping": 17.0,
-          "title": "碧潭大橋【超值租案】洗衣機★採光優★低樓層優選好屋",
-          "type": "獨立套房"
-        },
-        {
-          "rent": 12999,
-          "area_ping": 17.0,
-          "title": "碧潭大橋【超值租案】洗衣機★採光優★低樓層優選好屋",
-          "type": "獨立套房"
-        },
-        {
-          "rent": 12999,
-          "area_ping": 17.0,
-          "type": "獨立套房"
-        },
-        {
-          "rent": 12999
-        },
-        {
-          "rent": 12999
+          "rent": 26500
         }
       ]
     }
